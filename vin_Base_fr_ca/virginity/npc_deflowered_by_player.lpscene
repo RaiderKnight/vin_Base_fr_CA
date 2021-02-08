@@ -1,0 +1,45 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    Actor = getSpecific(PassedOn)
+    Actor.dress()
+    Actor.show()
+    Actor.moveToPerson(Player)
+    Actor(Embarassed):: "<Player.name>, j'ai quelque chose d'important à te dire..."
+    Player(Surprised):: "<Actor.name>, qu'est-ce qu'il y a?"
+    Actor(Embarassed):: "C'était la première fois que je baisais avec quelqu'un..."
+    0:: "Cool, alors on le refait!"
+    1:: "Il y a une première fois à toute ..."
+    2:: "Pas étonnant que tu sois si poche! "
+    
+    If 0
+        Actor(Happy):: "Pourquoi pas ..."
+        Player(Happy):: "Oh, <Actor.name>, tu n'as aucune idée à quel point je suis heureux d'entendre ça..."
+        Player:: "Je me sens comme <Player.le_or_la> <Player.gars_or_fille> <Player.le_or_la> plus <Player.chanceux_or_chanceuse> du monde d'être <Player.ton_or_ta> <Player.premier_or_premiere>..."
+        Player:: "J'espère que j'ai réussi à te faire aimer le sexe, parce que de mon côté j'ai adoré notre petite 'séance'."
+        Player:: "J'imagine que oui sinon tu n'aurais pas voulu recommencer."
+        Actor(Excited):: "Shut! Déshabille-toi..."
+        Actor::attractiontoplayer += 50
+        
+        Actor.strip()
+        Player.strip()
+        
+        "Nous nous déhabillons tous les deux et commençons à se caresser mutuellement."
+            
+        Actor:: "Oh, <Actor.name>, tu es maintenant <Actor.mon_or_ma> <Actor.dieu_or_deesse> du sexe...""
+        Sex(Player, Actor)
+        
+    Elseif 1
+        Player(Surprised):: "Oh vraiment? Il y a une première fois pour tout, je suppose. J'espère que je ne t'ai pas fait de mal?"
+        "<Actor.name> n'a pas l'air d'aimer ma réponse qui j'avoue est un peu platte. J'imagine que <Actor.name> regrette de s'être fait déviergé par moi."
+    Else
+        Player:: "Ça paraissait! Tu tremblais pis t'étais comme un poisson mort tout le temps! Tu as clairement besoin de plus de pratique!"
+        "<Actor.name> est visiblement insultée par ma réponse. Je m'en fou un peu, c'est la vérité."
+        "je sais pas, joue avec ton corp le soir, écoute des films de cul,... <Actor.name> a juste pas assez d'expérience pour fourrer avec moi!"    
+    Endif
+    
+    SceneEnd()

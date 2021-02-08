@@ -1,0 +1,72 @@
+WHAT: work
+WHERE: work
+WHEN: 19 - 23
+WHO: Boss = getSpecific(Boss); Colleague = getSpecific(Colleague); If Boss:perversion > 60 && Boss.isInterestedIn(Colleague) && !Boss.isDating()
+OTHER: Random(0, 100) < 0.2*sneak
+
+SceneStart()
+setBackground(work)
+
+"Il est déjà tard dans la soirée, mais la lumière dans le bureau de <Boss.mon_or_ma> boss est toujours allumée. C'est plutôt inhabituel car <Boss.il_or_elle> rentre habituellement chez <Boss.lui_or_elle> à cinq heures. Dois-je me faufiler pour voir ce qui se passe?"
+0:: "Espionner"
+1:: "Je préfère ne pas"
+
+If 0
+    Boss.dress()
+    Boss.show(2)
+    Colleague.dress()
+    Colleague.show(3)
+    Colleague(Sad):: "D'accord, si c'est ce qu'il faut pour obtenir cette promotion, je le ferai"
+    Boss(Flirty):: "Déshabille-toi alors ..."
+    Player.hide()
+    Sex(Boss, Colleague)
+    
+    Boss.hide()
+    Colleague.hide()
+    Player.show(0)
+    "Quelle scène scandaleuse! <Colleague.name> couche avec <Boss.mon_or_ma> boss pour obtenir une promotion. Que dois-je faire concernant ces informations?"
+    0:: "Reporter aux RH"
+    1:: "Je ferme ma gueule"
+    
+    If 0
+        "J'ai rédigé un rapport détaillé de ce que j'ai vu et l'ai envoyé aux RH. "
+        Boss:rapportwithplayer -= Random(0, 100)
+        Colleague:rapportwithplayer -= Random(0, 100)
+        If interpersonal > Random(0, 100)
+            "À la suite de ma dénonciation, <Boss.mon_or_ma> boss et <Colleague.name> ont été licenciés, alors que j'ai été félicité par les supérieurs pour mon acte courageux!"
+            Colleague.removeColleague()
+            Boss = generatePerson()
+
+            If Random (0,1) < 0.7
+                Random
+                    Boss.blendPreset(workaholic)
+                    Boss.blendPreset(workhard_playhard)
+                endRandom
+            endif
+
+            If Random(0,1) < 0.95
+                Random
+                    Boss.blendPreset(fourties)
+                    Boss.blendPreset(fifties)
+                    Boss.blendPreset(sixties)        
+                endRandom
+            endif
+                
+            Boss.randomizeFace()
+            Boss.randomizeHairs()
+            
+            Boss.setBoss()
+            jobperformance += Random(0, 5)
+        Else
+            "Les RH ont mené une enquête après avoir reçue cette plainte mais n'a trouvé aucune preuve pour prouver mon accusation! Pire encore, <Boss.mon_or_ma> boss a découvert mon identité en tant que dénonciateur et semble maintenant avoir une vendetta personnelle contre moi."
+            jobperformance -= Random(0, 10)
+        Endif
+    Else
+        "<Boss.Mon_or_Ma> boss et <Colleague.name> ne m'ont pas jamais mal traité. Je ne devrais pas faire quelque chose qui pourrait compromette leur carrière."
+    Endif
+Else
+    "Non, je ne devrais pas faire ça ou c'est la meilleur façon de faire chier <Boss.mon_or_ma> boss!"
+Endif
+
+SceneEnd()
+timeout(2000, whistleblower)

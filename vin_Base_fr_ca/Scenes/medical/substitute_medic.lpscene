@@ -1,0 +1,23 @@
+WHAT: all
+WHERE: hospital:work
+WHEN: 0 - 24
+WHO: Actor = getSpecific(Doctor, Only); If Actor:rapportwithplayer > 10
+OTHER: none
+
+    SceneStart()
+    Actor.dressUniform()
+    Actor.show(2)
+    Actor(Happy):: "Scuse <Player.name>, pourrais-tu me remplacer et garder un œil sur les urgences aujourd'hui? Je dois courir. J'ai quelque chose d'urgent à faire."
+    0:: "Oui"
+    1:: "Non"
+    
+    If 0
+        Player(Happy):: "Bien sûr, je serai ravi de t'aider."
+        Actor:rapportwithplayer += Random(0, 2.5)
+        karma += 2.5
+    Else
+        Player(Sad):: "Désolé, je suis assez occupé en ce moment. Tu devrais demander à quelqu'un d'autre!"
+        Actor:rapportwithplayer -= Random(0, 2)
+    Endif
+    SceneEnd()
+    timeout(350, substitute_medic)

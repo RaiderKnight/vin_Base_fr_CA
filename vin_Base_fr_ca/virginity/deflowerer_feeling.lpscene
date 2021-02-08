@@ -1,0 +1,25 @@
+WHAT: all
+WHERE: all, -home
+WHEN: 0 - 24
+WHO: Actor = getPerson(false); If Actor.isDeflowerer()
+OTHER:
+
+    SceneStart()
+    "Attend un peu, est-ce ...?"
+    Actor.dress()
+    Actor.show()
+    "C'est <Actor.name>, qui a pris ma déviergé..."
+    "Cela fait un petit bout que je ne l'ai pas vu! Nous avions arrêté de se rencontrer, je ne sais pas pour quelle raison. Mais le fait de revoir <Actor.name> en ce moment, je ne peux pas m'empêcher de repenser à cette passion particulière que nous partagions."
+    0:: "Redemander à <Actor.name> son numéro de tel."
+    1:: "Certaines choses et personnes doivent rester dans le passé"
+    
+    If 0
+        "Qu'y a-t-il de si mal à rester au moins en contact avec la personne qui était la principale co-vedette dans l'un des événements les plus importants de ma vie de toute façon ..."
+        "Je trouve le courage d'approcher <Actor.name> et de lui demander son numéro de téléphone."
+        "Échange réalisé avec succès! Yes, j'ai maintenant son numéro!"
+        exchangeContact(Actor)
+    Else
+        
+    Endif
+    SceneEnd()
+    timeout(2000, deflowerer_feeling)

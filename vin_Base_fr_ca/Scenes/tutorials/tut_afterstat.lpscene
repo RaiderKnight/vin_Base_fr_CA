@@ -1,0 +1,13 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    "Les attributs ne sont pas statiques mais augmentent / diminuent en fonction des actions que vous effectuez et des décisions que vous prenez pendant les scènes."
+    "De plus, les attributs s'influencent entre-eux aussi. Les personnages à forte perversion auront une augmentation de l'excitation plus rapide par exemple."
+    "Maintenant que votre personnage est terminé, il reste à l'habiller."
+    SceneEnd()
+    OpenMenu(Inventory)
+    followUp(tut_afterinventory)

@@ -1,0 +1,13 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    Player.hide()
+    "Bienvenue dans LifePlay, nouveau jeu avec mode tutoriel. Cliquez n'importe où ou appuyez sur Espace pour passer à la ligne suivante du script du tutoriel."
+    "Tout d'abord, veuillez choisir les options que vous souhaitez voir apparaître dans votre jeu en cochant / décochant les modules optionnels appropriés dans l'écran suivant. Vous ne serez jamais obligé de voir un contenu qui ne vous intéresse pas."
+    SceneEnd()
+    OpenMenu(ModManager)
+    followUp(tut_aftermod)

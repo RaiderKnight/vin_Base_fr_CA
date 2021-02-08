@@ -1,0 +1,26 @@
+WHAT: all
+WHERE: all
+WHEN: 0 - 24
+WHO: Actor = getCompanion(); If Actor.isVirgin() && Actor:rapportwithplayer > 50 && !Actor.isDating() && !Actor.hasRelationship(Spouses, Dating)
+OTHER: !Player.isVirgin()
+
+
+    SceneStart()
+        Actor2 = getSpecific(Dating)
+        "On peu dire que <Actor.name> et moi, sommes de bons amis, assez pour qu'<Actor.il_or_elle> soit devenue très à l'aise de discuter de sujet plutôt personnels récemment..."
+        "La plus grande révélation de <Actor.name>, est bien sûr qu'<Actor.il_or_elle> est toujours vierge!"
+        Actor:: "Pour être honnête <Player.name>, j'en ai marre d'être vierge? Je veux juste me faire devierger, un point c'est tout!"
+        Actor:: "Connais-tu des volontaires qui voudraient m'aider?"
+        0:: "Moi!"
+        1:: Actor2.isValid():: "Avec mon amour, <Actor2.name>"
+        2:: "Tu devrais attendre"
+    
+        If 0
+            Sex(Player, Actor)
+        Elseif 1
+            Sex(Actor2, Actor)
+        Else
+            "J'ai dit à <Actor.name> qu'<Actor.il_or_elle> devrait attendre et réserver sa virginité pour quelqu'un qu'<Actor.il_or_elle> aime vraiment."
+        Endif
+    SceneEnd()
+    timeout(500, virgin_approaches)

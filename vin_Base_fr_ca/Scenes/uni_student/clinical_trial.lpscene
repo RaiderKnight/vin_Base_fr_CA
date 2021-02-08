@@ -1,0 +1,18 @@
+WHAT: all
+WHERE: university:school
+WHEN: 8 - 20
+WHO: none
+OTHER: Random(0, 100) < fitness
+
+    SceneStart()
+    "Il y a un dépliant demandant des volontaires pour participer à un essai clinique pour une recherche universitaire. Je recevrai de l'argent en échange."
+    "Dois-je appliquer?"
+    0:: "Oui"
+    1:: "Non"
+    
+    If 0
+        money += Random(15, 75)
+        fitness -= Random(0, 0.5)
+    Endif
+    SceneEnd()
+    timeout(250, clinical_trial)

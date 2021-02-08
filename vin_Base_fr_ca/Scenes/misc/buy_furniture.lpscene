@@ -1,0 +1,64 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    PreciseModify()
+    choice = 1
+    While choice > 0
+        "Qu'est-ce que je veux acheter?"
+        0:: "Rien"
+        1:: "Set de literie et lit"
+        2:: "Table à manger et chaises"
+        3:: "Armoire"
+        4:: "Bureau et chaise de bureau"
+        5:: "Table basse et canapé"
+        6:: "Table de billard"
+        7:: "Décorations"
+        
+        If 0
+            "J'ai assez de meubles dans ma maison pour le moment."
+        Else
+            If 1
+                Price = 150*CostofLiving*Random(0.8, 1.2)
+            Elseif 2 || 3 || 4 || 6
+                Price = 75*CostofLiving*Random(0.8, 1.2)           
+            Elseif 5 || 7
+                Price = 100*CostofLiving*Random(0.8, 1.2)
+            Endif
+            
+            Price1 = Price*Random(1.5, 2.5)
+            Price2 = Price*Random(4, 10)
+            
+            PriceConvertered = Price.convertToLocalCurrency(false)
+            Price1Convertered = Price1.convertToLocalCurrency(false)
+            Price2Convertered = Price2.convertToLocalCurrency(false)
+            
+            "There are so many options. Which should I go for?"
+            0:: "Produit à prix budget pour <PriceConvertered>"
+            1:: "Produit milieu de gamme pour <Price1Convertered>"
+            2:: "Produit de luxe pour <Price2Convertered>"
+            3:: "Aucun"
+            
+            If 3
+                "En y réfléchissant, j'ai une meilleure idée d'utilisation pour mon argent."
+            Else
+                "Cela devrait correspondre à mes besoins et à mon budget."
+                If 0
+                    furniture_value += Price
+                    money -= Price
+                Elseif 1
+                    furniture_value += Price1
+                    money -= Price1
+                Else
+                    furniture_value += Price2
+                    money -= Price2
+                Endif           
+            Endif
+            choice = 8
+        Endif       
+    Endwhile
+    
+    SceneEnd()

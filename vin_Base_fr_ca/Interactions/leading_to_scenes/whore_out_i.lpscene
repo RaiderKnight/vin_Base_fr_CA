@@ -1,0 +1,78 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24 
+WHO: none
+OTHER: none
+
+    SceneStart()
+    "J'ai décidé d'approcher une personne qui semble prêt à payer pour du sexe ... Entouka, <Actor.il_or_elle> me fait signe d'aller <Actor.le_or_la> voir..."
+    If Actor.isInterestedIn(Player) && [Actor:perversion - Actor:attractiveness > 50 || WHERE == brothel]
+        If Random(0, 100) < 50 && [Actor.isMale() || [Actor.isTrans() && !Player.isMale()]] 
+            If Random(0, 100) < 50
+                Actor(Flirty):: "Salut, combien pour un blowjob?"
+                Actor:likes_oral => Random(50, 100)
+                Dice = Random(200, 300)
+                Filter(Blowjob)
+            Else
+                Actor(Flirty):: "Salut, combien pour une branlette?"
+                Dice = Random(100, 200)
+                Filter(Handjob)
+            Endif
+        Elseif Actor.isFemale() && Random(0, 100) < 25
+            Actor(Flirty):: "Salut, c'est combien pour licher ton vagin?"
+            Actor:likes_oral => Random(50, 100)
+            Dice = Random(200, 300)
+            Filter(LickPussy)        
+        Else
+            If Random(0, 100) < 50 || [Player.isFemale() && !Actor.isMale()]
+                Actor(Flirty):: "C'est combien pour faire ce que je veux de toi?"
+                Dice = Random(300, 400)
+            Else
+                Actor(Flirty):: "C'est combien pour te fourrer dans le cul?"
+                Actor:likes_anal => Random(50, 100)
+                Dice = Random(400, 500)
+                Filter(Anal)
+            Endif    
+        Endif
+        
+        P1C = Dice.convertToLocalCurrency(true)
+        P2 = Dice/2
+        P2C = P2.convertToLocalCurrency(true)
+        P3 = Dice/3
+        P3C = P3.convertToLocalCurrency(true)
+        
+        "Combien devrais-je charger?"
+        0:: "Refuser de baiser avec <Actor.lui_or_elle>"
+        1:: "Offrir un prix élevé (<P1C>)"
+        2:: "Offrir un prix raisonnable (<P2C>)"
+        3:: "Offrir un rabais (<P3C>)"
+        
+        If 0
+            Player(Sad):: "Désolé, je croyais que vous vouliez me demander autre chose ..."
+        Elseif choice*attractiveness > Actor:intelligence + Actor:interpersonal
+            Actor(Flirty):: "On dirait bien que nous avons un accord, chérie."
+            If WHERE == brothel
+                "Je suis donc <Actor.name> jusqu'à sa chambre situé dans un bordel."
+            Else
+                "Je suis donc <Actor.name> jusqu'à sa chambre de motel situé pas très loin."
+                setBackground(home)
+            Endif
+            Sex(Actor, Player)
+            money => money + Dice/choice
+            
+            If Random(5, 30) < Actor:attractiontoplayer
+                "En plus de nos honoraires convenus, <Actor.name> m'a également donné un gros pourboire."
+                money += Dice/choice/2
+                "Je ne peux pas m'empêcher de remarquer à quel point <Actor.name> est devenu <Actor.amoureux_or_amoureuse> de moi après ce rapport sexuel... je crois qu'<Actor.il_or_elle> va devenir un <Actor.client_or_cliente> <Actor.officiel_or_officielle> ..."
+                Actor.makePermanent()
+                Actor.setActorVar(tag_john, 1)
+            Endif
+        Else
+            Actor(Angry):: "Pas question, c'est ben trop cher chérie! Tu as une trop haute opinion de toi-même. Je vais aller voir ailleurs."
+        Endif
+    Else
+        Actor(Angry):: "Est-ce que j'ai l'ai de quelqu'un d'assez désespéré pour payer pour du sexe? Dégage !"
+        Player(Sad):: "Woah coco! Je croyais que tu voulais me demander quelque chose ..."
+    Endif
+    
+    SceneEnd()

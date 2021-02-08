@@ -1,0 +1,133 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+
+    SceneStart()
+    Actor.makePermanent()
+    "J'ai remarqué que <Actor.name> se tenait seul près du bar. Devrais-je l'approcher et engager une conversation?"
+    0:: "Oui"
+    1:: "Non"
+        
+    If 0
+        "Nous avons commencé à discuter ensemble et avons pris le temps de nous connaître un peu."
+        ChatContinued = true
+        While ChatContinued
+            drunk = false
+            Kissed = false
+            "Je suis avec <Actor.name>. Que dois-je faire?"
+            0:: "Discuter"
+            1:: "Offrir un drink a <Actor.name>"
+            2:: "Mettre ma main sur sa cuisse"
+            3:: "Embrasser <Actor.name>"
+            4:: !Actor.isContactExchanged():: "Échanger numéros de tel."
+            5:: "Aller voir ailleur!"
+            
+            If 0
+                "Nous discutons encore un moment, en apprenant de plus en plus les uns sur les autres."
+                Actor:rapportwithplayer += Random(0, 1)
+                If Actor.isInterestedIn(Player)
+                    Actor:attractiontoplayer += Random(0, 1)
+                Endif
+            Elseif 1
+                money -= Random(2, 10)
+                "Je viens d'offrir un verre à <Actor.name> et <Actor.il_or_elle> a accepté avec joie."
+                drunk = true
+                Player:intoxication += Random(0, 15)
+                Actor:intoxication += Random(0, 15)
+            Elseif 2
+                If Actor.isInterestedIn(Player) && [Actor.isDominantSex(Player) || Random(50, 200) < Actor:attractiontoplayer + Actor:perversion || Actor:intoxication > 50]
+                    "<Actor.name> n'a pas dit un mot mais semble récepti<Actor.f_or_ve> à mes avances sexuelles."
+                    Actor:attractiontoplayer += Random(0, 2)
+                Else
+                    Actor(Angry):: "Que fais-tu, pervers? Retire tes mains de sur moi!"
+                    "Et voilà, <Actor.name> est parti en colère. "
+                    ChatContinued = false
+                    Actor:attractiontoplayer -= Random(0, 20)
+                Endif
+            Elseif 3
+                AnimatePair(Player, Actor, Kissing)
+                Player(Kiss):: "..."
+                If Actor:attractiontoplayer > Random(0, 20) || Actor:intoxication > 70
+                    Actor(Kiss):: "..."
+                    "<Actor.name> c'est tout de suite approché la bouche de ma bouche et nous avons commencés à s'embrasser à côté du bar."
+                    Kissed = true
+                    Actor:attractiontoplayer += Random(0, 2)
+                Else
+                    Actor(Sad):: "Désolé, vous semblez <Actor.gentil_or_gentille> mais pas ce soir. Je ne te connais pas assez bien."
+                    Actor:attractiontoplayer -= Random(0, 5)
+                Endif
+            Elseif 4
+                "Nous avons échangé nos numéros afin de pouvoir nous revoir à certains un moment."
+                exchangeContact(Actor)
+            Else
+                "J'ai trouvé une excuse pour me débarrasser de <Actor.name>. Je ne veux pas passer toute la nuit à discuter avec <Actor.lui_or_elle>. "
+                ChatContinued = false
+            Endif
+            
+            If ChatContinued && choice != 3
+                If !Kissed
+                    If Actor.isInterestedIn(Player) && [Actor:perversion + Actor:attractiontoplayer > Random(150, 200) || Actor:intoxication == 100 || [Actor.isDominantSex(Player) && Actor:perversion + Actor:attractiontoplayer > Random(100, 200)]]
+                        AnimatePair(Player, Actor, Kissing)
+                        Actor(Kiss):: "..."
+                        "Tout à coup, <Actor.name> se penche et commence à m'embrasser sur les lèvres."
+                        0:: "Donner un baiser en retour"
+                        1:: "Refuser son baiser"
+                        
+                        If 0
+                            Player(Kiss):: "..."
+                            "J'ai tout de suite approché ma bouche de sa bouche et nous avons commencés à s'embrasser à côté du bar."
+                            Kissed = true
+                            Actor:attractiontoplayer += Random(0, 2)
+                        Else
+                            "J'ai tourné ma tête, en faisant semblant d'avoir vue quelque chose au loins, pour éviter son baiser. <Actor.Il_or_Elle> a tout de suite compris le message."
+                            Actor:attractiontoplayer -= Random(0, 5)
+                        Endif
+                    Elseif !drunk && [[Actor.isDominantSex(Player) && Random(0, 50) < Actor:attractiontoplayer] || Random(0, 100) < Actor:attractiontoplayer]
+                        "<Actor.name> m'offre un verre. Dois-je accepter l'offre?"
+                        0:: "Oui"
+                        1:: "Non"
+                        
+                        If 0
+                            Player:intoxication += Random(0, 15)
+                            Actor:intoxication += Random(0, 15)
+                        Endif
+                    Elseif Random(0, 100) < 20 || [Random(0, 1)*interpersonal < 30 && Actor:attractiontoplayer < Random(0, 50) && Actor:rapportwithplayer < Random(0, 50)]
+                        Actor(Happy):: "C'était amusant de discuter avec toi, mais je dois y aller maintenant."
+                        Player(Happy):: "Ok, profite du reste de ta nuit!"
+                        ChatContinued = false
+                    Endif
+                Endif
+                
+                If Kissed
+                    "Dois-je suggérer à <Actor.name> d'aller dans un endroit plus privé?"
+                    0:: "Oui"
+                    1:: "Non"
+                    
+                    If 0
+                        If Actor.isDominantSex(Player) || Random(50, 200) < Actor:attractiontoplayer + Actor:perversion || Actor:intoxication > 90
+                            "J'ai chuchoté dans l'oreille de <Actor.name> ce que je cherchais vraiment à faire ce soir et <Actor.il_or_elle> a tout de suite compris le message. C'est pourquoi <Actor.il_or_elle> a décidé de venir chez moi!"
+                            "Nous sommes pratiquement arrivé chez moi."
+                            moveTo(Home)
+                            setBackground(home)
+                            "Aussitôt arrivé à l'intérieur, nous ne pouvions plus attendre et nous nous somme immédiatement déshabiller et avons commencé à se caresser l'un et l'autre."
+                            Sex(Player, Actor)
+                            perversion += Random(0, 1)
+                            ChatContinued = false
+                            Actor:attractiontoplayer += Random(0, 5)
+                        Else
+                            Actor(Sad):: "Désolé, mais je ne baise pas les premiers soirs. Pis, je ne couche pas avec quelqu'un que je connais à peine."
+                            Actor:attractiontoplayer -= Random(0, 10)
+                        Endif
+                    Else
+                        "Non, c'est trop tôt pour ça ..."
+                    Endif
+                Endif
+            Endif
+        Endwhile
+    Else
+        timeout(1, approach_at_bar)
+    Endif
+    SceneEnd()

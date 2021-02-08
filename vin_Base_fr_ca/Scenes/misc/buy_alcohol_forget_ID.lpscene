@@ -1,0 +1,36 @@
+WHAT: all
+WHERE: alcohol, supermarket, beverages
+WHEN: 0-24
+WHO: none
+OTHER: Random(0, 100) < 20
+
+    SceneStart()
+    Actor = generatePersonTemporary()
+    Actor.dress()
+    Actor.show(2)
+    Actor(Irritated):: "Hey, pourrais-tu s'il te plait me faire une faveur?"
+    Player(Happy):: "Oui, qu'est-ce que c'est?"
+    Actor(Angry):: "J'étais venu ici pour acheter quelques bières, mais j'ai oublié ma carte d'identité. Pourriez-vous les acheter pour moi? J'ai l'argent - je vous attendrai dehors."
+    0:: "Oui"
+    1:: "Non"
+    
+    If 0
+        Player(Happy):: "Je serais ravi de t'aider. Ce sont des règlements twits de toute façon. T'es visiblement assez vieux."
+        Actor.hide()
+        "J'ai acheté les bières comme demandé et, comme nous en avions convenu, et <Actor.il_or_elle> m'a bien remboursé les bières une fois à l'extérieur."
+        If Actor:age < 21
+            intelligence -= Random(0, 0.5)
+        Else
+            intelligence += Random(0, 0.5)
+        Endif
+    Else
+        Player(Angry):: "Non désolé, je ne pense pas que tu as l'air assez vieux pour boire ..."
+        If Actor:age < 21
+            intelligence += Random(0, 0.5)
+        Else
+            intelligence -= Random(0, 0.5)
+        Endif
+    Endif
+    
+    SceneEnd()
+    timeout(96, buy_alcohol_forget_ID)

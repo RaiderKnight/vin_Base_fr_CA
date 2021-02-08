@@ -1,0 +1,25 @@
+WHAT: all
+WHERE: all, -home
+WHEN: 0 - 24
+WHO: none 
+OTHER: Random(0, 100) < 3
+
+    SceneStart()
+    Actor = generatePersonTemporary()
+    Actor.dress()
+    Actor.show()
+    "Un étranger s'approche ..."
+    Actor:: "Salut, Je suis <Actor.Mr_or_Ms> Deepwood."
+    Actor:: "Pardonnez-moi mais ma question est peut-être un peu bizarre."
+    Player:: "Ok ..."
+    Actor:: "Voulez-vous m'acheter un poulet en caoutchouc avec une poulie au milieu?"
+    0:: "Dites non poliment"
+    1:: "Donnez de l'argent pour que <Actor.Mr_or_Ms> Deepwood puisse en acheter un"
+    
+    If 1
+        money -= 50
+    Endif
+    Actor.hide()
+    Player:: "C'était quoi ça, j'ai tu halluciné ou quoi?"
+    SceneEnd()
+    timeout(5000, deepwood_cms)

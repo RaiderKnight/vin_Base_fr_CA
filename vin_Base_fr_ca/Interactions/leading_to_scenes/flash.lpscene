@@ -1,0 +1,32 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    Player.stripOne()
+    "J'ai rapidement flashé mes parties intimes à <Actor.name>, on va voir ce qu'<Actor.il_or_elle> va dire !"
+    perversion += 0.5
+    If Random(100, 200) < Actor:attractiontoplayer + perversion
+        Actor:attractiontoplayer += 0.5
+        Actor:perversion += 0.5
+        Actor(Flirty):: "Je dois dire que j'ai vue de quoi de vraiment intéressant tout d'un coup. Peux-tu me montrer ce que tu c'est faire avec?"
+        0:: "Bien sûr, viens ici tout de suite !"
+        1:: "En fait, je n'avais pas l'intention que ça aille aussi loin ..."
+        
+        If 0
+            Sex(Player, Actor)
+        Endif
+    Elseif Actor.hadSex() || Random(40, 100) < Actor:attractiontoplayer + perversion
+        "<Actor.name> n'a pas dit un mot mais <Actor.il_or_elle> m'a souri. <Actor.Il_or_Elle> a vraiment apprécié(e) ce qu'<Actor.il_or_elle> a v<Actor.u_or_ue>."
+        Actor:attractiontoplayer += 0.5
+        Actor:perversion += 0.5
+    Else
+        Actor(Angry):: "What the fuck! T'es donc ben dégueux! Couvre moi ça tout de suite esti de pervers!"
+        Actor:attractiontoplayer -= 1
+        If WHERE != home && WHERE != fraternity && WHERE != brothel && WHERE != stripclub && WHERE != prison
+            followUp(public_indecency)
+        Endif
+    Endif
+    SceneEnd()

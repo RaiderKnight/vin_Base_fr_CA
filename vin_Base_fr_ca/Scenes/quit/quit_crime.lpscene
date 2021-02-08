@@ -1,0 +1,22 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    Actor = getSpecific(Criminal)
+    If Actor.isValid()
+        "Suis-je sûr de vouloir abandonner ma carrière criminelle?"
+        0:: "Oui"
+        1:: "Non"
+        
+        If 0
+            "Passons à autre chose et oublions mon sombre passé. Espérons justeque mon ancien boss ne me considère pas comme étant nuisible étant donné que j'abandonne le métier."
+            quitCrime()
+            karma += 10
+        Endif
+    Else
+        "Je n'ai adhéré à aucune organisation criminelle. Je n'ai pas de carrière criminelle pour me retirer."
+    Endif
+    SceneEnd()

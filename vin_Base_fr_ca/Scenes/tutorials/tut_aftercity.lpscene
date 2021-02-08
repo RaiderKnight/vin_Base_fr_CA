@@ -1,0 +1,18 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    Player.hide()
+    "Cela été un temps de chargement assez rapide, non? C'est parce que Central Bath est une petite carte, donc même avec des paramètres de randomisation maximum (il y a tout simplement moins de données a charger pour jouer), donc elle se charge toujours très rapidement."
+    "Les cartes plus grandes comme le centre de Londres prendront beaucoup plus de temps à charger et vous ne pouvez conserver les paramètres de randomisation qu'à un seul chiffre (ou ne pas utiliser du tout la randomisation) ou vous aurez des problèmes de performances."
+    "Passons à la partie amusante: créer votre personnage!"
+    "Le menu suivant après ce tutoriel vous permettra de personnaliser votre personnage. Il y a beaucoup d'options de personnalisation - vous pouvez littéralement passer des heures sur ce menu à personnaliser chaque détail."
+    "Mais pour l'instant, choisissons simplement un sexe, puis utilisons les différents boutons dans le coin supérieur gauche de votre écran pour la création d'un personnage rapide."
+    "Puis cliquez sur l'onglet 'Personal' (le dernier), et choisissez les détails importants pour votre personnage, comme le nom, l'orientation sexuelle et le vocal."
+    "Rappelez-vous les commandes de caméra que vous avez apprises plus tôt? Celles-ci s'appliquent également à ce menu de création de personnage."
+    SceneEnd()
+    OpenMenu(CharGen)
+    followUp(tut_afterchargen)

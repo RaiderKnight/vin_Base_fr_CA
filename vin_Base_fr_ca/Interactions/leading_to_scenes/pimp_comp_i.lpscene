@@ -1,0 +1,37 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24 
+WHO: none
+OTHER: none
+
+    SceneStart()
+    "J'ai décidé d'approcher quelqu'un qui semble prêt à payer pour du sexe ...  entouka payer pour baiser avec <CurrentCompanion.name> ..."
+    If Actor.isInterestedIn(CurrentCompanion) && [Actor:perversion - Actor:attractiveness > 50 || WHERE == brothel]
+        Actor(Flirty):: "Combien?"
+        0:: "Refuser de baiser avec <Actor.lui_or_elle>"
+        1:: "Offrir un prix élévé"
+        2:: "Offrir un prix raisonnable"
+        3:: "Offrir un rabais"
+        
+        If 0
+            Player(Sad):: "Désolé, mais <CurrentCompanion.il_or_elle> ne travaille pas en ce moment ..."
+        Elseif choice*CurrentCompanion:attractiveness > Actor:intelligence + Actor:interpersonal
+            Actor(Flirty):: "On dirait que nous avons un accord, chérie. J'espère que <CurrentCompanion.name> vaut vraiment la peine."
+            If WHERE == brothel
+                "<CurrentCompanion.name> suis <Actor.name> jusqu'à sa chambre situé dans un bordel pas très loin."
+            Else
+                "<CurrentCompanion.name> suis <Actor.name> jusqu'à sa chambre situé dans un motel pas très loin"
+                setBackground(home)
+            Endif
+            Sex(Actor, CurrentCompanion)
+            money += Random(50, 250)/choice
+            Player:: "Good job, <CurrentCompanion.name>. Voici ta part."
+        Else
+            Actor(Angry):: "Pas question, c'est trop cher! Tu as une trop haute opinion de toi-même, chérie. Je m'en trouverai ailleurs."
+        Endif
+    Else
+        Actor(Angry):: "Est-ce que j'ai l'ai de quelqu'un d'assez désespéré pour payer pour du sexe? Dégage !"
+        Actor(Flirty):: "On se calme coco! Je croyais que tu voulais me demander quelque chose!"
+    Endif
+    
+    SceneEnd()

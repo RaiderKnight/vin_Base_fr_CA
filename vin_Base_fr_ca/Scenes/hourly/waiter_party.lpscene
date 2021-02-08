@@ -1,0 +1,29 @@
+WHAT: work_hourly
+WHERE: restaurant, cafe, biergarten, pub
+WHEN: 0 - 24
+WHO: none
+OTHER:
+
+    SceneStart()
+    "Mon lieu de travail propose également des services de traiteur pour des fêtes spéciales chez des particuliers. On m'a demandé d'en préparer un pour aujourd'hui ... Ce n'est pas ma partie préférée de mon travail, mais cela doit être fait."
+    setBackgroundCustom(fraternity)
+    Actor = generatePersonTemporary()
+    If Random(0, 100) < Actor:perversion
+        Actor.dress()
+        Actor.show()
+        Actor.makeInterested(Player)
+        Actor:attractiontoplayer => 30
+        "L'<Actor.un_or_une> des fêtards m'e check depuis le début du party. Déjà pas mal affect<Actor.e_or_ee> par la boisson, <Actor.il_or_elle> se dirige maintenant vers la salle de bain, me faisant un clin d'œil avant d'entrer. Assez évident qu'<Actor.il_or_elle> veut baiser!"
+        0:: "Baiser dans la salle de bain"
+        1:: "Rester professionnel"
+        
+        If 0
+            setBackground(shower)
+            Sex(Player, Actor)
+        Endif
+    Else
+        "Au final, le party s'est déroulée sans incident et j'ai même reçu un pourboir."
+        money += 20
+    Endif
+    SceneEnd()
+    timeout(100, waiter_party)

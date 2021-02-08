@@ -1,0 +1,6 @@
+ID: tam
+NAME: Le Mâle Alpha
+DESC: C'est l'histoire d'une fille naïve qui a un faible pour les mauvais garçons qui se retrouve toujours dans des relations abusives avec des gangsters dangereux, malgré les conseils de sa meilleure amie plus mature. Ferez-vous équipe avec son meilleur ami pour sauver la pauvre fille de ce monde d'abus sexuels ou allez-vous plutôt rejoindre la «gang» de voyous et essayer de «briser» sa meilleure amie aussi? 
+ONCE: true
+CONDITIONS: none
+START: tam_start

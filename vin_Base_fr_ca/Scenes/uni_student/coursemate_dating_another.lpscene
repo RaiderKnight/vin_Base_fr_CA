@@ -1,0 +1,31 @@
+WHAT: all
+WHERE: university:school, university:work
+WHEN: 0-24
+WHO: Actor = getSpecific(Coursemate); If !Actor.isDating() && !Actor.isAsexual() && !Actor.hasRelationship(Spouses, Dating) && Actor:attractiontoplayer < 40
+OTHER: none
+
+    SceneStart()
+    Actor.dress()
+    Actor.show(2)
+    Actor2 = generatePersonTemporary()
+    While !Actor.isInterestedIn(Actor2)
+        Actor2 = generatePersonTemporary()
+    Endwhile
+    Actor2.makePermanent()
+    Actor2:age => Random(18, 22)
+    Actor2.randomizeHairs()
+    Actor2.randomizeFace()
+    Actor2.setDifferentMajor()
+    Actor2.dress()
+    Actor2.show(3)
+    If WHERE == university:school    
+        "<Actor.Mon_or_Ma> camarade de classe <Actor.name> a passé beaucoup de temps avec <Actor2.name>, <Actor2.un_or_une> <Actor2.gars_or_fille> avec qui <Actor2.il_or_elle> étudie beaucoup ces jours-ci ... Je me demande si il y a pas anguille sous roche ..."
+    Else
+        "Mon élève <Actor.name> a passé beaucoup de temps avec <Actor2.ce_or_cette> <Actor2.gars_or_fille>, que je ne pense pas être l'un de mes élèves, après les classes ces derniers jours... Je me demande si il y a pas anguille sous roche ..." 
+    Endif
+    0:: "Tant mieux pour eux"
+    1:: "C'est dommage"
+
+    addNpcRelationship(Dating, Actor, Actor2)
+    SceneEnd()
+    timeout(1000, coursemate_dating_another)

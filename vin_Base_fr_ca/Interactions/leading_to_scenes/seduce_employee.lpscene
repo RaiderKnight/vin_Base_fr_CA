@@ -1,0 +1,30 @@
+WHAT: none
+WHERE: none
+WHEN: 0 - 24
+WHO: none
+OTHER: none
+
+    SceneStart()
+    "La meilleure chose à propos du fait d'être propriétaire d'une entreprise est que je peux flirter autant que je veux avec les employés que je trouve attrayants et je n'ai pas de ressources humaines à qui rendre compte."
+    "Un employé en particulier a attiré mon attention, c'est <Actor.name>, donc chaque fois que l'occasion se présente, je flirte intensément avec <Actor.lui_or_elle>."
+    Actor:attractiontoplayer += 3
+    If Actor:attractiontoplayer > 30
+        "<Actor.name> semble assez réceptif à mes avances, bien que je ne puisse pas dire si <Actor.il_or_elle> agit simplement de cette façon car je suis son boss ou qu'<Actor.il_or_elle> a peur de perdre son poste."
+        0:: "Soyons plus coriaces et essayons de l'emmener au lit"
+        1:: "Ne précipitons pas les choses"
+        
+        If 0
+            If Actor.hadSex() || Random(30, 100) < Actor:attractiontoplayer
+                "J'ai invité <Actor.name> chez moi après le travail, sans être très subtile sur le pourquoi je l'invite. Mais à ma grande joie, <Actor.il_or_elle> a accepté mon invitation."
+                moveTo(home)
+                setBackground(home)
+                Sex(Player, Actor)
+            Else
+                "J'ai invité <Actor.name> chez moi après le travail, sans être très subtile sur le pourquoi je l'invite. Malheureusement, <Actor.il_or_elle> a refusé mon invitation."
+                Actor:attractiontoplayer -= 3
+            Endif
+        Endif
+    Else
+        "<Actor.name> résiste toujours à mes avances, mais je sais qu'avec le temps, je lui ferai dire oui. C'est moi le boss après tout !"
+    Endif
+    SceneEnd()

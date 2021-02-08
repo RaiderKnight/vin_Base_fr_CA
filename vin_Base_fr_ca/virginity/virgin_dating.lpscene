@@ -1,0 +1,30 @@
+WHAT: all
+WHERE: home
+WHEN: 0 - 24
+WHO: Actor = getSpecific(Dating); If Actor.isVirgin()
+OTHER: none
+
+    SceneStart()
+    Actor.show()
+    Actor.dress()
+    "<Actor.name> et moi sortons ensemble depuis un moment maintenant. Ça se passe plutôt bien mais il y a un vide d'éléphant dans la pièce ... "
+    "Nous n'avons pas fait de sexe depuis le début de notre relation... À vrai dire, <Actor.name> est encore vierge."
+    "Peut-être que je devrais essayer de mettre un peu plus de pression sur <Actor.name> pour commencer à avoir des relations sexuelles?"
+    "Montrer que les sexe c'est comme un sport, il faut se pratiquer pour devenir <Actor.bon_or_bonne> et que l'éléve viens toujours qu'à surpasser son maitre..."
+    0:: "Oui"
+    1:: "Non"
+    
+    If 0
+        If Random(50, 200) < Actor:attractiontoplayer + Actor:perversion
+            Actor(Sad):: "Je suppose que tu as raison ... Nous sommes ensemble depuis un bon moment, c'est injuste de ma part de te faire attendre. Toute façon, je n'avais pas l'intention de te faire attendre aussi longtemps."
+            Sex(Player, Actor)
+        Else
+            Actor(Angry):: "<Player.name>, je t'ai dit que je n'étais pas prêt ... Une relation n'est rien d'autre que du sexe pour toi?"
+        Endif
+    Else
+        "Je ne veux pas faire pression sur <Actor.mon_or_ma> <Actor.chum_or_blonde> pour mon propre plaisir. Je vais lui donner encore un peu de temps. <Actor.Il_or_Elle> sera prê<Actor.t_or_te> un jours...."
+        Player:masochist += 0.1
+        Actor:attractiontoplayer += 2
+    Endif
+    SceneEnd()
+    timeout(200, virgin_dating)
