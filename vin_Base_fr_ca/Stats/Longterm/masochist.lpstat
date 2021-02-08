@@ -1,0 +1,9 @@
+STAT_ID: masochist
+STAT_NAME: Soumis et masochiste; Va de -100 à 100. A 100, vous êtes extrêmement soumis et appréciez la douleur et les abus (être attacher, avoir peur, esclave, victime de viol, etc.) À -100, vous êtes extrêmement dominant et aimez infliger de la douleur et être violent (taureau, maître, violeur, etc.).
+PLAYER_ONLY: false
+HIGHER_BETTER: no_difficulty_adjustment
+STAT_MIN: -100
+STAT_MAX: 100
+DAILY_CHANGE: 0
+DEFAULT_VALUE: 0
+NPC_ONLY: false

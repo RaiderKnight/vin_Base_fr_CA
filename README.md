@@ -1,2 +1,6 @@
 # vin_Base_fr_CA
- Mod for the game LifePlay
+Module pour le jeu LifePlay
+
+Module actuellement non terminé - EN CONSTRUCTION
+
+

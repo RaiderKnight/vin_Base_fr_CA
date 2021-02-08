@@ -1,0 +1,9 @@
+STAT_ID: rapportwithplayer
+STAT_NAME: Rapport -> Moi; Combien cette personne vous aime en tant qu'ami. La valeur de départ est en grande partie basée sur votre relation interpersonnelle. Augmentez avec l'envoi de cadeaux et les activités comme les rencontres. 
+PLAYER_ONLY: false
+HIGHER_BETTER: true
+STAT_MIN: -100
+STAT_MAX: 100
+DAILY_CHANGE: 0
+DEFAULT_VALUE: 0
+NPC_ONLY: true
