@@ -20,22 +20,24 @@ Colleague3.show(3)
 Colleague4.show(4)
 Colleague5.show(5)
 
-"Today is another corporate teambuilding day. They run a lot of cheesy exercises, hoping to improve relationships between staff. I guess the exercises could be classed as 'sport', although lots of office guys aren't that young or in good shape, so they are laughably easy for a relatively athletic person like me."
-"Should I take this opportunity to impress my colleagues with my athletic ability? I don't usually get a chance to do that sitting in the office all day."
-0:: "Yes"
-1:: "No"
+"Aujourd'hui est une autre journée des employés, organisé par l'entreprise. Ils organisent beaucoup d'exercices ringards, dans l'espoir d'améliorer les relations entre le personnel."
+"Je suppose que les exercices pourraient être qualifiés de sport, même si beaucoup de gars de bureau ne sont pas si jeunes ou en bonne forme, ils sont donc ridiculement faciles pour une personne relativement athlétique comme moi."
+"Dois-je profiter de cette occasion pour impressionner mes collègues avec mes capacités athlétiques? Je n'ai généralement pas la chance de faire ça assis au bureau toute la journée."
+0:: "Oui"
+1:: "Non"
 
 If 1
-    "I'd better not show off ... or risk coming across as a douchebag! Let's just be like everyone else."
+    "Je ferais mieux de ne pas pas trop me la croire ... ou risquer de passer pour un douchebag! Soyons égaux comme tout le monde."
     Colleague1:rapportwithplayer += Random(0, 2)
     Colleague2:rapportwithplayer += Random(0, 2)
     Colleague3:rapportwithplayer += Random(0, 2)
     Colleague4:rapportwithplayer += Random(0, 2)
     Colleague5:rapportwithplayer += Random(0, 2)
-    "I spent the day barely breaking a sweat, but it was enjoyable and my relationship with co-workers seemed to have improved."
+    "J'ai passé la journée à peine à transpirer, mais c'était agréable et ma relation avec mes collègues semble s'être améliorée nettement."
 Else
-    "Why not? I keep myself healthy for a reason!"
-    "I wasn't shy to show off my athletic prowess all day, making the older and less in-shape guys in the office look silly in comparison. I must admit I did come across as a bit of a douche, but the fellow sport nuts in the company seemed to be impressed."
+    "Pourquoi pas? Je me garde en bonne santé pour une raison!"
+    "Je n'ai pas hésité à montrer mes prouesses athlétiques toute la journée, ce qui a rend les gars plus âgés et moins en forme du bureau ridicules en comparaison."
+    "Je dois admettre que j'ai agi en cave avec eux, mais je m'en fou complètement, au moins mes autres collègues sportifs semblaient impressionnées. Ils devaient se dire: <Player.Lui_or_Elle>, <Player.il_or_elle> a du guts!"
     If Colleague1:fitness > 50
         Colleague1:rapportwithplayer += Random(0, 5)
         If Colleague1.isInterestedIn(Player)

@@ -5,22 +5,22 @@ WHO: Actor = getSpecific(Boss)
 OTHER: none
 
     SceneStart()
-    "Oh no, I was so distracted by other things while working from home that lost track of the time. It's one minute till the next video conference call."
-    "Now where is the invitation link? Here it is."
-    "I'm in. Just in time for the call to start"
+    "Oh non, j'étais tellement distrait par d'autres choses en travaillant à la maison que j'ai perdu la notion du temps. Il reste une minute avant ma prochaine conférence téléphonique."
+    "Où est maintenant le lien d'invitation? Le voici."
+    "J'y suis. Juste à temps avant que l'appel commence"
     If Player.isNaked()
         dressFormal()
         Actor.dress()
         secondScreen(Actor)
         Actor.show()
-        Actor:: "Welcome everyone to today's video conference call. Today's agenda includes ..."
-        Actor:: "What the fuck, <Player.name>? Why are you naked?"
-        "Oh no! In my hurry to log into the conference call in time, I completely forgot to get dressed."
+        Actor:: "Bienvenue à tous à la visioconférence d'aujourd'hui! L'ordre du jour d'aujourd'hui comprend..."
+        Actor:: "C'est quoi ce bordel, <Player.name>? Pourquoi êtes-vous nu?"
+        "Oh non! J'étais tellement pressé de me connecter à la conférence téléphonique et d'être à temps, j'ai complètement oublié de m'habiller."
         If Actor:perversion > 50 || Actor.hadSex()
-            Actor:: "Well, since you're already nude, I think we might be able to fit some adult entertainment into the agenda."
-            Actor:: "Why don't you start playing with yourself? Spice this boring conference call up a bit"
-            0:: "Masturbate for everyone to watch"
-            1:: "I'll just put on some clothes"
+            Actor:: "Eh bien, puisque vous êtes déjà nue, je pense que nous pourrons peut-être intégrer des divertissements pour adultes à l'agenda."
+            Actor:: "Pourquoi ne commencez-vous pas à jouer avec vous-même? Pimentez un peu cette conférence téléphonique ennuyeuse"
+            0:: "Masturber devant tout le monde"
+            1:: "Je vais juste mettre des vêtements"
             
             If 0
                 filter(Solo)
@@ -31,11 +31,11 @@ OTHER: none
                 jobperformance -= 5
             Endif
         Else
-            Actor:: "This is the most unprofessional behaviour I've ever seen. Rest assured this will be reflected in your next performance review!"
+            Actor:: "C'est le comportement le moins professionnel que j'aie jamais vu. Soyez assuré que cela se reflétera dans votre prochaine évaluation des performances!"
             jobperformance -= 5
         Endif
     Else
-        "The video conference call went according to plans. I have the technology to thank for being able to work from home so effectively." 
+        "L'appel de visioconférence s'est déroulé comme prévu. J'ai le meilleur ordinateur pour pouvoir travailler aussi efficacement à domicile." 
     Endif
     SceneEnd()
     timeout(200, naked_call)

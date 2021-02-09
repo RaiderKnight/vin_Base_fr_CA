@@ -10,31 +10,31 @@ setBackground(work)
 Colleague.dress()
 Colleague.show(2)
 
-"It's no secret that <Colleague.name> doesn't like me very much. Should I do something about it?"
-0:: "Do nothing"
-1:: "Talk it out"
-2:: "Sabotage <Colleague.his_or_her> work"
+"Ce n'est un secret pour personne que <Colleague.name> ne m'aime pas beaucoup. Dois-je faire quelque chose à ce sujet?"
+0:: "Ne rien faire"
+1:: "Parlez-en"
+2:: "Saboter so travail"
 
 If 0
-    "<Colleague.name> has every rights to hate me, just like I have the right to not give a shit."
+    "<Colleague.name> a tous les droits de me haïr, donc j'ai le droit de ne pas m'en foutre."
     Colleague:rapportwithplayer -= Random(0, 2)
 Elseif 1
-    "It's not good to have a bad relationship with someone at work. It's best if I can sit down and talk to <Colleague.him_or_her> about it maturely."
+    "Ce n'est pas bon d'avoir une mauvaise relation avec quelqu'un au travail. Il vaut mieux que je m'assois avec <Colleague.lui_or_elle> et en parler avec maturité."
     If interpersonal > Random(0, 100)
-        "My reconciliation efforts paid off. Our relationship has improved somewhat since that chat."
+        "Mes efforts de réconciliation ont porté fruits. Notre relation s'est quelque peu améliorée depuis notre discussion."
         Colleague:rapportwithplayer += Random(0, 5)
     Else
-        "Our chat led nowhere though and we remained on bad terms."
+        "Notre discussion n'a mené nulle part et nous sommes toujours en mauvais termes."
     Endif
 Else
-    "If you dare to cross me, you're going to suffer!"
-    "Whenever I can, I sneakily sabotaged <Colleague.his_or_her> work, making <Colleague.him_or_her> suffer from one setback and embarrassment after another."
+    "Si tu ose me croiser, tu vas souffrir, ti-cass!"
+    "À chaque fois que je le peux, je sabote sournoisement le travail de <Colleague.name>, faisant subir à <Colleague.name> des revers et des embarras, l'un après l'autre."
     Colleague:rapportwithplayer -= Random(0, 10)
     If Random(0, 100) < 0.05*intelligence
-        "Incredibly, one of my sabotages worked better than I could ever dream of. <Colleague.name> screwed up a big project causing the company lots of money. As a result, <Colleague.He_or_She> was fired! Good riddance."
+        "Incroyablement, un de mes sabotages a tellement fonctionné que je vais même en rêver. <Colleague.name> a foiré un gros projet qui a coûté beaucoup d'argent à l'entreprise. En conséquence, <Colleague.il_or_elle> a été renvoyé! Bon débarras."
         Colleague.removeColleague()
     Elseif intelligence < Random(0, 100)*Random(0, 1)
-        "Unfortunately, my boss caught wind of one of my sabotage attempts and issued me a warning. I'm sure they'll bring this up again in the next performance review."
+        "Malheureusement, mon patron a eu vent d'une de mes tentatives de sabotage et m'a lancé un avertissement. Je suis sûr qu'il en reparlera lors de la prochaine évaluation des performances."
         jobperformance -= Random(0, 3)
     Endif
 Endif

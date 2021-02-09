@@ -10,27 +10,28 @@ setbackground(work)
 Boss = getSpecific(Boss)
 Boss.dress()
 Boss.show(2)
-"There's a specialist training course being organized by HR tomorrow. Spaces are limited as those external trainers are expensive to hire, so my department can only send one person."
-Boss(Happy):: "So, who wants to sign up for this training course tomorrow?"
+"Une formation spécialisée est organisée par les RH demain. Les places sont limitées car ces formateurs externes coûtent cher à embaucher, mon département ne peut donc envoyer qu'une seule personne."
+"C'est alors que <Boss.le_or_la> boss demande aux employés..."
+Boss(Happy):: "Alors, qui veut s'inscrire à ce cours de formation demain?"
 Colleague.dress()
 Colleague.show(4)
 
-Colleague(Happy):: "I would love to do it!"
-0:: "Sign up"
-1:: "Stay silent"
+Colleague(Happy):: "J'adorerais y aller "
+0:: "M'inscrire"
+1:: "Restez silencieux"
 
 If 1
-    "If <Colleague.name> wants to take the course, I'll be nice enough to not stand in <Colleague.his_or_her> way."
+    "Si <Colleague.name> veut suivre le cours, c'est peut-être mieux comme ça! <Colleague.Il_or_Elle> est tout de même plus intelligen<Colleague.t_or_te>!"
     Going = false
 Else
-    Player(Excited):: "I would really appreciate this opportunity!"
+    Player(Excited):: "J'apprécierais vraiment cette opportunité! Je considère que ça pourrait apporter un plus à ma façon de travailler!"
     Colleague:rapportwithplayer -= Random(0, 5)
     If intelligence - Colleague:intelligence> Random(0, 20) || Boss:rapportwithplayer > Random(50, 100) || Boss.isDating()
         Going = true
-        Boss(Happy):: "Alright, <Player.name>, I feel this course would benefit you the most. <Colleague.name>, sorry, but next time we'll definitely consider you."
+        Boss(Happy):: "Très bien <Player.name>, je pense que ce cours vous sera le plus utile. <Colleague.name>, désolé, mais la prochaine fois, nous vous considérerons certainement."
     Else
         Going = false
-        Boss(Sad):: "Sorry, <Player.name>, but we'll let <Colleague.name> take the course this time. Next time, we'll definitely consider you."
+        Boss(Sad):: "Désolé, <Player.name>, mais nous allons laisser <Colleague.name> suivre le cours cette fois. La prochaine fois, nous vous considérerons certainement."
     Endif
 Endif
 
@@ -38,12 +39,12 @@ Boss.hide()
 Colleague.hide()
 
 If Going
-    "I might have threatened my relationship with <Colleague.name>, but in exchange, I was able to participate in a fantastic training course. The knowledge I acquired and the people I met there was quite a boost to my career."
+    "J'aurais peut-être menacé ma relation avec <Colleague.name>, mais en échange, j'ai pu participer à une formation fantastique. Les connaissances que j'ai acquises et les personnes que j'ai rencontrées là-bas ont été un véritable coup de pouce pour ma carrière."
     jobexperience += Random(0, 2)
     intelligence += Random(0, 1)
     timeout(800, training_course)
 Else
-    "<Colleague.name> went to the training course. When <Colleague.he_or_she> came back, <Colleague.he_or_she> spent the whole lunch hour saying how great the course was and how much <Colleague.he_or_she> learned. If true, that was quite an opportunity missed for me ..."
+    "<Colleague.name> est allé au cours de formation. Lorsque <Colleague.name> est revenu, <Colleague.il_or_elle> a passé toute l'heure du déjeuner à dire à quel point le cours était excellent et combien <Colleague.il_or_elle> a appris. Si c'est vrai, c'était une occasion manquée pour moi ..."
     timeout(400, training_course)
 Endif
 

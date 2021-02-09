@@ -5,24 +5,24 @@ WHO: none
 OTHER: Random(0, 100) < 0.001*jobexperience
 
 SceneStart()
-"Hmm, a new e-mail ... What? The CEO is sending me an e-mail? This must be a mistake."
-"'Hahaha, that client is an idiot. How he made his millions - I'll never know. That was a shitty deal we managed to get the fool to sign'"
-"Nasty business! They deliberately deceived clients while laughing behind their backs. If this gets out, it would be a major PR disaster."
-"Ah, I get why this e-mail ended up in my inbox: I have the same last name as someone on the board. The CEO sent it to the wrong person."
-"In any case, I now have the evidence that could potentially bring down this company's reputation. There are a lot of media organizations that would love to break this for a generous payment. What should I do?"
-0:: "Sell it to the press"
-1:: "Stay quiet"
+"Hmm, un nouvel e-mail ... Quoi? Le PDG m'envoie un e-mail? Ce doit être une erreur."
+"'Hahaha, ce client est un idiot. Comment il a gagné ses millions - je ne le saurai jamais. C'était un accord merdique que nous avons réussi à faire signer par cet imbécile'"
+"Ok, c'est des crosseurs! Ils ont délibérément fourré nos clients en riant dans leurs dos. Si cela sortait dans les nouvelles, ce serait un désastre majeur."
+"Ah, là je comprends pourquoi cet e-mail s'est retrouvé dans ma boîte de réception: j'ai le même nom de famille que quelqu'un dans la liste des employés. Le PDG l'a envoyé à la mauvaise personne."
+"Entouka, j'ai maintenant les preuves qui pourraient potentiellement faire briser la réputation de cette entreprise. Il y a beaucoup de médias qui aimeraient diffuser cela pour un paiement généreux. Que dois-je faire?"
+0:: "Contacter la presse"
+1:: "Ne rien dire"
 
 If 0
-    "How can I turn down making a small fortune? I sold the bombshell email to the news organization that bid the most, while remaining anonymous. It was a major scandal and the company immediately became the center of public anger."
+    "Comment puis-je refuser de faire une petite fortune? J'ai vendu l'e-mail bombe à l'agence de presse qui enchérissait le plus, tout en restant anonyme. Ça a été un scandale majeur et l'entreprise est immédiatement devenue une cible publique."
     money += Random(50000, 500000)
     karma -= 50
-    "Of course, it was easy enough still for the company to track down the leaker and I was promptly fired. Also, most companies in  the industry wouldn't dare to hire me now after what I've done. But who cares? I now have more money than I know what to do with."
+    "Malheureusement, il a été assez facile pour l'entreprise de trouver le fuite et j'ai été rapidement renvoyé. De plus, la plupart des entreprises du secteur n'oseraient pas m'embaucher maintenant après ce que j'ai fait. Mais qu'importe? Je suis rendu full cash, je ne sais pas quoi en faire."
     loseJob()
     jobexperience => 0
 Else
-    "I'd better not be greedy and ruin this company's reputation. The company has treated me well enough. And what will my colleagues think of me then?"
-    "I even responded back to the CEO notifying him of his mistake and advising him to be more careful in the future. Realizing how much of a disaster he just escaped, he personally met me to thank me for my loyalty. I also have the feeling that a promotion is coming my way soon ..."
+    "Je ferais mieux de fermer ma gueule et éviter de ruiner la réputation de cette entreprise. L'entreprise m'a assez bien traité. Et que penseront mes collègues de moi après?"
+    "J'ai même répondu au PDG en l'informant de son erreur et en lui conseillant de faire plus attention à l'avenir. Réalisant à quel point il venait d'échapper à une catastrophe, il m'a rencontré personnellement pour me remercier et m'as félicité. J'ai aussi le sentiment qu'une promotion arrive bientôt ..."
     jobperformace => 100
 Endif
 

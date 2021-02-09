@@ -10,31 +10,31 @@ setbackground(Work)
 Colleague.dress()
 Colleague.show(2)
 
-Player(Curious):: "What's the matter, <Colleague.name>? You don't look too happy!"
-Colleague(Drained):: "I've got an important presentation tomorrow. I'm so nervous! You know I always freeze when it comes to public speaking."
-0:: "Wish <Colleague.him_or_her> luck"
-1:: "Offer help"
+Player(Curious):: "Qu'y a-t-il, <Colleague.name>? Vous n'avez pas l'air trop heureux!"
+Colleague(Drained):: "J'ai une présentation importante demain. Je suis tellement nerveux! Vous savez que je suis gêné, je gèle toujours quand je parle en public."
+0:: "Souhaite merde à <Colleague.him_or_her>"
+1:: "Offrir de l'aide"
 
 If 0
-    Player(Sad):: "Oh yeah, presentations can be nerve-wracking. Good luck anyways!"
-    Colleague(Sad):: "Yeah, I definitely need some luck to not make a fool of myself in front of everyone tomorrow."
+    Player(Sad):: "Oh oui je sais, les présentations peuvent être angoissantes, surtout devant le boss. Bonne chance quand même!"
+    Colleague(Sad):: "Ouais merci, j'ai vraiment besoin de chance pour ne pas me ridiculiser devant tout le monde demain."
     Colleague:rapportwithplayer -= Random(0, 2)
     If Colleague.isInterestedin(Player)
         Colleague:attractiontoplayer += ( Random(0,3)*Colleague:masochist/100 )
     Endif
 Else
-    Player(Happy):: "I actually don't have too much on my plates right now. I can help you rehearse for the presentation, if you want?"
+    Player(Happy):: "En fait, j'ai pas grand ouvrages en ce moment. Je peux t'aider pour ta présentation, si tu veux?"
     karma += 2.5
-    Colleague(Excited):: "Oh thank you! I wouldn't mind having someone as my test audience and to give me feedback."
+    Colleague(Excited):: "Oh oui merci! Cela ne me dérangerait pas d'avoir quelqu'un comme public de test et de me donner des commentaires."
     Colleague:rapportwithplayer += Random(0, 5)
     If Colleague.isInterestedin(Player)
         Colleague:attractiontoplayer -= ( Random(0,10)*Colleague:masochist/100 )
     Endif
     passTime(0.5, 2)
-    "Having practiced the presentation in front of me and received useful feedback on it, <Colleague.name> eventually managed to achieve an acceptable delivery. <Colleague.He_or_She> was very grateful."
+    "Après l'avoir aidé pour sa présentation et donné mes commentaires utiles à ce sujet, <Colleague.name> a finalement réussi à obtenir une écoute acceptable. <Colleague.Il_or_Elle> a été très reconnaissant."
     If interpersonal < Random(0, 100)
         Player:jobperformance -= Random(0, 1)
-        "Unfortunately, I spent too much time helping <Colleague.name> with the presentation that I forgot to do some of my own work."
+        "Malheureusement, j'ai passé trop de temps à aider <Colleague.name> avec sa présentation que j'ai oublié de faire une partie de mon propre travail."
     Endif
 Endif
 
