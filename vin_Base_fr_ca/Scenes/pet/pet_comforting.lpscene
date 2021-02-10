@@ -6,18 +6,18 @@ OTHER: isAtHome()
 
     SceneStart()
     Actor.show(2)
-    "<Actor.name> is wagging <Actor.his_or_her> tail. <Actor.He_or_She> seems to be in a playful mood."
-    0:: "Play with <Actor.him_or_her>"
-    1:: "Not now"
+    "<Actor.name> remue sa queue de joie. <Actor.Il_or_Elle> semble être d'humeur à jouer."
+    0:: "Jouez avec <Actor.name>"
+    1:: "Pas maintenant"
     
     If 0
-        Player(Happy):: "Good boy! Come here ..."
+        Player(Happy):: "Bon chien! Viens ici ..."
         Actor:rapportwithplayer += Random(0, 2)
         Actor:attractiontoplayer += Random(0, 2)
         Actor:interpersonal += Random(0, 2)
         Player:mood += Random(0, 20)
     Else
-        Player(Angry):: "Not now! Go play somewhere else!"
+        Player(Angry):: "Pas maintenant! Va jouer avec ta grosse corde!"
         Actor:rapportwithplayer -= Random(0, 2)
         Actor:attractiontoplayer -= Random(0, 2)
         Actor:interpersonal -= Random(0, 2)

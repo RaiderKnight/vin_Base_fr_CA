@@ -19,9 +19,9 @@ OTHER: none
     Actor2.dress()
     Actor2.show(3)
     
-    "<Actor.Brother_or_Sister> <Actor.name> has been hanging out with this <Actor2.name> <Actor2.guy_or_girl> studying <Actor2.Major> a lot these days ... I wonder if they are an item now ..."
-    0:: "Good for them"
-    1:: "That's a shame"
+    "<Actor.Le_or_La> <Actor.Frere_or_Soeur> <Actor.name> passe beaucoup de temps avec <Actor2.name>. Ils étudient beaucoup ensemble ces jours-ci ... Je me demande si il y a pas quelque chose en arrière de ça ..."
+    0:: "Tant mieux pour eux"
+    1:: "C'est dommage"
 
     addNpcRelationship(Dating, Actor, Actor2)
     SceneEnd()

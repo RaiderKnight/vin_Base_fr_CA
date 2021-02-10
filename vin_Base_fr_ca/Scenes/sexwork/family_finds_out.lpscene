@@ -7,11 +7,11 @@ OTHER: Random(0, 1000) < pornfame/intelligence
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    Actor(Angry):: "<Player.name>, can we talk please?"
-    "Oh god, this doesn't sound good."
-    "<Actor.name> showed me a printout with a screenshot on it ... It's my porn Twitter account ..."
-    Actor(Angry):: "How could I have guessed? My <Actor.callplayer> is a porn star ... You humiliated our family honour!"
-    "I tried to apologize and get my <Actor.relationship>'s support for my porn career. Unfortunately, <Actor.he_or_she> was having none of it."
+    Actor(Angry):: "<Player.name>, j'aimerais te parler s'il te plaît?"
+    "Oh mon Dieu, ça ne se présente pas bien."
+    "<Actor.name> m'a montré une impression avec une capture d'écran dessus ... C'est mon compte Twitter porno ..."
+    Actor(Angry):: "Comment aurais-je pu deviner? Que <Actor.callplayer> est une star du porno ... Vous avez humilié l'honneur de notre famille, vraiment twit de ta part!"
+    "J'ai essayé de m'excuser et d'y faire comprendre mon point de vue à propos de ma carrière dans le porno. Malheureusement, <Actor.name> n'a rien voulu entendre."
     mood -= Random(0, 50)
     Actor:rapportwithplayer -= Random(0, 50)
     SceneEnd()

@@ -5,7 +5,7 @@ WHO: Actor = getSpecific(Neighbour); If !Actor.isAsexual() && !Actor.isDating() 
 OTHER: isAtHome() && !isWithCompanion()
 
     SceneStart()
-    "I was walking past my neighbour <Actor.name>'s apartment. <Actor.He_or_She> was with someone."
+    "Je passais devant l'appartement de mon voisin <Actor.name>. <Actor.Il_or_Elle> semblait être avec quelqu'un."
     Actor2 = generatePersonTemporary()
     While !Actor.isInterestedIn(Actor2)
         Actor2 = generatePersonTemporary()
@@ -20,9 +20,9 @@ OTHER: isAtHome() && !isWithCompanion()
     
     Actor.dress()
     Actor.show(4)
-    Actor(Happy):: "<Player.name>, come over, let me introduce you to my <Actor2.boyfriend_or_girlfriend>, <Actor2.name>. <Actor2.name>, this is my neighbour <Player.name>."
+    Actor(Happy):: "<Player.name>, venez, laissez-moi vous présenter mon ami, <Actor2.name>. <Actor2.name>, voici <Player.mon_or_ma> <Player.voisin_or_voisine> <Player.name>."
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you, <Player.name>."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de vous rencontrer, <Player.name>."
+    Player(Happy):: "Ravi de vous rencontrer aussi."
     SceneEnd()
     timeout(350, neighbour_spouse, neighbour_dating)

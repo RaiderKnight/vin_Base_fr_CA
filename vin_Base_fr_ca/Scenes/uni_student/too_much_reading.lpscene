@@ -5,9 +5,9 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "A lecturer decided to give us a few book chapters and countless papers to read before the next lecture. There's no way I can read them all!"
-    0:: "Try my best"
-    1:: "Just give up"
+    "Un professeur a décidé de nous donner quelques chapitres de livres et d'innombrables articles à lire avant le prochain cours. il nous prend pour robots, je ne peux pas tous les lire!"
+    0:: "Faire mon possible"
+    1:: "Abandonner"
     
     If 0
         intelligence += Random(0, 0.25)

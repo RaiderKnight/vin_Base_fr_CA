@@ -5,15 +5,15 @@ WHO: none
 OTHER: Random(70, 100) < interpersonal
 
     SceneStart()
-    "I'm having a great time with this class. I've become quite a popular lecturer with the students with my charisma and smart jokes."
-    0:: "Continue being light-hearted"
-    1:: "Stick more to the teaching material"
+    "Je passe un bon moment avec mes élèves de classe. Je suis devenu un professeur très populaire auprès des étudiants avec mon charisme et mes fameuses blagues."
+    0:: "Continuer à être cool"
+    1:: "Devenir un peu plus strict"
     
     If 0
-        "It's great to feel popular. As for actual knowledge, I'm sure they can fill any gaps with their reading at home."
+        "Je trouve cela cool d'être populaire auprès des étudiants. En ce qui concerne les connaissances réelles, je suis sûr qu'ils peuvent combler toutes les lacunes avec leur études à la maison."
         interpersonal += Random(0, 0.25)
     Else
-        "That's enough joking around for now. I'm not here to win a popularity contest. Let's spend more time on the actual teaching material."
+        "C'est assez plaisant pour le moment. Par contre, je ne suis pas venu ici pour gagner un concours humoristique. Donc, je vais passer plus de temps à enseigner mon matériel pédagogique que des jokes."
         intelligence += Random(0, 0.25)
     Endif
     SceneEnd()

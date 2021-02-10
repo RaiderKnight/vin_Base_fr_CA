@@ -8,15 +8,15 @@ SceneStart()
 Actor = generatePerson()
 Actor.show(2)
 
-"I'm in the club and I couldn't help but notice there's a completely naked <Actor.guy_or_girl> dancing shamelessly on the floor."
-0:: "Ignore"
-1:: "Scold <Actor.him_or_her>"
+"Je suis dans le club et je n'ai pas pu m'empêcher de remarquer qu'il y a <Actor.un_or_une> <Actor.gars_or_fille> complètement nue qui danse sans gêne sur le plancher de danse."
+0:: "Ignorer"
+1:: "Engueuler <Actor.name>"
 
 If 0
-    "It's bemusing but none of my business. Some people are exhibitionists, supporting some causes or just don't care."
+    "C'est déconcertant mais ce n'est pas mon affaire. Certaines personnes sont exhibitionnistes, soutiennent certaines causes... tout <Actor.il_or_elle> fait pas mal à personne!."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "Have some decency, damn it. Put some clothes on!"
+    Player(Angry):: "Aye ! Va t'habiller espèce de vège, je pense que tu devrais arrêter de boire, parce que l'alcool est en train de prendre le dessus sur toi!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

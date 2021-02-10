@@ -7,21 +7,22 @@ OTHER: none
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    "One of my students <Actor.name> is clearly checking me out ... I think <Actor.he_or_she> might have a crush on me."
-    0:: "Flirt with my eyes"
-    1:: "Avoid eye contact"
+    "Je pense que un de mes élèves <Actor.name> à un oeil sur moi ... La façon dont <Actor.il_or_elle> me regarde c'est clair qu'<Actor.il_or_elle> fantasme sur moi."
+    0:: "Faire un clin d'oeil"
+    1:: "Fuir du regard"
     
     If 0
-        "I made sure that <Actor.name> knows the feeling is mutual, literally tearing <Actor.his_or_her> clothes off with my eyes for the whole lecture."
+        "Je me suis assuré que <Actor.name> sache que le sentiment est réciproque, en le déshabillant des yeux pendant tout le cours."
         Actor:attractiontoplayer += Random(0, 2)
         If !isContactExchanged() && Actor:attractiontoplayer > 35
-            "After class ..."
-            "I was packing my things up after class when <Actor.name> passed by and dropped a piece of paper on my table, winked at me and walked off."
-            "It's <Actor.his_or_her> number with the message 'Text me!'. <Actor.He_or_She> isn't shy, is <Actor.he_or_she>?"
+            "J'ai maintenant terminé de donner mon cours ..."
+            "Pendant que j'étais en train de ranger mes affaires après le cours, <Actor.name> passe devant moi et dépose un morceau de papier subtilement sur mon bureau, et me fait un clin d'œil et retourne à la maison."
+            "Voyons voir ce morceau de papier qu'<Actor.il_or_elle> m'a laissé?"
+            "Ok, <Actor.il_or_elle> m'a laissé son numéro de téléphone avec écrit en-dessous 'Texte moi!'. Je <Actor.le_or_la> pensais gêné(e), pas tant que ça Finallement?"
             exchangeContact(Actor)
         Endif
     Else
-        "<Actor.name> is probably just one of those college <Actor.assholes_or_sluts> that took a <Actor.fraternity_or_sorority> bet on banging a lecturer. Let's not fall for this."
+        "<Actor.name> n'est probablement qu'<Actor.un_or_une> de ces élèves <Actor.douchebags_or_bitchs> qui a pris un pari avec ces chums pour faire tomber un professeur en le mettant dans le trouble. Ne tombons pas dans le panneau. C'est suspect!"
         Actor:attractiontoplayer -= Random(0, 2)
     Endif
     SceneEnd()

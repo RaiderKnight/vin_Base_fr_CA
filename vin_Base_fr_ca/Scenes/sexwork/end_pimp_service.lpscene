@@ -6,15 +6,15 @@ OTHER: none
 
     SceneStart()
     setBackground(street)
-    "<CurrentCompanion.name> isn't making me too much money in an increasingly competitive sex industry. Maybe it's time to drop <CurrentCompanion.him_or_her> and find some fresh blood to pimp?"
-    0:: "Yes"
-    1:: "No"
+    "<CurrentCompanion.name> ne me rapporte pas trop d'argent avec son cul pis l'industrie du sexe est de plus en plus compétitive. Il est peut-être temps d'abandonner <CurrentCompanion.name> et de trouver de la jeune chaire fraiche?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "Enough is enough. <CurrentCompanion.name> isn't bringing in the dough, <CurrentCompanion.he_or_she> isn't worth my time investment."
+        "Assez, c'est assez. <CurrentCompanion.name> ne rapporte pas de cash, alors, salut, dégage, va travailler dans un restaurant..."
         CurrentCompanion.removeProstitute()
     Else
-        "No, <CurrentCompanion.he_or_she> might not be bringing in as much revenue as before, but still a valuable asset for my business."
+        "Non, <CurrentCompanion.il_or_elle> ne génère peut-être pas autant de revenus qu'auparavant, mais reste un atout précieux pour mon entreprise."
     Endif
     
     SceneEnd()

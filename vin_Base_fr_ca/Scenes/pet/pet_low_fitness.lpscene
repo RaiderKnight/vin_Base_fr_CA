@@ -6,8 +6,8 @@ OTHER: isAtHome()
 
     SceneStart()
     Actor.show(2)
-    "<Actor.name> seems so ill and lethargic recently. I really need to take <Actor.him_or_her> to the vets more often."
-    "I can tell that even <Actor.he_or_she> is starting to realize how bad a pet-owner I am."
+    "<Actor.name> semble si malade et léthargique c'est temps-ci. J'ai vraiment besoin d'emmener <Actor.name> chez le vétérinaire plus souvent"
+    "Même que <Actor.name> commence à se demander si je suis vraiment son propriétaire, tellement je <Actor.le_or_la> néglige."
     Actor:rapportwithplayer -= Random(0, 5)
     Actor:attractiontoplayer -= Random(0, 5)
     SceneEnd()

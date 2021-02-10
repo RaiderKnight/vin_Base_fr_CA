@@ -17,9 +17,9 @@ OTHER: none
     Actor2.dress()
     addNpcRelationship(Dating, Actor, Actor2)
 
-    Actor(Happy):: "<Player.name>, let me introduce you to my <Actor2.boyfriend_or_girlfriend>, <Actor2.name>. <Actor2.name>, this is my friend <Player.name>."
+    Actor(Happy):: "<Player.name>, permettez-moi de vous présenter mon <Actor2.frere_or_soeur>, <Actor2.name>. <Actor2.name>, voici mon ami <Player.name>."
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you, <Player.name>."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de vous rencontrer, <Player.name>."
+    Player(Happy):: "Ravi de vous rencontrer aussi."
     SceneEnd()
     timeout(350, friend_dating)

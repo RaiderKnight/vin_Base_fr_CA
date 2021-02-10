@@ -7,12 +7,13 @@ OTHER: none
     SceneStart()
     setBackgroundCustom(stable)
     Actor.show(2)
-    "There's a horse show taking place today. Should I take <Actor.name> and participate?"
-    0:: "Yes"
-    1:: "No"
+    "Il y a un concours d'équitation aujourd'hui. Dois-je emmener <Actor.name> et participer?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "We went and had a fun time at the horse show. We weren't professional so didn't win anything but at least it was quality owner-horse bonding, despite some minor injuries suffered by both of us. I met and exchanged contacts with some cool fellow horse lovers too."
+        "Nous sommes allés nous amuser au concours d'équitation. Nous n'étions pas trop professionnels, nous n'avons donc rien gagné, mais au moins c'était un lien de qualité entre le propriétaire et le cheval, malgré quelques blessures mineures subies de notre côté."
+        "J'ai aussi rencontré et échangé des contacts avec quelques amis amoureux des chevaux."
         Actor:fitness -= Random(0, 5)
         energy -= Random(25, 75)
         Actor:attractiontoplayer += Random(0, 10)
@@ -24,7 +25,7 @@ OTHER: none
             exchangeContact(Actor2)
         Endwhile
     Else
-        "Neither myself or my horse are in a condition for a horse show right now."
+        "Ni moi ni mon cheval ne sont en état de faire un concours d'équitation en ce moment."
     Endif
     
     SceneEnd()

@@ -8,22 +8,22 @@ OTHER: none
     dressFormal()
     Actor.dress()
     Actor.show(2)
-    "Gosh, I'm really struggling with this <Actor.Major> class. It's such a complicated subject that I could barely understand a thing. If this keeps going, I'm afraid I might fail the exam."
-    0:: "Ask Dr <Actor.name_last> for help"
-    1:: "Do more reading"
+    "Criss que j'ai de la misère avec ce cours de <Actor.Major>. C'est un cours tellement compliqué que je comprend pratiquement rien, je capote. Si ça continue, je vais pocher mon examen."
+    0:: "Demander de l'aide à Dr <Actor.name_last>"
+    1:: "Étudier plus"
     
     If 0
-        "I decided to come up to Dr <Actor.name_last> after class and admitted my struggles with the subject matter."
-        Actor(Happy):: "I hope that clears things up a bit for you. If you have any more questions, you can come see me during my office hours and I'll be happy to help."
-        0:: "Can I ask you questions via text instead?"
-        1:: "Thank you!"
+        "J'ai décidé d'aller voir le Dr <Actor.name_last> après le cours et je lui ai dit de m'aider avec mes difficultés scolaire."
+        Actor(Happy):: "J'espère que cela a clarifié un peu les choses pour toi. Si tu as d'autres questions, tu peux venir me voir pendant mes heures de bureau et je serai heureux de t'aider."
+        0:: "Puis-je vous poser des questions par SMS à la place?"
+        1:: "Ok cool, merci!"
         
         If 0
             If Random(0, 200) < Actor:attractiontoplayer + Actor:rapportwithplayer + Actor:perversion + interpersonal
-                Actor(Happy):: "Well, that's quite an unprofessional form of communication with a student, but I guess it's efficient. Fine, you can contact me via this number."
+                Actor(Happy):: "Eh bien, je ne suis pas supposé avec un étudiant, mais je suppose que c'est pas si grave que cela. Très bien, tu peux me contacter via ce numéro."
                 exchangeContact(Actor)
             Else
-                Actor(Surprised):: "That's rather ... inappropriate. As I said, just come see me in my office if you need me."
+                Actor(Surprised):: "Sérieux ... tu veux me faire perdre mon emploi. Comme je te l'ai dit, viens me voir dans mon bureau si tu as besoin d'aide."
             Endif        
         Endif
     Endif

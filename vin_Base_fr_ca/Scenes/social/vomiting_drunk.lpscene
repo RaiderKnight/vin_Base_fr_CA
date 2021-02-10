@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I couldn't help but notice there's a completely hammered <Actor.guy_or_girl> vomiting on the floor. Someone clearly couldn't handle their alcohol!"
-0:: "Ignore"
-1:: "Scold <Actor.him_or_her>"
+"Je n'ai pas pu m'empêcher de remarquer qu'il y avait <Actor.un_or_une> <Actor.gars_or_fille> qui vomissait sur le sol. Clairement quelqu'un qui ne supporte pas l'alcool!"
+0:: "Ignorer"
+1:: "L'engueuler"
 
 If 0
-    "It's none of my business. Some people just drink too much. The staff will clean that up."
+    "Ce ne sont pas mes affaires. Certaines personnes boivent trop. Quelqu'un va nettoyer ça, pas moi!"
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "That's disgusting. If you can't handle alcohol, don't drink or you'll ruin everyone else's night!"
+    Player(Angry):: "Aye <Actor.le_or_la> <Actor.soulons_or_soulonne> quand on ne sait pas boire, on boit pas! Té en train de fucker le party ben raide..."
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
     karma -= 1

@@ -5,16 +5,16 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "Being part of a <Player.fraternity_or_sorority>, I can't remember the last time I managed to remain sober for a whole day ... It's just constant partying and binge drinking every single day of the week."
-    "I can feel that my body is feeling the pressure of the massive amount of alcohol I've been consuming."
-    0:: "Drink strategically"
-    1:: "Go hard or go home"
+    "Quand tu fais partie d'un club privé entre étudiants, souvent tu ne te souviens pas de la dernière fois que tu as réussi à rester sobre pendant une journée entière ... C'est tout le temps le party dans cabane et consommation excessive d'alcool et de weed tous les jours de la semaine."
+    "Hic! je commence à être pas mal affecté, je pense que j'ai plus d'alcool que de sang dans mes veines."
+    0:: "Boire modérément"
+    1:: "Continuer de boire"
     
     If 0
-        "I can't really turn down all the offers from my <Player.brothers_or_sisters> to drink, but I've learned to how to appear to be downing a lot of booze without actually drinking much. That way, I can save my poor body without being anti-social."
+        "Je ne peux vraiment pas refuser toutes les offres de boissons de mes <Player.freres_or_soeurs>, mais j'ai appris à avoir l'air de boire beaucoup d'alcool sans vraiment boire beaucoup. Comme ça tout le monde est content!"
         masochist += Random(0, 0.25)
     Else
-        "That's the life of a <Player.fraternity_or_sorority> <Player.boy_or_girl>! I'm sure I'm more than capable of handling my alcohol."
+        "C'est ça la vie dans un club privé entre étudiants! Mais là, je sens que je vais tomber knock-out bientôt, si je continue à boire."
         fitness -= Random(0, 1)
         masochist -= Random(0, 1)
     Endif

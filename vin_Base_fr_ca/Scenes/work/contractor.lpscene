@@ -10,16 +10,16 @@ Contractor = generatePerson()
 Contractor.dress()
 Contractor.show(2)
 
-"Not everyone I work with is permanent staff. We have a lot of contractors on a short to medium term basis to help out with projects. One such contractor is <Contractor.name>. We got along quite well during <Contractor.his_or_her> time with us, but the contract is running out and <Contractor.he_or_she> is leaving soon."
-"Should I ask for <Contractor.name>'s contact number so that we can see each other again outside of work?"
-0:: "Ask for <Contractor.his_or_her> number"
-1:: "Maybe not"
+"Toutes les personnes avec lesquelles je travaille ne sont jamais du personnel permanent. Nous avons beaucoup de sous-traitants à court et moyen terme pour nous aider dans les projets. Un de ces entrepreneurs est <Contractor.name>. Nous nous sommes plutôt bien entendus pendant qu'<Contractor.il_or_elle> était avec nous, mais le contrat est épuisé et <Contractor.il_or_elle> partira bientôt."
+"Dois-je demander le numéro de tel. à <Contractor.name> afin que nous puissions nous revoir en dehors du travail?"
+0:: "Demander son numéro de tel."
+1:: "Non"
 
 If 0
-    "We exchanged personal contacts before <Contractor.name>'s contract ran out. I can now meet <Contractor.him_or_her> outside of work."
+    "Nous avons échangé nos contacts personnels avant l'expiration du contrat de <Contractor.name>. Je peux maintenant <Contractor.le_or_la> rencontrer en dehors du travail."
     exchangeContact(Contractor)
 Else
-    "I decided not to exchange numbers with <Contractor.name>."
+    "J'ai décidé de ne pas échanger mon numéro avec <Contractor.name>."
 Endif
 
 SceneEnd()

@@ -5,26 +5,26 @@ WHO: none
 OTHER: !isWithCompanion() && Random(50, 200) < martial
 
     SceneStart()
-    "There's a amateur martial arts competition happening in a few days. Should I sign up?"
-    0:: "Yes"
-    1:: "No"
+    "Il y a une compétition d'arts martiaux amateurs dans quelques jours. Devrais-je m'inscrire?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "I decided to sign up and did quite a bit of practice before the competition."
+        "J'ai décidé de m'inscrire et j'ai fait pas mal d'entrainement et de pratique avant la compétition."
         If Random(50, 200) < martial*Random(0, 1)
-            "My efforts paid off. I was crowned the winner of the competition."
+            "Mes entrainements ont porté fruits. J'ai fini première place de la compétition."
             money += Random(500, 2000)
             mood => 100
         Elseif Random(50, 200) < martial
-            "My efforts paid off. I managed to secure the third place in the competition."
+            "Mes entrainements ont porté fruits. J'ai réussi à décrocher la troisième place de la compétition."
             money += Random(250, 1000)
             mood += 20
         Else
-            "Despite my best efforts, there were far better martial artists than I was, and I didn't get any prizes."
+            "Malgré tous mes efforts, il y avait de bien meilleurs candidats que moi et je n'ai reçu aucun prix."
             mood -= 10
         Endif
     Else
-        "I decided not to sign up for the competition."
+        "J'ai décidé de ne pas m'inscrire à la compétition."
     Endif
     SceneEnd()
     timeout(500, martial_competition)

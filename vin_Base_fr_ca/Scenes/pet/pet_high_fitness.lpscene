@@ -6,8 +6,8 @@ OTHER: isAtHome()
 
     SceneStart()
     Actor.show(2)
-    "<Actor.name> seems so healthy and energetic recently. Those visits to the vet really pay off."
-    "I can tell that <Actor.he_or_she> is appreciative of my good care."
+    "<Actor.name> semble si en forme et énergique ces temps-ci. Ces visites chez le vétérinaire sont vraiment payantes."
+    "Je peux dire que <Actor.he_or_she> apprécie mes bons soins."
     Actor:rapportwithplayer += Random(0, 5)
     Actor:attractiontoplayer += Random(0, 5)
     SceneEnd()

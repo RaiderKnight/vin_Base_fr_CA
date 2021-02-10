@@ -8,22 +8,22 @@ OTHER: none
     dressFormal()
     Actor.dress()
     Actor.show(2)
-    "This <Actor.Major> class is one of my favourites. It's a subject matter I'm really passionate about and a possible topic for my final thesis. However, I feel like what Dr <Actor.name_last> is teaching in class is too basic to ensure everyone can get up to speed - I want the more advanced stuffs!"
-    0:: "Ask Dr <Actor.name_last> for help"
-    1:: "Find advanced books in the library"
+    "Ce cours <Actor.Major> est l'un de mes préférés. C'est un sujet qui me passionne vraiment et un sujet important pour ma thèse finale. Cependant, j'ai l'impression que ce que le Dr <Actor.name_last> enseigne en classe est trop basique pour que tout le monde puisse être meilleurs - je veux des éléments plus avancés! "
+    0:: "Demander de l'aide à Dr <Actor.name_last>"
+    1:: "Rechercher dans des livres à la bibliothèque"
     
     If 0
-        "I decided to come up to Dr <Actor.name_last> after class and showed my interest in more advanced reading materials about the subject matter."
-        Actor(Happy):: "I think these book recommendations should keep you occupied for a while. If you have any questions or fail to understand anything while reading these, you can come see me during my office hours and I'll be happy to help."
-        0:: "Can I ask you questions via text instead?"
-        1:: "Thank you!"
+        "J'ai décidé de venir d'aller voir le Dr <Actor.name_last> après le cours et je lui ai montré mon intérêt d'avoir des cours plus avancés sur le sujet."
+        Actor(Happy):: "Je pense que ces recommandations de livres devraient vous occuper pendant un certain temps. Si vous avez des questions ou si vous ne comprenez rien en les lisant, vous pouvez venir me voir pendant mes heures de bureau et je serai heureux de vous aider."
+        0:: "Puis-je vous poser des questions par SMS à la place?"
+        1:: "Merci!"
         
         If 0
             If Random(0, 200) < Actor:attractiontoplayer + Actor:rapportwithplayer + Actor:perversion + interpersonal
-                Actor(Happy):: "Well, that's quite an unprofessional form of communication with a student, but I guess it's efficient. Fine, you can contact me via this number."
+                Actor(Happy):: "Eh bien, c'est une forme de communication assez peu professionnelle avec un étudiant, mais je suppose que je peux. Très bien, vous pouvez me contacter via ce numéro."
                 exchangeContact(Actor)
             Else
-                Actor(Surprised):: "That's rather ... inappropriate. As I said, just come see me in my office if you need me."
+                Actor(Surprised):: "C'est plutôt ... inapproprié. Comme je te l'ai dit, viens me voir dans mon bureau si tu as des questions."
             Endif        
         Endif
     Endif

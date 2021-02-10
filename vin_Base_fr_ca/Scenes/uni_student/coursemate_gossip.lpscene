@@ -12,26 +12,26 @@ OTHER: none
     Actor.show(2)
 
     If WHERE == university:school
-        "Wait, is that my coursemate <Actor2.name> and Dr <Actor.name_last> walking together back to <Actor.his_or_her> office?"
+        "Attend un peu, est-ce que <Actor.mon_or_ma> camarade de classe <Actor2.name> et le Dr <Actor.name_last> retournent ensemble à son bureau ?"
     Else
-        "Wait, is that my student <Actor2.name> and Dr <Actor.name_last> walking together back to <Actor.his_or_her> office?"
+        "Attend un peu, est-ce que c'est mon élève <Actor2.name> avec le Dr <Actor.name_last> qui retournent ensemble à son bureau?"
     Endif
-    "What should I do?"
-    0:: "Gossip"
+    "Que dois-je faire?"
+    0:: "Répandre une rumeur"
     1:: "No big deal"
     
     If 0
         If WHERE == university:school
-            "Could they be having an affair? Having sex with a lecturer, <Actor2.name> is such a <Actor2.stud_or_slut>!"
-            "I decided to spread the rumour to the rest of the course, which <Actor2.name> firmly denied."
+            "Ils ont peut-être une liaison ensemble, faire du cul avec un prof me semble que c'est vège! Ont peu déjà savoir ce qu'<Actor2.il_or_elle> va faire plus tard comme job!"
+            "Entoutka c'est peut-être pas le cas mais, j'ai quand même décidé de répandre une rumeur dans la classe, comme quoi ils couchent ensemble, ce que <Actor2.name> a fermement nié."
         Else
-            "Could they be having an affair? Having sex with a student, <Actor.name> is such a <Actor.stud_or_slut>!"
-            "I decided to spread the rumour to the rest of the Department, which <Actor.name> firmly denied."        
+            "Ils ont peut-être une aventure ensemble, faire du cul avec un élève me semble que c'est pervers! Si <Actor.name> ce fait prendre, il perd sa job c'est clair!"
+            "Entoutka c'est peut-être pas le cas mais, j'ai quand même décidé de répandre une rumeur dans la café des profs, ce que <Actor.name> a fermement nié."        
         Endif
         Actor:rapportwithplayer -= Random(0, 2.5)
         Actor2:rapportwithplayer -= Random(0, 5)
     Else
-        "Who cares? <Actor.name> is probably just asking for help with coursework."
+        "Bof, je m'en fou! <Actor.name> demande peut-être juste de l'aide pour ces cours."
     Endif
     
     SceneEnd()

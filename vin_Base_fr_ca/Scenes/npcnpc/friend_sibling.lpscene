@@ -17,14 +17,14 @@ OTHER: none
         addNpcRelationship(Siblings, Actor, Actor3)    
     Endif
     
-    Actor(Happy):: "<Player.name>, let me introduce you to my <Actor2.brother_or_sister>, <Actor2.name>. <Actor2.name>, this is my friend <Player.name>."
+    Actor(Happy):: "<Player.name>, permettez-moi de vous présenter <Actor2.mon_or_ma> <Actor2.frere_or_soeur>, <Actor2.name>. <Actor2.name>, voici mon ami <Player.name>."
     If dice < 30
-        Actor(Happy):: "And also my <Actor3.brother_or_sister>, <Actor3.name>."
+        Actor(Happy):: "Et aussi <Actor3.mon_or_ma> <Actor3.frere_or_soeur>, <Actor3.name>."
         Actor3.show(2)
-        Actor3(Happy):: "Hey there. Good to meet you."
+        Actor3(Happy):: "Salut. Ravi de te rencontrer."
     Endif
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you, <Player.name>."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de te rencontrer, <Player.name>."
+    Player(Happy):: "Ravi de te rencontrer aussi."
     SceneEnd()
     timeout(350, friend_sibling)

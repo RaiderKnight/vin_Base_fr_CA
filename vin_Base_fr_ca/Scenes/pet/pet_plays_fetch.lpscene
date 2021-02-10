@@ -6,18 +6,18 @@ OTHER: none
 
     SceneStart()
     Actor.show(2)
-    "<Actor.name> is wagging <Actor.his_or_her> tail. <Actor.He_or_She> seems to be in a mood to play fetch."
-    0:: "Play catch with <Actor.him_or_her>"
-    1:: "Not now"
+    "<Actor.name> remue sa queue pour montrer qu'<Actor.il_or_elle> est conten<Actor.t_or_te>. <Actor.Il_or_Elle> semble être d'humeur à vouloir jouer à la balle."
+    0:: "Jouer à la balle avec <Actor.name>"
+    1:: "Pas mainteant"
     
     If 0
-        Player(Happy):: "Good boy! There, fetch that ..."
+        Player(Happy):: "Bon toutou! Là, va chercher, va chercher ..."
         Actor:rapportwithplayer += Random(0, 1)
         Actor:attractiontoplayer += Random(0, 1)
         Actor:interpersonal += Random(0, 1)
         Player:mood += Random(0, 5)
     Else
-        Player(Angry):: "Not now! We should start heading home!"
+        Player(Angry):: "Pas maintenant! Je devrais penser à commencer à rentrer à la maison!"
         Actor:rapportwithplayer -= Random(0, 1)
         Actor:attractiontoplayer -= Random(0, 1)
         Actor:interpersonal -= Random(0, 1)

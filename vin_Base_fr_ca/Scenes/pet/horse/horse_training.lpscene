@@ -7,17 +7,17 @@ OTHER: none
     SceneStart()
     setBackgroundCustom(stable)
     Actor.show(2)
-    "I'm training my horse today. Unfortunately, <Actor.name> seems more stubborn than usual and is having none of my instructions"
-    0:: "Be more assertive"
-    1:: "Show more patience"
+    "J'entraîne mon cheval aujourd'hui. Malheureusement, <Actor.name> semble plus têtu que d'habitude et n'écoute aucune de mes instructions"
+    0:: "Soyez plus assertif"
+    1:: "Montrez plus de patience"
     
     If 0
-        "I start raising my voice more, making sure my horse know who's in charge here."
+        "Je commence à élever davantage la voix pour m'assurer que mon cheval sait qui est en charge ici."
         masochist -= Random(0, 2)
         Actor:attractiontoplayer -= Random(0, 2)
         Actor:rapportwithplayer -= Random(0, 2)
     Else
-        "It's just one of those days. Let's just show some more patience and be gentle and <Actor.he_or_she> should eventually start listening to my instructions."
+        "Ce n'est qu'un de ces mauvais jours. Faisons juste preuve d'un peu plus de patience et soyons gentils et <Actor.il_or_elle> devrait éventuellement commencer à écouter mes instructions."
         masochist += Random(0, 2)
         Actor:attractiontoplayer += Random(0, 2)
         Actor:rapportwithplayer += Random(0, 2)

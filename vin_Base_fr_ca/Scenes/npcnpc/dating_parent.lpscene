@@ -29,14 +29,14 @@ OTHER: isAtDatingHome() && !isWithCompanion() && !isPlayerMarried()
         addNpcRelationship(ParentChild, Actor3, Actor)    
     Endif
     
-    Actor(Happy):: "Baby, let me introduce you to my <Actor2.dad_or_mom>."
+    Actor(Happy):: "Bébé, laisse-moi te présenter à <Actor2.mon_or_ma> <Actor2.pere_or_mere>."
     If dice < 70
-        Actor(Happy):: "And also my <Actor3.dad_or_mom>."
+        Actor(Happy):: "Et aussi <Actor3.mon_or_ma> <Actor3.pere_or_mere>."
         Actor3.show(2)
-        Actor3(Happy):: "Hey there. Good to meet you at last."
+        Actor3(Happy):: "Salut. Ravi de vous rencontrer enfin."
     Endif
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you finally, <Player.name>. <Actor.name> couldn't stop talking about you."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de vous rencontrer, <Player.name>. <Actor.name> ne pouvait pas arrêter de parler de vous."
+    Player(Happy):: "Ravi de vous rencontrer aussi."
     SceneEnd()
     timeout(1000, dating_parent)

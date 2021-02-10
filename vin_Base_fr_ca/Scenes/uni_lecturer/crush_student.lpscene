@@ -7,21 +7,22 @@ OTHER: none
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    "One of my students <Actor.name> is insanely hot! <Actor.Him_or_Her> being in my class is so distracting ... I could barely keep my eyes off <Actor.him_or_her>."
-    0:: "Flirt with my eyes"
-    1:: "Avoid eye contact"
+    "<Actor.Un_or_Une> de mes élèves <Actor.name> est incroyablement sexy! <Actor.Il_or_Elle> est tellement hot que ça me distrait ... J'ai comme on dirait, pogné un fix dessus!"
+    0:: "<Actor.Le_or_La> flirter avec mes yeux"
+    1:: "Me forcer à regarder ailleurs"
     
     If 0
-        "I made sure that <Actor.name> knows my attraction, literally tearing <Actor.his_or_her> clothes off with my eyes for the whole lecture."
+        "Je me suis assuré que <Actor.name> remarque mon attirance envers <Actor.lui_or_elle>, en <Actor.le_or_la> déshabillant des yeux pendant tout le cours."
         Actor:attractiontoplayer += Random(0, 1)
         If !isContactExchanged() && Actor:attractiontoplayer > 35
-            "After class ..."
-            "I was packing my supplies up after class when <Actor.name> passed by and dropped a piece of paper on my table, winked at me and walked off."
-            "It's <Actor.his_or_her> number with the message 'Text me!'. It's my dream come true!"
+            "Après les cours ..."
+            "J'étais en train de ramasser mes affaires après le cours lorsque <Actor.name> passe à côté de moi et a laisse tomber un morceau de papier par terre, et me fait un clin d'œil et retourne faire ces choses."
+            "La curiosité m'emporte, alors je ramasse le morceau de papier par terre."
+            "On dirait bien qu'<Actor.il_or_elle> m'a laissé son numéro de téléphone avec un message en-dessous 'Envoyez-moi un SMS!'. Mon rêve est devenu réalité!"
             exchangeContact(Actor)
         Endif
     Else
-        "Come on, let's stay professional here ..."
+        "Ok rêvons pas, restons professionnels ..."
     Endif
     SceneEnd()
     timeout(100, crush_student)
