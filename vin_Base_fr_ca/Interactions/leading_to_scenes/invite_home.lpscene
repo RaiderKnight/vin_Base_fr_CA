@@ -6,10 +6,10 @@ OTHER: none
 
     SceneStart()
     If Actor.isDating() || Actor.isRelative() || [Random(30, 100) < interpersonal && [Actor:rapportwithplayer > 30 || Actor:attractiontoplayer > 30]] 
-        Actor(Happy):: "Of course, let's go back to your place and chill."
+        Actor(Happy):: "Bien sûr, allons chez vous pour relaxer."
         moveTo(home)
         setBackgroundCustom(livingroom)
-        "We're now inside the apartment."
+        "Nous sommes maintenant à l'intérieur de l'appartement."
         choice = -1    
         ate = false
         hadSex = false    
@@ -18,29 +18,29 @@ OTHER: none
             
         While choice < 5
             Kissed = false
-            "What should I suggest to <Actor.name> that we do?"
-            0:: "Chat"
-            1:: !ate:: "Eat something together"
-            2:: "Watch a movie"
-            3:: "Drink alcohol"
-            4:: !hadSex:: "Kiss <Actor.him_or_her>"
-            5:: MyHome:: "Politely ask <Actor.him_or_her> to leave"
+            "Que dois-je suggérer à <Actor.name> de faire?"
+            0:: "Discuter"
+            1:: !ate:: "Mangez quelque chose ensemble"
+            2:: "Regarder un film"
+            3:: "Boire de l'alcool"
+            4:: !hadSex:: "Embrasser <Actor.name>"
+            5:: MyHome:: "Demandez poliment à <Actor.name> de partir"
             
             If 5
-                "We said goodbye and went our ways."
+                "Nous nous sommes dit au revoir et sommes parti chacun de notre côté."
             Else
                 If 0
-                    "We simply sat and chat for a while ..."
+                    "Nous nous sommes simplement assis et avons bavardé pendant un moment ..."
                     passTime(0.1, 0.2)
                 Elseif 1
-                    "We made some quick snacks and enjoyed them together ..."
+                    "Nous avons préparé des collations rapides et les avons dégustées ensemble, tout en discutant ..."
                     ate = true
                     passTime(0.2, 0.4)
                 Elseif 2
-                    "We watched a movie together ..."
+                    "Nous avons regardé un film ensemble ..."
                     passTime(1, 2)
                 Elseif 3
-                    "We had a drink together ..."
+                    "Nous avons pris un verre ensemble ..."
                     passTime(0.1, 0.2)
                     Player:intoxication += Random(0,10)
                     Actor:intoxication += Random(0,10)
@@ -53,59 +53,59 @@ OTHER: none
                     Player(Kiss):: "..."
                     Actor(Kiss):: "..."
                     If Dating
-                        "We kissed. It started slow but soon became more passionate. It was obvious what we both wanted ..."
+                        "Nous nous sommes embrassés. Cela a commencé lentement mais rapidement c'est devenu plus passionné. C'était évident ce que nous voulions tous les deux ..."
                     Else
-                        "We had a kiss, an awkward one at first, but soon moving towards a more passionate direction."
+                        "Nous avons eu un baiser, un baiser maladroit au début, mais nous nous sommes rapidement dirigés vers une direction plus passionnée."
                     Endif
-                    "Should I let this escalate further?"
-                    0:: Vanilla:: "Make out"
-                    1:: "Stop"
+                    "Dois-je essayer de baiser avec <Actor.name>?"
+                    0:: Vanilla:: "Oui"
+                    1:: "Non pas maintenant"
                     
                     If 0
                         If Actor.isDating() || [Actor.isInterestedIn(Player) && [Actor.IsDominantSex(Player) || Actor:attractiontoplayer + Actor:perversion > Random(50, 200) || Actor:intoxication > 80]]
-                            "Our kiss got more and more steamy and soon we were making out, our hands all over each other."
+                            "Notre baiser devenait de plus en plus torride que nous avons tous les deux commencer à caresser l'autre un peu partout."
                             If TfGame() && Actor.isMale()
-                                "I'm a man trapped inside a woman's body. I don't think I'm gay, but here I am, about to hook up with my male date."
+                                "Je suis un homme piégé dans le corps d'une femme. Je ne pense pas que je suis gay, mais me voici, sur le point de baiser avec un gars."
                             Endif
                             hadSex = true
                             Player:perversion += Random(0, 1)
                             Sex(Player, Actor)
                             Actor.show(2)
-                            "The sex was amazing. We put our clothes back on afterwards and continued our date."
+                            "Le sexe était incroyable. Nous avons remis nos vêtements après et avons continué à discuter."
                             passTime(0.2, 0.5)
                         Else
-                            "Unfortunately for me, <Actor.name> didn't seem interested in letting things escalate any further and pulled away."
+                            "Malheureusement pour moi, <Actor.name> ne semblait pas intéressé à baiser ou même juste s'en tenir aux préliminaires."
                         Endif
                     Else
-                        "I decided to stop it there and not go any further."
+                        "J'ai décidé de m'arrêter là et de ne pas aller plus loin."
                     Endif
                 Elseif Random(0, 100) < 20
                     If Dating
-                        "After a while, we were both exhausted and went to bed together for the night."
+                        "Au bout d'un moment, nous étions tous les deux épuisés et nous sommes allés nous coucher ensemble pour la nuit."
                         passTime(4, 8)
                         energy += Random(50, 100)
-                        "The next morning ..."
+                        "Le lendemain matin ..."
                         If MyHome
-                            Actor(Happy):: "I've gotta go now, honey. Thanks for letting me stay the night. I can't wait to see you again soon!"
+                            Actor(Happy):: "Je dois y aller maintenant, chérie. Merci de m'avoir laissé passer la nuit. J'ai hâte de te revoir bientôt!"
                         Else
-                            Player(Happy):: "I've gotta go now, honey. Thanks for letting me stay the night. I can't wait to see you again soon!"
+                            Player(Happy):: "Je dois y aller maintenant, chérie. Merci de m'avoir laissé passer la nuit. J'ai hâte de te revoir bientôt!"
                         Endif
                         Actor:attractiontoplayer += Random(0, 1)
                     Else
                         If MyHome
-                            Actor(Happy):: "I've gotta go now. Thank you for inviting me in."
-                            Player(Happy):: "Alright. Thank you for staying. Goodbye!"
+                            Actor(Happy):: "Je dois y aller maintenant. Merci de m'avoir invité."
+                            Player(Happy):: "Très bien. Merci d'être resté. À la prochaine!"
                         Else
-                            Actor(Happy):: "It has been a great day, but I'm getting quite tired now. Do you mind ..."
-                            "Getting the message from <Actor.name>, I said goodbye."
+                            Actor(Happy):: "Ce fut une belle journée, mais je suis assez fatigué maintenant. Je dois y aller maintenant ..."
+                            Player(Happy):: "Allez, repose toi bien, au revoir."
                         Endif
-                        "We parted ways."
+                        "Nous nous sommes séparés."
                     Endif
                     choice = 5            
                 Endif        
             Endif
         Endwhile
     Else
-        Actor(Sad):: "Sorry, I don't feel like I know you enough to go home with you."
+        Actor(Sad):: "Désolé, je n'ai pas l'impression de te connaître suffisamment pour t'inviter chez moi."
     Endif    
     SceneEnd()

@@ -1,6 +1,6 @@
 ID: skag
-NAME: She Kissed A Girl
-DESC: Help any straight female NPC awaken and explore her lesbian side (i.e. that NPC will have the 'Interested in Women' tag after the quest completes). If the player is female, she can do the 'teaching' herself. If you're playing a male character however, you can ask a significant other or family member you have to do it. 
+NAME: Elle a embrassé une fille
+DESC: Aidez n'importe quelle NPC féminin complètement hétéro à se réveiller et à explorer son côté lesbienne (c'est-à-dire que ce NPC aura l'étiquette `Interested in Women' une fois la quête terminée). Si le joueur est une femme, elle peut aider le NPC à devenir lesbienne. Cependant, si vous jouez un personnage masculin, vous pouvez demander à une de vos amies ou à un membre de votre famille de le faire. 
 ONCE: false
 CONDITIONS: none
 START: skag_start

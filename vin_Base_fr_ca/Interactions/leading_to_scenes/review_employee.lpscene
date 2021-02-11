@@ -9,67 +9,67 @@ OTHER: none
     If HoursElapsed - LastReview > 730
         Actor.setActorVar(LastReview, HoursElapsed)
         Raise = false
-        Player:: "<Actor.name>, I think it's time for your performance appraisal."
-        Actor:: "Yes, of course."
-        0:: "Give a raise"
-        1:: "Ask for sex in exchange for a raise"
-        2:: "Do nothing"
-        3:: "Fire"
+        Player:: "<Actor.name>, je pense qu'il est temps de faire une évaluation de vos aptitudes."
+        Actor:: "Ok cool, merci patron."
+        0:: "Donner une augmentation"
+        1:: "Demandez du sexe en échange d'une augmentation"
+        2:: "Ne rien faire"
+        3:: "Congédier <Actor.name>"
         
         If 0
             Raise = true
         Elseif 1
             If Actor.hadSex() || Random(40, 70) < Actor:perversion
                 Raise = true
-                Actor:: "Okay ... I could really do with the extra cash."
+                Actor:: "En échange d'une augmentation, pourquoi pas ..."
                 Sex(Player, Actor)
             Else
                 Raise = false
-                Actor:: "Sorry, but I can't do that ..."
+                Actor:: "Désolé, mais c'est contre mes règles ..."
             Endif
         Elseif 2
-            Player:: "Your performance has been okay, but it doesn't warrant a raise though. Just return to work."
+            Player:: "Vos performances sont bonnes, mais cela ne justifie pas une augmentation. Retournez simplement au travail."
             If Actor.hadSex() || Random(50, 80) < Actor:perversion
-                Actor:: "Please, I'll do anything for that raise ..."
-                "I think I know what <Actor.name> is suggesting ..."
-                0:: "Fuck <Actor.him_or_her>"
-                1:: "No"
+                Actor:: "S'il vous plaît, je ferai n'importe quoi pour une augmentation ..."
+                "Je pense que je sais ce que <Actor.name> suggère ..."
+                0:: "Baiser <Actor.name>"
+                1:: "Non, c'est non, va travailler"
                 
                 If 0
                     Raise = true
-                    Player:: "Fine, since you're so desperate."
+                    Player:: "Très bien, puisque vous êtes si désespéré. Barre la porte et ferme le store."
                     Sex(Player, Actor)                
                 Endif
             Else
-                Actor:: "Okay ... I'll try harder."
+                Actor:: "D'accord ... je vais travailler plus fort."
             Endif
         Else
             Fire = true
             If Actor.hadSex() || Random(50, 80) < Actor:perversion
-                Actor:: "Please, I'll do anything to not get fired ..."
-                "I think I know what <Actor.name> is suggesting ..."
-                0:: "Fuck <Actor.him_or_her>"
-                1:: "No"
+                Actor:: "S'il vous plaît, je ferai n'importe quoi pour ne pas me faire sacrer dehors ..."
+                "Je pense que je sais ce que <Actor.name> suggère ..."
+                0:: "Baiser <Actor.name>"
+                1:: "Vous avez vraiment touché le fond!"
                 
                 If 0
                     Fire = false
-                    Player:: "Fine, since you're so desperate."
+                    Player:: "Très bien, puisque vous êtes si désespéré."
                     Sex(Player, Actor)                
                 Endif
             Endif
             If Fire
-                "I decided to fire <Actor.name>."
+                "J'ai décidé de renvoyer <Actor.name>. Je n'ai vraiment pas besoin de ce genre d'employé..."
                 Actor.removeEmployee()
             Endif
         Endif
         
         If Raise
-            "As promised, I gave <Actor.name> a 10% raise."
+            "Comme promis, j'ai donné à <Actor.name> une augmentation de 10%."
             Actor.modifySalary(1.1)
             Actor:rapportwithplayer += 5
             Actor:attractiontoplayer += 5
         Endif
     Else
-        "It doesn't make sense to give another performance review to this employee less than one month since the last."
+        "Cela n'a pas de sens de donner une autre évaluation de rendement à cet employé, moins d'un mois depuis la dernière évaluation."
     Endif
     SceneEnd()

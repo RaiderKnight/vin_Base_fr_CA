@@ -8,46 +8,52 @@ OTHER: none
         SceneStart()
         setBackground(home)
         OldPlayer = getSpecific(OldPlayer)
-        Player(Shocked):: "What the fuck? Who the hell is ..."
-        "At that moment, it finally hit me: the woman in the mirror is ME!"
-        0:: "What the fuck!"
-        1:: "It's like a dream!"
+        Player(Shocked):: "What the fuck? Veux-tu bien me dire pourquoi je vois une belle personne dans le mirroir au lieu de me voir ..."
+        "C'est en disant cela que j'ai toute de suite compris: la fille dans le mirroir, eh bien... c'est MOI!"
+        0:: "Non, non, non,.... Qu'est ce que je vais faire?"
+        1:: "Fuck top, mais avoir une noune, je trouve ça hot!"
         
         If 0
-            Player(Furious):: "Nooooooooooooooooooooooooooooooooooooooooooooooooooo!"
-            "I screamed out in complete shock and horror, only to get even more shocked and horrified at how high-pitched and feminine my voice has become. Not only do I look like a woman, I also sound like a woman."
+            Player(Furious):: "C'est qui le tabarnak de cave qui m'a transformé en fille, j'étais si fier de ma grosse queue pis je suis rendu une ostie de fille!"
+            Player(Furious):: "Sérieux c'est clair que je suis en train de rêver, voyons donc, pourquoi quelqu'un payerais pour me transformer... Je la comprend pas!"
+            "Je me pince la peau, j'me touche la queue, euh, mon vagin pour vérifier si je rêve.... et non, je ne rêve pas."
+            Player(Furious)::"Ayowe, j'ai même une voie féminine, pus de pomme d'adam,... Non seulement je ressemble à une femme, mais je parle aussi comme une femme."
+            "Wow, je sais pas quoi faire ou dire de plus... je suis vraiment dans la marde... Je fais juste penser à mes chums pis ma famille..."
         Else
-            "I don't believe what I'm seeing! I lean into the mirror, touching my face, blinking my eyes, unable to help the manic grin spreading across my face. A loud, high-pitched scream of delight passes from my throat. It’s real! It’s impossible, insane, but it’s real!"
+            "Je ne crois pas ce que je vois! Je me regarde dans le miroir, touchant mon visage, entre les jambes, les seins, clignant des yeux, incapable d'empêcher le sourire maniaque de se répandre sur mon visage."
+            "Un cri de plaisir fort et aigu sort de ma gorge. OMG, c'est réel! C'est impossible, insensé, mais c'est réel! Dieu je t'adore!"
         Endif
-        "It's 2019 so my reaction to everything is to of course take out my phone. I immediately clicked on Facebook."
-        "And to add the shock, I'm logged in as some '<Player.name> <Player.name_last>'. My hometown, alma mater and friendlist all remains the same, but I couldn't find a single photo or even mention of <OldPlayer.name> <OldPlayer.name_last> ... I searched for that name on Facebook, then Google, but no matches. It's like I has been erased from the internet, which I didn't know was even possible."
-        "Suddenly, I hear a knock on my door ..."
+        "Nous sommes en 2021 donc ma réaction naturelle est bien sûr de sortir mon téléphone et immédiatement poster ça sur Facebook."
+        "Et pour ajouter du piquant à mon message, je suis connecté en tant que '<Player.name> <Player.name_last>'."
+        "Ma ville natale, ma mère et ma liste d'amis restent tous les mêmes, mais je n'ai pas trouvé une seule photo ou même une mention de <OldPlayer.name> <OldPlayer.name_last> ... J'ai cherché mon ancien profil sur Facebook, puis sur mes autres comptes sur internet, mais aucune correspondance. C'est comme si j'avais été effacé d'Internet. C'est comme impossible..."
+        "Soudainement, j'entends cogner à ma porte ..."
         Actor = getRelative()
         If Actor.isValid()
-            "It's my <Actor.relationship>, <Actor.name>."
+            "C'est <Actor.name>."
         Else
             Actor = getSpecific(Landlord)
-            "It's my <Actor.landlord_or_landlady>, <Actor.name>."
+            "C'est <Actor.mon_or_ma> propriétaire, <Actor.name>."
         Endif
-        Actor:: "Is everything okay in there, <Player.name>? I heard your scream! What's wrong?"
-        Player(Sad):: "It's fine. Don't worry ..."
-        "Shit, I shouldn't have said anything, how do I explain to <Actor.him_or_her> about my high-pitched voice?"
-        Actor:: "Okay then. Just let me know if anything is wrong, okay?"
-        "Wait, why isn't <Actor.he_or_she> surprised at my new voice? And, what did <Actor.he_or_she> just call me? <Player.name>? That's the same name on the Facebook profile I was logged into."
-        0:: "Maybe I AM <Player.name> now ..."
-        1:: "No way, I'm <OldPlayer.name>"
+        Actor:: "Bonjour <Player.name>, est-ce que tout va bien là-dedans? J'ai entendu des cris venant de votre appartement! Est-ce que tout va bien?"
+        Player(Sad):: "C'est beau, tout est correct. Ne vous inquiétez pas ..."
+        "Merde, je n'aurais pas dû ouvrir la porte et dire quoi que ce soit, comment expliquer à <Actor.him_or_her> ma nouvelle voix?"
+        Actor:: "Ok, si vous le dites. Merci de baisser le ton, ils y a d'autres personnes qui vivent dans l'immeuble, d'accord?"
+        "Attendez, pourquoi <Actor.il_or_elle> n'est pas surpris de ma nouvelle voix? Et, comment <Actor.il_or_elle> vient de m'appeler? <Player.name>? C'est le même nom que sur mon profil Facebook auquel j'étais connecté."
+        "Je lui ai jamais dit mon nouveau nom??"
+        0:: "Peut-être que JE SUIS <Player.name> maintenant ..."
+        1:: "Pas question, je suis toujours <OldPlayer.name>"
         
         If 0
-            "Maybe that's my name now ... maybe I'm a woman now ... somehow. And everyone seems to have always known me as a woman."
+            "Peut-être que c'est mon nom maintenant… peut-être que je suis une femme maintenant… d'une manière ou d'une autre. Et tout le monde semble m'avoir toujours connu comme une femme. Je vais m'assumer alors..."
             masochist += Random(0, 10)
         Else
-            "I'm not <Player.name>. I'm not a woman for fuck's sake. This is all a cruel dream. I'll wake up from it and be <OldPlayer.name> again."
+            "Je ne suis pas <Player.name>. Je ne suis pas une femme pour le plaisir. Tout cela est un rêve cruel. Je me réveillerai surement un jours et je serai à nouveau <OldPlayer.name>."
         Endif
-        "Maybe I should go to a hospital and tell a doctor everything?"
-        "I suppose that's the only decent idea I have right now."
-        "Damn, I'm still naked ... I need to put on some clothes. None of my clothes would fit, but at least I can get this woman's body covered."
-        "I open my wardrobe and long and behold, none of my clothes were there ... Instead, it's full of women's clothes ... <Player.name>'s clothes ..."
-        "Damn it, seems like every trace of <OldPlayer.name> has been erased from my own apartment. Oh well, at least these clothes would fit this body."
+        "Peut-être que je devrais aller à l'hôpital et tout dire à un médecin?"
+        "Je suppose que c'est la seule idée décente que j'ai en ce moment."
+        "Merde, je suis toujours nue ... J'ai besoin de mettre des vêtements. Mes vêtements sont surement maintenant trop grand, mais au moins ils pourront cacher mon corps de femme."
+        "J'ouvre ma garde-robe et pouf! Aucun de mes anciens vêtements sont à l'intérieur ... Au lieu de cela, il est plein de vêtements pour femmes ... les miens j'imagine ..."
+        "Bon sang, il semble que chaque trace de <OldPlayer.name> ait été effacée de mon propre appartement. Eh bien, au moins ces vêtements sont vraiment beaux et ils conviennent à ma nouvelle taille."
         SceneEnd()
         OpenMenu(Inventory)
         followUp(tf_afterinventory)

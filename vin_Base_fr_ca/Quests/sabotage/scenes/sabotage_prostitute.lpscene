@@ -7,16 +7,16 @@ OTHER: none
     SceneStart()
     Actor = a1.getActorAlias()
     Actor2 = a2.getActorAlias()
-    "I came up with an idea: I can pay for a prostitute to approach and try to sleep with <Actor.name> or <Actor2.name>. Hard to turn down free sex."
+    "J'ai eu une idée: j'ai le gôut de payer une escorte à <Actor.name> ou <Actor2.name>. Difficile de refuser du sexe gratuit."
     "There's no free lunch of course, and the prostitute will film the whole encounter and send it to the poor soul that got cheated on."
-    0:: "Good idea"
-    1:: "Let's think of something else"
+    0:: "Bonne idée"
+    1:: "Pensons à une autre idée"
     
     If 0
         relation = sabotage_relation.getGlobal()
         detection = sabotage_detection.getGlobal()
         
-        "For whom should I hire a prostitute?"
+        "Pour qui dois-je payer une escorte?"
         0:: "<Actor.name>"
         1:: "<Actor2.name>"
         
@@ -33,29 +33,30 @@ OTHER: none
         Endwhile
         Pros.dress()
         Pros.show(2)
-        "This <Pros.guy_or_girl> looks just like <Cheater.name>'s type."
+        "<Pros.Cet_or_Cette> <Pros.gars_or_fille> ressemble exactement au type de <Cheater.name>."
         money -= 300
-        Player(Happy):: "You understand what you need to do?"
-        Pros(Flirty):: "All clear! I've done this before for Charles Kushner actually."
+        Player(Happy):: "Vous comprenez ce que vous devez faire?"
+        Pros(Flirty):: "Tout est clair! J'ai déjà fait ça pour Charles Kushner en fait."
         setBackground(bar)
-        "Action time ..."
+        "Pendant ce temps ... l'escorte se rend chez <Cheater.name>!"
         Player.hide()
         Cheater.dress()
         Cheater.show(0)
-        Pros(Flirty):: "You must be <Cheater.name>. I've been asked to attend to your needs tonight. It's a gift from a friend. Everything is already paid for."
+        Pros(Flirty):: "Vous êtes surement <Cheater.name>. On m'a demandé de venir prendre soins de vous ce soir. C'est un cadeau d'un ami. Tout est déjà payé."
         If Random(0, 100) < Cheater:perversion
-            Cheater(Flirty):: "Dear, aren't you a good-looking one? And for free as well - what a wonderful gift from a mysterious friend ... Let's get out of here."
+            Cheater(Flirty):: "Ok, méchant beau cadeau ça! Et gratuit en plus - voyez, j'ai des chums vraiment cool ... Entrez tout de suite ma belle."
             setBackground(home)
             Sex(Cheater, Pros)
             Cheater.show(0)
             Pros.show(2)
-            "After sex, the prostitute I hired stuck to the plan and sent the secretly recorded tape straight to <Cheated.name>'s email address. A true professional!"
+            "Après le rapport sexuel, l'escorte que j'ai embauchée a respecté le plan et a envoyé la cassette secrètement enregistrée directement à l'adresse e-mail de <Cheated.name>. Une vrai professionnel!"
             detection += 5
             relation += 0.3*(Current:masochist - 50) 
         Else
-            Cheater:: "Well, it's tempting but I can't do that, honey. You see, I'm taken ..."
-            Cheater:: "I'll tell you what though, you won't need to attend to my needs but I'll pay you double what you've been paid if you rat out the name of the person behind this 'gift'."
-            Pros(Shocked):: "Wow, that's a generous offer. Yes, <Player.his_or_her> name is <Player.name> <Player.name_last>. <Player.He_or_She> wanted me to film the whole thing and send it to your <Cheated.boyfriend_or_girlfriend> as well."
+            Cheater:: "Eh bien, c'est tentant mais je ne peux pas faire ça. Tu vois, je suis en couple ..."
+            Cheater:: "Je vais vous dire quoi cependant, vous n'aurez pas besoin de vous occuper de mes besoins mais je vous paierai le double de ce que vous avez été payé si vous me dites le nom de la personne derrière ce fameux cadeau."
+            Pros(Shocked):: "Wow, c'est une offre généreuse. Pourquoi pas de toute façon m'en criss de <Player.lui_or_elle>, ma job c'est de ramasser du cash!"
+            Pros(Shocked):: "Faque, <Player.il_or_elle> s'appel <Player.name> <Player.name_last>. <Player.Il_or_Elle> voulait aussi que je film le tout et l'envoyer à votre <Cheated.chum_or_blonde>."
             detection += 30
         Endif
         
@@ -64,4 +65,3 @@ OTHER: none
         followUp(sabotage_progress)
     Endif
     SceneEnd()
-    

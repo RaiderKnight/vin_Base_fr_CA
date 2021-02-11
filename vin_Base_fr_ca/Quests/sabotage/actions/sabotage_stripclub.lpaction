@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: sabotage_stripclub
-ACTION_NAME: Trick: Stripclub Visit
+ACTION_NAME: Astuce: Visite au club de strip-tease
 WHERE: quest
 WHEN: 0 - 24
 MINUTES: 1 - 1

@@ -6,32 +6,32 @@ OTHER: none
 
     SceneStart()
     If Actor.isDating()
-        "The best thing about being in a steady relationship is that sex is much easier to come by"
+        "La meilleure chose à propos d'une relation stable est que le sexe est beaucoup plus facile à trouver"
     Else
-        "I had sex with <Actor.name> before. Maybe it wouldn't take much convincing to get it on again?"
+        "J'ai déjà couché avec <Actor.name>. Si <Actor.il_or_elle> n'a pas changé, je n'ai pas besoin de beaucoup d'arguments pour <Actor.le_or_la> convaincre de faire un trip de cul?"
     Endif
-    "Should I be direct and suggest having a threesome with <Actor.name> and another person I know now?"
-    0:: "Yes"
-    1:: "No"
+    "Dois-je être direct et suggérer de faire un trio avec <Actor.name> et une autre personne que je connais maintenant?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
         If Random(0, 50) < Actor:attractiontoplayer + interpersonal + Actor:perversion + Actor:incest
-            Actor(Flirty):: "Fine ... I'm quite horny myself actually. Who are you thinking about to join us?"
+            Actor(Flirty):: "Très bien ... Je suis moi-même assez en manque en fait. A qui pense-tu pour nous rejoindre?"
             selectNPC()
             Actor2 = getSelectedNPC()
             If !Actor2.isValid()
-                "I couldn't decide on who to invite."
+                "Je ne suis pas capable de me décider, qui inviter."
             Elseif Actor2.hadSex() || Actor2.isInterestedIn(Actor)
                 Actor2.dress()
                 Actor2.show()
-                "We managed to convince <Actor2.name> to join our threesome. In no time at all, <Actor2.he_or_she> arrived."
+                "Nous avons réussi à convaincre <Actor2.name> de rejoindre notre trio. En un rien de temps, <Actor2.he_or_she> est arrivé."
                 Sex(Player, Actor, Actor2)
                 perversion += Random(0, 0.05)            
             Else
-                "Unfortunately, <Actor2.name> turned down our invitation for a threesome. Maybe I should pick someone who I've already had sex with next time, or someone who's interested in <Actor.name>. A threesome is not usually a request made out of the blue." 
+                "Malheureusement, <Actor2.name> a refusé notre invitation pour un trio. Je devrais peut-être choisir quelqu'un avec qui j'ai déjà couché la prochaine fois, ou quelqu'un qui s'intéresse à <Actor.name>. Un trio n'est généralement pas une demande fait du bleu." 
             Endif
         Else
-            Actor(Sad):: "Sorry, but I'm not in the mood for sex right now, let alone a threesome ..."
+            Actor(Sad):: "Désolé, mais je ne suis pas dans le beat pour faire du cul en ce moment, encore moins un trio ..."
         Endif
     Endif
     SceneEnd()

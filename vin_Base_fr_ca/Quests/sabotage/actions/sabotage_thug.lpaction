@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: sabotage_thug
-ACTION_NAME: Trick: Hired Thug
+ACTION_NAME: Astuce: Voyou embauché
 WHERE: quest
 WHEN: 0 - 24
 MINUTES: 1 - 1

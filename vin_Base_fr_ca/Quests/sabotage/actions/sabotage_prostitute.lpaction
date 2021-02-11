@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: sabotage_prostitute
-ACTION_NAME: Trick: Prostitution Gift
+ACTION_NAME: Astuce: Cadeau de prostitution
 WHERE: quest
 WHEN: 0 - 24
 MINUTES: 1 - 1

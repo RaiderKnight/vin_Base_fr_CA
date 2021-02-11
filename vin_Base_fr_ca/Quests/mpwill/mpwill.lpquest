@@ -1,6 +1,6 @@
 ID: mpwill
-NAME: Missing Person - William M
-DESC: Take part in a missing person investigation for William M, a hard-working accountant and family man who went missing during a morning jog. Potential rewards: intelligence & karma boosts and attraction and/or rapport with certain characters. 
+NAME: Personne disparue - William M
+DESC: Participez à une enquête à propos d'une personne disparue appelé William M, un comptable et père de famille assidu qui a disparu lors de son jogging matinal. Récompenses potentielles: l'intelligence et le karma augmentent et l'attraction et/ou le rapport avec certains personnages. 
 ONCE: true
 CONDITIONS: none
 START: mpwill_start

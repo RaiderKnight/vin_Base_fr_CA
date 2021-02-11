@@ -8,27 +8,27 @@ OTHER: !isPlayerMarried()
     secondScreenIfHidden(Actor)
     Actor.dress()
     Actor.show(2)
-    "I have been going out with <Actor.name> for a while and so far it looks like we might have a future together. Maybe I should start gradually introducing <Actor.him_or_her> to my family. We're having a family dinner soon, perhaps I should take <Actor.name> with me?"
-    0:: "Yes"
-    1:: "No"
+    "Je sors avec <Actor.name> depuis un certain temps et jusqu'à présent, il semble que nous pourrions avoir un avenir ensemble. Peut-être que je devrais commencer à présenter progressivement <Actor.name> à ma famille. Nous avons un dîner en famille bientôt, je devrais peut-être l'emmener avec moi?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "This is a perfect opportunity to show how committed I am to the relationship."
+        "C'est une occasion parfaite de montrer à quel point je suis engagé dans ma relation."
         karma += 2.5
         secondScreen()
         Loc = findNearbyBuilding(restaurant)
         moveTo(Loc)        
-        "Later on ..."
+        "Quelques jours plus tard ..."
         Actor.show()
         Actor2.dress()
         Actor2.show(3)        
-        Player(Embarassed):: "<Actor2.Relationship>, this is my <Actor.boyfriend_or_girlfriend>, <Actor.name>."
-        Actor(Happy):: "Nice to meet you finally in person. <Player.name> has never stopped going on about how amazing <Player.his_or_her> <Actor2.relationship> is."
-        Actor2(Happy):: "Nice to meet you too, <Actor.name>. You guys sure are a cute couple."
+        Player(Embarassed):: "<Actor2.Relationship>, voici <Actor.mon_or_ma> <Actor.chum_or_blonde>, <Actor.name>."
+        Actor(Happy):: "Ravi de vous rencontrer enfin en personne. <Player.name> n'a jamais cessé de dire à quel point vous êtes incroyable."
+        Actor2(Happy):: "Ravi de vous rencontrer aussi, <Actor.name>. Vous êtes aussi un joli couple."
         Actor:attractiontoplayer += Random(0, 3)
         Actor2:rapportwithplayer += Random(0, 2)
     Else
-        "No, it's too early in the relationship to do that. We could break up anytime. How would I explain that to my family then?"
+        "Non, il est trop tôt dans notre relation pour faire ça. On pourrait rompre à tout moment. Comment pourrais-je expliquer ça à ma famille alors?"
         Actor:attractiontoplayer -= Random(0, 1)
     Endif
     SceneEnd()

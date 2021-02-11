@@ -9,60 +9,60 @@ setBackground(work)
 Harasser.dress()
 Harasser.show(2)
 
-Harasser(Flirty):: "Oh look at you! Aren't you an eye candy? You have no idea how much having you in the office brightens up my days, although I would much rather have you in a more private space, if you catch my meaning ..."
-"Oh there <Harasser.he_or_she> is again, getting all flirtatious and handsy."
-0:: "It's sexual harassment"
-1:: "I enjoy the attention"
+Harasser(Flirty):: "Oh regarde toi! N'êtes-vous pas un régal pour les yeux? Vous n'avez aucune idée à quel point de vous voir au bureau illumine mes journées, même si j'aimerais allez dans un espace plus privé, si tu comprend où je m'en vais ..."
+"Euh, <Harasser.il_or_elle> est toujours comme cela avec moi."
+0:: "C'est du harcèlement sexuel"
+1:: "J'apprécie le compliment"
 
 If 0 
-    "This inappropriate behaviour really needs to stop, but how can I make it stop?"
-    0:: "Do nothing"
-    1:: masochist < 75:: "Clarify lack of interest"
-    2:: masochist < 50:: "Threaten to tell HR"
-    3:: masochist < 25:: "Report to HR"
+    "Ce comportement inapproprié doit vraiment cesser, mais comment puis-je l'arrêter?"
+    0:: "Ne rien faire"
+    1:: masochist < 75:: "Clarifier mon manque d'intérêt"
+    2:: masochist < 50:: "Menacer de le dire aux RH"
+    3:: masochist < 25:: "Rapporter aux RH"
     
     If 0
-        "<Harasser.He_or_She> might be a bit unprofessional, but I don't want to be mean or threaten <Harasser.his_or_her> job."
-        "Hopefully, <Harasser.he_or_she> doesn't take my silence as invitation."
+        "<Harasser.Il_or_Elle> est peut-être un peu professionnel et bas de classe, mais je ne veux pas être méchant ou lui faire perdre son emploi."
+        "J'espère qu'<Harasser.il_or_elle> ne prendra pas mon silence comme une invitation."
         Harasser:attractiontoplayer += Random(0, 2)
     Elseif 1
-        Player(Angry):: "Cut it out, <Harasser.name>! I told you many times before: I'm not interested!"
-        Harasser(Flirty):: "Not yet, but you will be, eventually ..."        
+        Player(Angry):: "Heille as-tu fini de faire le clown? Je te l'ai déjà dit plusieurs fois que je ne suis pas intéressé!"
+        Harasser(Flirty):: "Ah fait pas ta chochotte, tu es juste pas prêt encore, mais tu le seras, éventuellement  ..."        
     Elseif 2
-        Player(Angry):: "Get your hands off me! This is sexual harassment. If I report to HR, you'll lose your job!"
-        Harasser(Scared):: "Hey, hey! Take it easy there. I haven't done anything - just paying compliments to my lovely colleague. No need to bring this up with the HR people."
+        Player(Angry):: "Lâchez-moi avec tes paroles de zouf! C'est du harcèlement sexuel. Si je signale ça aux RH, tu perd ton emploi!"
+        Harasser(Scared):: "Hé, hé! Vas-y doucement. Je ne faisait que des blagues - je fais juste ça parce que tu es cool. Pas besoin d'en parler avec les RH."
         Harasser:attractiontoplayer -= Random(0, 5)
     Else
-        "Enough is enough! I'm telling HR all about this pervert."
+        "Assez, c'est assez! Je dis tout aux RH! Ta carrière est finie!"
         Harasser.hide()
-        "A few days later ..."
+        "Quelques jours plus tard ..."
         If Harasser:interpersonal > Random(0, 100)
-            "'Thank you for your e-mail. Rest assured, we take all accusations of sexual harassment in the workplace very seriously. As such, we have brought up the issue with <Harasser.name>. While we have not found enough evidence for a sackable offence, we have requested that <Harasser.name> restrained from any further actions that may make <Harasser.his_or_her> colleagues uncomfortable'"
+            "'Merci pour votre e-mail. Soyez assuré que nous prenons toutes les accusations de harcèlement sexuel sur les lieux de travail très au sérieux. En tant que tel, nous avons soulevé le problème avec <Harasser.name>. Bien que nous n’ayons pas trouvé suffisamment de preuves pour une infraction pouvant le renvoyer, nous avons demandé à <Harasser.name> de s'abstenir de toute action supplémentaire susceptible de mettre ces collègues mal à l'aise.'"
             Harasser:attractiontoplayer -= Random(0, 30)
             Harasser:rapportwithplayer -= Random(0, 30)
-            "<Harasser.He_or_She> didn't get fired, but that should be enough of a warning. I hope the pervert leaves me alone from now on ..."
+            "<Harasser.Il_or_Elle> n'a pas été viré, mais cela devrait suffire pour un avertissement. J'espère qu'<Harasser.il_or_elle> me laissera tranquille à partir de maintenant ..."
         Else
-            "Great news! HR investigated the issue. Apparently I wasn't the only one being harassed by <Harasser.name> - other victims had come forward too. As such, they had no choice but to fire the pervert. Good riddance!"
+            "Bonne nouvelle! Les RH ont enquêté sur le problème. Apparemment, je n'étais pas seul à être harcelé par <Harasser.name> - d'autres victimes s'étaient également manifestées. En tant que telles, elles n'avaient pas d'autre choix que de renvoyer <Harasser.name>. Bon débarras!"
             Harasser.removeColleague()
             Harasser:attractiontoplayer -= Random(0,100)
             Harasser:rapportwithplayer => -100
         Endif
     Endif
 Elseif 1
-    "I must say though: I do enjoy the attention. Besides, <Harasser.name> is all talk and no action. No harm has ever been done. I'll just leave <Harasser.him_or_her> be ..."
+    "Je dois dire que: des fois c'est drôle. De plus, <Harasser.name> a le poste le moins payé, a de la misère a arriver... Tant qu'on me touche pas. Je fait semblant de rien entendre..."
     Harasser:attractiontoplayer += Random(0, 5)
     peversion += Random(0, 0.5)
     If perversion > Random(0, 100)
-        "Or ... maybe I should just give the pervert what <Harasser.he_or_she> obviously wants and be done with it!"
-        0:: "Give <Harasser.name> my number"
-        1:: "Do nothing"
+        "Ou ... peut-être que je devrais simplement donner a ce pervers ce qu'<Harasser.il_or_elle> veut et en finir avec ça!"
+        0:: "Donner mon numéro"
+        1:: "Ne rien faire"
         
         If 0
-            Player(Flirty):: "Look at you, all talk and no action. Why don't you actually invite me out some time?"
-            "With that said, I slipped a piece of paper to <Harasser.name> with my personal number on it. The pervert couldn't believe <Harasser.his_or_her> luck!"
+            Player(Flirty):: "Tu as vraiment une grande gueule mais tu agis pas par exemple. Pourquoi tu ne m'invite pas à sortir quelque part, au lieu de niaiser?"
+            "Cela dit, j'ai glissé un morceau de papier dans la poche de <Harasser.name> avec mon numéro personnel dessus. <Harasser.Il_or_Elle> va capoter ben raide quand <Harasser.il_or_elle> va voir ça!"
             exchangeContact(Harasser)
         Else
-            "Actually, that is a very bad idea. It's annoying enough having to deal with such a weirdo at work - I'm not going to invite <Harasser.him_or_her> into my private life."
+            "En fait, c'est une très mauvaise idée. C'est déjà assez ennuyeux d'avoir à faire face à <Harasser.name> au travail - je ne vais certainement pas coucher avec <Harasser.name>."
         Endif
     Endif
 Endif

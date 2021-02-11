@@ -1,78 +1,78 @@
 !Tag(Aggressive)
-    Oh baby, you're the only <A2.man_or_woman> I want in my life right now.
+    Oh mon amour, tu es <A2.le_or_la> <A2.seul_or_seule> <A2.homme_or_femme> que je veux dans ma vie en ce moment.
     ...
 ##
 Tag(Aggressive)
     ...
-    I don't want you to treat me as your <A2.prince_or_princess> tonight, baby. I want you to take me as a <A2.man_or_woman>.
+    Je ne veux pas que tu me traite comme <A2.un_or_une> <A2.prince_or_princesse> ce soir, mon amour. Je veux ça rough et profond.
 ##
 Tag(NonSexual)
     ...
-    Darling, I need you tonight more than ever.
+    Chérie, j'ai envie de toi ce soir plus que jamais.
 ##
 [Tag(NonSexual) || Tag(Foreplay)] && ToCum < 50
     ...
-    Make love to me, baby. Take me and fuck me till I can't feel the pain anymore.
+    Fais-moi l'amour bébé. Prends-moi et baise-moi jusqu'à ce que je ne puisse plus ressentir la douleur.
 ##
 [Tag(NonSexual) || Tag(Foreplay)] && ToCum < 50
     ...
-    I need you, baby. I need you to make love to me. Now.
+    J'ai besoin de toi bébé. J'ai besoin que tu me fasses l'amour. Maintenant.
 ##
 Tag(Penetration)
     ...
-    Ouuuuuu, yessss baby, fuck me deep. Fuck your little <A2.prince_or_princess> the way <A2.he_or_she> likes it. Ouuuuuuuuuuuuuu, faster baby, harder.
+    Ouuuuuu, oui bébé, baise-moi profondément. Fourre <A2.ton_or_ta> <A2.petit_or_petite> <A2.prince_or_princesse> comme tu l'aime. Ouuuuuuuuuuuuu, bébé plus vite, plus fort.
 ##
 *START* Tag(Blowjob)
-    And, I'm going to give you a taste of what you want.
+    Et je vais te donner un avant-goût de ce que goûte mon corps.
     ...
 ##
 *END* Tag(Couple)
-    You liked it, didn't you? 
-    Yes, I did ...
+    T'aime ça, n'est-ce pas? 
+    Oui j'adore ...
 ##
 Tag(Penetration)
-    You want more, don't you?
-    Yes!
+    T'en veux plus, n'est-ce pas?
+    Oui!
 ##
 Tag(Penetration) && toCum > 50
     ...
-    Oh, my god, baby! Yes! I'm...I'm...I'm almost...there! "Oooooooo, deeper!"
+    Oh, mon dieu, bébé! Oui! Je suis ... je suis ... tu me fais capoter, continue ... là! Oooooooo, oui plus profond!
 ##
 Tag(Penetration) && toCum > 50
     ...
-    Ooooo, fuck me, you glorious <A1.bastard_or_bitch> ... Aaaaaaaa, deeper... I'm cu...cumming!
+    Ooooo, oui fourre moi, oh! toi <A1.mon_or_ma> <A1.salaud_or_bitch> ... Aaaaaaaa, plus profond ... je vais ve... venir!!
 ##
 Tag(Penetration, Aggressive)
-    Then, scream out, if you want.
-    You're...hurting me, <A1.name>!
+    Ta yeule, crie, si tu veux.
+    Ouch...tu me fais mal, <A1.name>!
 ##
 Tag(Penetration)
     ...
-    Fuck me, baby ... Punish your baby <A2.boy_or_girl> with that cock.
+    Baise-moi, bébé ... Punis <A2.ton_or_ta> peti<A2.t_or_te> bébé <A2.boy_or_girl> avec ta grosse bite.
 ##
 [Tag(Cowgirl) || Tag(ReverseCowgirl)] && toCum > 50
     ...
-    Hold me on it, baby, I'm gonna cum... ...so good.
+    Tiens-moi, bébé, je vais jouir ... ... cest tellement bon.
 ##
 Tag(Penetration) && toCum > 50
     ...
-    Ccc...cumming, <A1.name>! God, oooooooohh...! I'm cccccummmminngggg so good! 
+    Jjjee...viens, <A1.name>! Oooooooohh...! je suis en train de l'inonder! 
 ##
 *START* Tag(Licking)
     ...
-    I like to be ... licked ... you know ... down there.
+    Ah oui liche moi comme un chaton, oublie pas ma girlande !
 ##
 *START* Tag(Licking)
     ...
-    Now taste me!
+    Maintenant goûte-moi!
 ##
 Tag(NonSexual) || Tag(Foreplay)
-    You're making me crazy, you know that, don't you? I'm dizzy with wanting you so bad!
+    Tu me rends fou, tu le sais, n'est-ce pas? J'ai le vertige quand je te vois!
     ...
 ##
 Tag(Licking)
     ...
-    Pay attention to the road, <A1.mister_or_miss>.
+    Suis bien la route, <A1.mister_or_miss>.
 ##
 Tag(Penetration) && toCum > 70
     ...
@@ -80,189 +80,189 @@ Tag(Penetration) && toCum > 70
 ##
 Tag(Penetration, MF)
     ...
-    Damn... that's good! Keep fucking me, baby... that's it... keep that cock fucking me hard!
+    Merde ... c'est bon! Continue de me baiser, bébé ... je capote ben raide ... garde le beat avec ta bite!
 ##
 Tag(Penetration)
-    Fuck... You feel so great, baby... you look so great! Fuck ...
+    Fuck... tu fais bien ça, bébé... tu es si hot! Ah, Fuck ...
     ...
 ##
 Tag(Penetration)
     ...
-    Ohhh, baby... YES! That's it... give it to me baby!
+    Ohhh, bébé... OUI! C'est ça... garde le galop bébé!
 ##
 Tag(Penetration)
     ...
-    I LOVE it.... yes, baby... please...
+    J'ADORE çaaaa ... oui, bébé... continue...
 ##
 Tag(Penetration)
     ...
-    Yes, please don't stop.
+    Oui, ne te arrête pas.
 ##
 *START* Tag(Penetration)
     ...
-    It's time
+    C'est l'heure de te batte à coup de pénis !
 ##
 Tag(Penetration)
     ...
-    Oh yes, please, fuck me!
+     Oh oui, s'il te plaît, baise-moi!
 ##
 *END* !Tag(NonSexual)
     ...
-    Yes, yes, cum for me baby, CUM FOR ME!
+    Oui, oui, jouis pour moi bébé, jouis pour moi!
 ##
 *START* Tag(Foreplay)
     ...
-    Can we play now?
+    Pouvons-nous jouer maintenant?
 ##
 *START* Tag(Blowjob)
     ...
-    <A1.name>, let me please you. All you have to do is enjoy this time. I will handle everything.
+     <A1.name>, laisse-moi te plaire. Tout ce que tu as à faire est de profiter de ce moment. Je vais tout gérer.
 ##
 *START* !Tag(NonSexual)
     ...
-    I'm going to please you and see to it that this night is a night you will never forget.
+    Je vais te plaire et faire en sorte que cette nuit soit une nuit que tu n'oublieras jamais.
 ##
 *START* Tag(Blowjob)
     ...
-    Let's see what I can do to satisfy that urge you have to get off that wagon
+     Voyons ce que je peux faire pour satisfaire ton envie de goûter mon pénis.
 ##
 Tag(NonSexual)
-    Please let me touch you, let me taste you, let me feel myself deep within you while your lips hold tightly to my shaft.
+    S'il te plaît laisse-moi te caresser, laisse-moi te goûter, laisse-moi te pénétrer au plus profond de ta bouche pendant que tes lèvres se serrent fermement contre ma verge.
     ...
 ##
 *END* !Tag(NonSexual)
-    <A2.name>, that was incredible. Never in my life have I felt this way before ...
+    <A2.name>, c'était incroyable. Jamais de ma vie je n'avais ressenti cela auparavant ...
     ...
 ##
 *START* Tag(Penetration)
-    Much obliged!
-    Oh <A1.name>, put that beautiful prick where it belongs... I want it in me.
+    Infiniment reconnaissant!
+     Oh <A1.name>, rentre ça belle bite dans mon trous bien huilé ... Je la veux profond en moi.
 ##
 Tag(Penetration) && toCum > 90
     ...
-    OHhhhh..... I'm going to cum. OH GOD.... I'm cumming..... I'm cumming.
+    Ohhhhh ..... Je vais venir. Damn ... Je viens ..... Je viens.
 ##
 Tag(Penetration) || Tag(Blowjob)
     ...
-    Oh God.... <A1.name>, how big is that thing?
+    Oh my God.... <A1.name>, c'est quoi c'te grosse affaire là?
 ##
 Tag(Penetration)
-    Am I hurting you? Should I stop?
-    No... No, don't stop!
+    Est-ce que je te fais mal? Devrais-je arrêter?
+    Non ... Non, ne t'arrête pas!
 ##
 Tag(Penetration) || Tag(Licking) || Tag(Fingering)
     ...
-    It feels too good. 
+    C'est trop bon. 
 ##
 Tag(Penetration) && toCum > 50
     ...
-    Don't stop. Fuck me .... fuck me anyway you want to ... make me cum. 
+    Ne t'arrête pas. Baise-moi ... baise-moi comme un taureau ... fait moi jouir à grand coup de pénis. 
 ##
 Tag(Penetration)
     ...
-    Ohh ... that's it ... fuck me ... Fuck me hard. Oh <A1.name>, go deep ... all the way ... as fast ... as hard as you can.
+    Ohh ... c'est ça ... baise-moi ... baise-moi encore plus fort. Oh <A1.name>, accote-là dans le fond ... aussi vite ... aussi fort que tu le peux.
 ##
 Tag(Penetration) && toCum > 90
-    Me too, baby!
-    I can't hold it ... can't ... I'm going to cum.
+    Moi aussi bébé!
+    Je ne peux pas me retenir ... je ne peux pas ... je vais jouir.
 ##
 Tag(Penetration) && toCum > 90
     ...
-    OHhhhh GOD, OOhhh, I'm cummmiiinng ... cummminnng!!!
+    OHhhhh GOD, OOhhh, je viiieeenns ... oooooouuuu!!!
 ##
 *END* Tag(Penetration)
-    Neither did I, honey ...
-    Oh <A1.name> ... <A1.name>, I always thought those stories ... stories about multiple orgasms were just that - stories. Christ ... I didn't know I could cum like that.
+    Moi non plus, chérie ...
+    Oh <A1.name> ... <A1.name>, j'ai toujours pensé que c'était des histoires ... les histoires d'orgasmes multiples. Bon sang ... je ne savais pas que je pouvais jouir autant.
 ##
 Tag(Penetration)
     ...
-    Fuck, baby, fuck!
+    Baise moi, baby, baise moi!
 ##
 Tag(Penetration)
     ...
-    Fuck!
+    Baise moi!
 ##
 Tag(Penetration)
     ...
-    Unh, ahh, oh god, oh sweet prick!
+    Unh, ahh, oh mon dieu, oh ta queue gluante me fait jouir!
 ##
 Tag(Penetration) && toCum > 50
     ...
-    Oh god, this is heaven! Oh, it's never been so good! 
+    Oh mon Dieu, je suis au paradis! Oh, ça n'a jamais été aussi bon! 
 ##
 Tag(Penetration) && toCum > 50
-    I know I am, baby.
-    Ahh, I never knew it could feel so good. Oh, you're so hard. You've filled me up, oh darling, you're the best!
+    Je sais que je le suis, bébé.
+    Ahh, je ne savais pas que ça pouvait être aussi bon. Oh, tu es si bandé. Tu m'as rempli la noune jusqu'au bord, oh chérie, tu es le meilleur!
 ##
 *END* Tag(Penetration)
     ...
-    Oh god, keep cuming! Give me all you've got. Fill me up with it!
+    Oh mon dieu, continue d'éjaculer! Donnez-moi tout ce que tu as. Rempli mon vagin de ton sperme!
 ##
 Tag(Penetration)
     ...
-    Oh god, so good
+    Oh god, c'est si bon.
 ##
 Tag(Penetration)
-    A pretty <A2.boy_or_woman> like you needs a good hot fucking every day.
-    God, I wouldn't know what to do if I got it every day.
+    Pour rester en santé tu a besoin d'une bonne baise torride à tous les jours.
+    Je sais, c'est pour ça que je suis avec toi, pour me baiser tous les jours.
 ##
 *START* Tag(Blowjob)
-    Suck my cock, baby.
+    Suce ma bite, bébé.
     ...
 ##
 Tag(Blowjob)
-    Oh yeah, suck it, baby. Suck my dick, suck every inch of it.
+    Oh ouais, suce la bien, bébé. Liche ton popcycle, liche chaque centimètre de ma queue.
     ...
 ##
 *END* Tag(Penetration) || Tag(Blowjob)
     ...
-    I couldn't believe you can cum this much.
+    Je ne peux pas croire que tu puisse éjaculer autant.
 ##
 *END* !Tag(Penetration)
     ...
-    I wish that was inside me!
+    J'aurais aimé que ce soit en moi!
 ##
 *START* Tag(Penetration)
-    I’m going to fuck you.
+    Je vais te baiser comme un lapin en chaleur.
     ...
 ##
 *START* Tag(Penetration)
     ...
-    You’re going to fuck me now.
+    Tu vas me baiser maintenant.
 ##
 Tag(NonSexual) || Tag(Blowjob)
     You have the most beautiful eyes.
     ...
 ##
 *START* Tag(Penetration)
-    Put me inside of you.
+    Tu as les plus beaux yeux.
     ...
 ##
 Tag(Penetration)
     ...
-    Fuck me faster!
+    Fourre-moi plus vite, plus fort!
 ##
 Tag(Penetration)
     ...
-    Fuck me harder! Deeper!
+    Baise moi plus fort! Plus profond!
 ##
 Tag(Vaginal) && toCum > 90
     ...
-    My cunt! Oh fill me! Fuck me! Oh yes!
+    Ma chatte! Oh remplis-la! Baise moi! Oh oui!
 ##
 *START* Tag(Licking) || Tag(Fingering)
-    You know I do ...
-    Like what you see?
+    Tu le sais que moi aussi ...
+    Aimes-tu mon corps?
 ##
 *START* Tag(Blowjob)
-    I think I would like to see what you are going to do with that
-    Is this what you had in mind?
+    J'aimerais voir ce que tu sais faire avec ta bouche et ta langue.
+    As-tu la même idée?
 ##
 *START* Tag(Penetration)
-    I want to bury myself inside you.
-    Please do!
+    Je veux sentir ma queue au chaud dans mon orifice préféré
+    Laisse-toi allez!
 ##
 *START* Tag(Penetration)
     ...
-    <A1.name>, I'm ready now, I want you very much.
+    <A1.name>, je suis prêt maintenant, viens me pénétrer.
 ##

@@ -8,21 +8,21 @@ OTHER: none
     Actor.dress()
     Actor.show(2)
 
-    "There's a completely hammered <Actor.guy_or_woman> vomiting on the floor. Someone clearly couldn't handle their alcohol!"
-    "Oh wait ... it's my <Actor.relationship>! What the hell ..."
-    0:: "Ignore"
-    1:: "Scold <Actor.him_or_her>"
-    2:: "Walk <Actor.him_or_her> home"
+    "Il y a <Actor.un_or_une> <Actor.gars_or_fille> complètement <Actor.saoul_or_saoulle> qui vomit sur le sol. Que veux-tu, il y en a qu'ils ne savent pas boire!"
+    "Oups! ... c'est <Player.ma_or_mon> <Actor.relationship>! Pas fooort ..."
+    0:: "Ignorer"
+    1:: "Engueuler <Actor.name>"
+    2:: "<Actor.La_or_Le> reconduire à la maison"
 
     If 0
-        "I'll just pretend that I don't know <Actor.him_or_her> and it's none of my business. The staff will clean that up."
+        "Je vais juste faire semblant de ne pas <Actor.le_or_la> connaître et ce ne sont pas mes affaires. Le personnel va nettoyer ça."
     Elseif 1
-        Player(Angry):: "That's disgusting. If you can't handle alcohol, don't drink! I'm embarrassed to be your <Actor.callplayer>!"
+        Player(Angry):: "Hey <Actor.le_or_la> <Actor.grand_or_grande>! Quand on sait pas boire , on boit pas, en passant!"
         karma -= 2.5
         masochist -= Random(0, 0.5)
         Actor:rapportwithplayer -= Random(0, 5)
     Else
-        "As a <Actor.callplayer>, I can't really just leave <Actor.him_or_her> like that. I'll have to walk <Actor.him_or_her> home."
+        "En tant que <Actor.callplayer>, je ne peux pas vraiment laisser <Actor.name> comme ça. Je vais devoir <Actor.le_or_la> ramener à la maison."
         karma += 2.5
         Actor:rapportwithplayer += Random(0, 5)
     Endif
