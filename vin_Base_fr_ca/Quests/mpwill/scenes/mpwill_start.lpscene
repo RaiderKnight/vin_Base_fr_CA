@@ -5,14 +5,14 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "One of my Facebook friends shared a missing person poster for a certain William M. He went missing a few days ago after going for a morning jog. Accountant, religious, athletic, breadwinner for the family - seems like a decent enough guy."
-    0:: "Keep reading"
+    "Un de mes amis Facebook a partagé une photo d'une personne disparue, c'est un certain William M. Il a disparu il y a quelques jours après être allé faire un jogging matinal. Comptable, religieux, sportif, adore sa famille - semble être un gars assez décent."
+    0:: "Continuez à lire"
     
-    "The cops are asking for local volunteers to aid in their effort to search for William. All they have is a portrait photo of him and a rough map of the route William usually takes when jogging."
-    0:: "Maybe I should lend a hand"
+    "La police demande des volontaires pour les aider dans leurs efforts de recherche pour William. Tout ce qu'ils ont, c'est une photo de lui et une carte approximative de l'itinéraire que William emprunte habituellement lorsqu'il fait du jogging."
+    0:: "Peut-être que je devrais donner un coup de main"
     
-    "I suppose a few hours a day for a couple of days helping with the search wouldn't be too much hassle for me. Who knows what kind of danger the guy may be in?"
-    "Let's check out the main spots on that running trail and start asking around."
+    "Je suppose que quelques heures par jour pendant quelques jours pourrait aider à la recherche, ça ne serait pas trop compliqué pour moi. Qui sait dans quel genre de danger le gars peut être?"
+    "Vérifions les principaux endroits sur cette carte et commençons à demander autour de nous."
     spot0.generateBuildingAlias(community_centre)
     spot0.addObjective(mpwill_search)
     

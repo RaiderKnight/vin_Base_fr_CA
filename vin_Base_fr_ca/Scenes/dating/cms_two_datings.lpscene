@@ -5,14 +5,14 @@ WHO: Actor = getSpecific(Dating); Actor2 = getSpecific(Dating); If Actor.isInter
 OTHER: isModEnabled(vin_Polyamorous)
 
     SceneStart()
-    "I was going about my business when I was interrupted by hearing my name moaned from <Actor.name>'s room. So I went investigate."
+    "J'allais à mes occupations lorsque tout d'un coup je me fais interrompre en entendant quelqu'un jouir, ça semble venir de la chambre de <Actor.name>. Allons voir!"
     Sex(Actor, Actor2)
-    "My two lovers are having some fun without me. I'm sure they wouldn't mind if I join them though."
-    0:: "Join them"
-    1:: "No"
+    "Mes deux amants s'amusent sans moi. Je suis sûr que cela ne les dérangerait pas si j'allais les rejoindre!"
+    0:: "Les rejoindre"
+    1:: "Non"
     
     If 0
-        "It's part of the fun of a polyamorous relationship."
+        "Cela fait partie du plaisir d'une relation polyamoureuse, non!"
         Sex(Player, Actor, Actor2)
     Endif 
     SceneEnd()

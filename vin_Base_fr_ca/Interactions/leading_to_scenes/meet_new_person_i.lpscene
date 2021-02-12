@@ -22,55 +22,55 @@ OTHER: none
     Endif
 
     If InterestedInPC && [DominantToPC || Random(0,1) < 0.2] && Random(0, 20) < (New_Person:attractiontoplayer + New_Person:interpersonal)
-        "I found myself engaged in a small conversation with someone I just met - <New_Person.name>. Before leaving <New_Person.he_or_she> asked for my number. Should I accept <New_Person.his_or_her> request?"
-        0:: "Yes"
-        1:: "No"
+        "Je me suis retrouvé engagé dans une petite conversation avec quelqu'un que je viens de rencontrer - <New_Person.name>. Avant de partir, <New_Person.il_or_elle> m'a demandé mon numéro. Dois-je accepter la demande de <New_Person.name>?"
+        0:: "Oui"
+        1:: "Non"
         
         If 0
             exchangeContact(New_Person)
-            "I happily accepted. We exchanged numbers and went our separate ways."
+            "J'ai accepté avec joie. Nous avons échangé nos numéros et nous nous sommes séparés."
             If CompanionIntroduced
-                CurrentCompanion(Happy):: "<New_Person.name> is a great person. You made the right choice giving <New_Person.him_or_her> your number."
+                CurrentCompanion(Happy):: "<New_Person.name> est une personne formidable. Tu as fait le bon choix en donnant ton numéros à <New_Person.lui_or_elle>."
                 CurrentCompanion:rapportwithplayer += Random(0,1)
             Endif
         Else
-            "I found an excuse not to give <New_Person.him_or_her> my number. Disappointed, <New_Person.he_or_she> left."
+            "J'ai trouvé une excuse pour ne pas lui donner mon numéro. Déçu, <New_Person.il_or_elle> est parti."
             If CompanionIntroduced
-                CurrentCompanion(Angry):: "You shouldn't have been so rude to my friend! Next time I won't introduce you to anyone else!"
+                CurrentCompanion(Angry):: "Tu n'aurais pas dû être aussi impoli avec mon <New_Person.ami_or_amie>! Tu es poche, la prochaine fois, je ne te présenterai plus à personne!"
                 CurrentCompanion:rapportwithplayer -= Random(0,2)
             Endif
 
         endIf            
     Else
         Random
-            "I came across someone interesting, who introduced <New_Person.himself_or_herself> as <New_Person.name>. Should I exchange contacts with <New_Person.him_or_her>?"
-            "Just by chance, I met <New_Person.name>, who seemed okay. Perhaps I should ask for <New_Person.his_or_her> number?"
+            "Je suis tombé sur quelqu'un d'intéressant, <New_Person.il_or_elle> se présente <New_Person.name>. Dois-je échanger mon numéro avec <New_Person.lui_or_elle>?"
+            "Juste par hasard, j'ai rencontré <New_Person.name>, qui semble bien. Peut-être devrais-je lui demander son numéro de téléphone?"
         endRandom
         
-            0:: interpersonal > 5:: "Yes"
-            1:: "No"
+            0:: interpersonal > 5:: "Oui"
+            1:: "Non"
                 
             If 0
                 If [New_Person:attractiontoplayer < 20 && InterestedInPC] || [!InterestedInPC && New_Person:rapportwithplayer < 0)]
                     Random
-                        New_Person(Happy):: "Sorry, but I don't feel like I know you well enough to share such personal information just yet."
-                        New_Person(Happy):: "It's gonna be a no, I'm afraid. Another day perhaps."
-                        New_Person(Irritated):: "Sorry, but I don't normally exchange numbers with someone I've just met."
+                        New_Person(Happy):: "Désolé, mais je n'ai pas l'impression de te connaître assez bien pour partager ces informations personnelles pour le moment."
+                        New_Person(Happy):: "Ça va être un non j'imagine. Un autre fois peut-être."
+                        New_Person(Irritated):: "Désolé, mais normalement je n'échange pas de numéros avec quelqu'un que je viens de rencontrer."
                     endRandom      
                         If CompanionIntroduced && [CurrentCompanion:rapportwithplayer > 30 || CurrentCompanion:attractiontoplayer > 30]
-                            CurrentCompanion(Irritated):: "Come on, <New_Person.name>. <Player.name> is a good person. You have nothing to worry about!"
-                            New_Person(Happy):: "Alright then, if you insist. Sorry for being too cautious!"
+                            CurrentCompanion(Irritated):: "Allez, <New_Person.name>. <Player.name> est une bonne personne. Tu n'as rien à craindre!"
+                            New_Person(Happy):: "Très bien alors, si tu insiste. Désolé d'être trop prudent!"
                             exchangeContact(New_Person)
-                            "We exchanged numbers and parted ways."
+                            "Nous avons échangé nos numéros et nous nous sommes séparés."
                         Else
-                            0:: "I understand."
-                            1:: masochist < 30:: "It's your loss!"
+                            0:: "Je comprends"
+                            1:: masochist < 30:: "Tu manque de quoi!"
                             
                             If 0
                                 Random
-                                    Player(Happy):: "That's okay. I understand. You've got to be careful with private information these days."
-                                    Player(Happy):: "No worries. It's not a big deal."
-                                    Player(Wink):: "Did I scare you away? Haha! Don't worry. See you around, I guess."
+                                    Player(Happy):: "Ce n'est pas grave. Je comprends. Faut se méfier des gens ces temps-ci."
+                                    Player(Happy):: "Pas de soucis. Ce n'est pas un gros problème."
+                                    Player(Wink):: "Est-ce que je t'ai fait peur? Haha! Ne t'inquiète pas. j'voulais pas te faire mal."
                                 endRandom
                                 
                                 New_Person:rapportwithplayer += Random(1,5)
@@ -81,9 +81,9 @@ OTHER: none
                                 
                             Else
                                 Random
-                                    Player(Angry):: "Fine then. It's your loss being so precious!"
-                                    Player(Angry):: "Get out of my sight then!"
-                                    Player(Sarcastic):: "Well, looks like someone has a overly high opinion of <New_Person.himself_or_herself> ..."
+                                    Player(Angry):: "Très bien alors. C'est tu savais ce que tu manques!"
+                                    Player(Angry):: "AH, check la petite chochotte!"
+                                    Player(Sarcastic):: "Eh bien, on dirait que quelqu'un a une haute opinion de soi-même ..."
                                 endRandom
                                 
                                 New_Person:rapportwithplayer -= Random(1,10)
@@ -92,8 +92,8 @@ OTHER: none
                                     New_Person:attractiontoplayer += ( Random(1,20)*New_Person:masochist/100 )
                                     If New_Person:attractiontoplayer > 50
                                         Random
-                                            New_Person(Scared):: "Well ... I .... I'm sorry if I came across as arrogant or something. Let's exchange numbers!"
-                                            New_Person(Scared):: "Sorry. I didn't mean any offence ... On second thought, here, you can have my number."
+                                            New_Person(Scared):: "Eh bien ... Je ... Je suis désolé si je ne voulais pas être arrogant ou quelque chose comme ça. Je voulais juste discuter!"
+                                            New_Person(Scared):: "Désolé. Tu m'as fais peur sur le coup ... Oui, ça serait cool de discuter, ont pourraient échanger nos numéros de téléphone car je suis un peu pressé maintenant."
                                         endRandom
                                         
                                         exchangeContact(New_Person)
@@ -105,11 +105,11 @@ OTHER: none
                         Endif
                 Else
                     exchangeContact(New_Person)
-                    "We exchanged numbers and parted ways."
+                    "Nous avons échangé nos numéros et nous nous sommes séparés."
                 endIf
                 
             Else
-                "I decided not to give <New_Person.him_or_her> my number."
+                "J'ai décidé de ne pas donner mon numéro à <New_Person.him_or_her>."
             endIf        
     endIf
     sceneEnd()

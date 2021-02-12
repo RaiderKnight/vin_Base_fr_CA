@@ -6,21 +6,21 @@ OTHER: !isWithCompanion()
 
 SceneStart()
 
-"I just received a text message. It's from <Dating.name>."
+"Je viens de recevoir un SMS. Il vient de <Dating.name>."
 Dating.dress()
 Dating.show(2)
-Dating(Flirty):: "Baby, send me a sexy selfie!"
-0:: "Yes"
-1:: "No"
+Dating(Flirty):: "Bébé, envoie-moi un selfie sexy!"
+0:: "Ok"
+1:: "Non"
 
 If 0
-    "I found a private place to snap a sexy selfie for my <Dating.boyfriend_or_girlfriend>."
-    Dating(Flirty):: "Wow baby, that was quick ... and very nice indeed."
-    Player(Flirty):: "Only for you, love."
+    "J'ai trouvé un endroit privé pour prendre un selfie sexy pour <Dating.mon_or_ma> <Dating.chum_or_blonde>."
+    Dating(Flirty):: "Wow bébé, c'était rapide ... et vraiment très beau à regarder."
+    Player(Flirty):: "Seulement pour toi, mon amour."
     perversion += Random(0, 0.25)
     Dating:attractiontoplayer += Random(0, 0.5)
 Else
-    "I ignored <Dating.name>'s peverted request and got on with my day."
+    "J'ai ignoré la demande de <Dating.mon_or_ma> <Dating.chum_or_blonde> et j'ai continué ma journée."
     Dating:attractiontoplayer -= Random(0, 0.5)
 Endif
 

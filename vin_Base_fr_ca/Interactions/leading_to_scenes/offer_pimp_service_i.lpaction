@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: offer_pimp_service_i
-ACTION_NAME: Offer pimp service
+ACTION_NAME: Offrir service d'escorte
 WHERE: interaction
 WHEN: 0 - 24
 MINUTES: 10 - 30

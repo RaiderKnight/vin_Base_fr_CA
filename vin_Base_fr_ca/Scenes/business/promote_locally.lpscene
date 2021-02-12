@@ -7,6 +7,6 @@ OTHER: none
     SceneStart()
     Change = 0.5
     ModifyReputation(Change)
-    "My business's reputation in the local community increased a bit."
+    "La réputation de mon entreprise s'est un peu accrue localement."
     SceneEnd()
     timeout(2, promote_locally)

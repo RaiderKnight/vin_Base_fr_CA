@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: end_pimp_service
-ACTION_NAME: End pimp services
+ACTION_NAME: Arrêter job d'escorte
 WHERE: sexwork
 WHEN: 0 - 24
 MINUTES: 1 - 1

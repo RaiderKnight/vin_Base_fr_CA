@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: look_for_shoot
-ACTION_NAME: Look for a shoot
+ACTION_NAME: Cherchez un shooting
 WHERE: modeling
 WHEN: 0 - 24
 MINUTES: 120 - 360

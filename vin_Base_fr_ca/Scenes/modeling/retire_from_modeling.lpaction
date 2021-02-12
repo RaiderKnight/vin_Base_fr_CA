@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: retire_from_modeling
-ACTION_NAME: Retire from modeling
+ACTION_NAME: Se retirer de la photo X
 WHERE: modeling
 WHEN: 0 - 24
 MINUTES: 1 - 1

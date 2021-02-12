@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: have_a_meal_prison
-ACTION_NAME: Have a meal
+ACTION_NAME: Manger
 WHERE: prison
 WHEN: 0 - 24
 MINUTES: 40 - 90

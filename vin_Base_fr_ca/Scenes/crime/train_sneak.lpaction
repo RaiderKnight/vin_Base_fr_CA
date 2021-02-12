@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: train_sneak
-ACTION_NAME: Learn sneaking techniques
+ACTION_NAME: Apprenez des techniques de furtivité
 WHERE: crime, prison
 WHEN: 0 - 24
 MINUTES: 60 - 120

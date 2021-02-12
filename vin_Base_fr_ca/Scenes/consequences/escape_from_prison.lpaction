@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: escape_from_prison
-ACTION_NAME: Escape from prison
+ACTION_NAME: S'évader de la prison
 WHERE: prison
 WHEN: 0 - 24
 MINUTES: 1 - 1

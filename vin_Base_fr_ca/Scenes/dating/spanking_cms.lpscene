@@ -5,17 +5,17 @@ WHO: Actor = getSpecific(Dating); If Actor:martial - Actor:masochist + masochist
 OTHER: none
 
     SceneStart()
-    Actor(Evil):: "You've been naughty. Prepare for a spanking!"
-    "It's no secret that <Actor.name> is a bit of a dom."
-    0:: "Take it"
-    1:: "Resist"
+    Actor(Evil):: "Vous avez été méchant. Prépare-toi a recevoir une fessée!"
+    "Ce n'est un secret pour personne que <Actor.name> est un peu un <Actor.dominateur_or_dominatrice>."
+    0:: "Accepter la fessée"
+    1:: "Résister"
     
     If 0
-        "I must admit I have become somewhat of a sub and have started enjoying it."
-        "<Actor.name> spanked me many times before letting me off."
+        "Je dois admettre que je suis devenu un peu un esclave sexuel mais je commence à en profiter."
+        "<Actor.name> me donne plusieurs fessées sur les fesses avant de me laisser partir."
         masochist += 1
     Else
-        Player(Angry):: "This is going too far!"
+        Player(Angry):: "Arrête, ça va trop loin!"
         masochist -= 1
     Endif
     SceneEnd()

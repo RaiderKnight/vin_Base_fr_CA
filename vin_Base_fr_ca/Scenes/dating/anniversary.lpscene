@@ -6,25 +6,25 @@ OTHER: none
 
 SceneStart()
 
-"Today is the anniversary of me and <Dating.name>. We decided to go to a fancy restaurant together."
+"Aujourd'hui, c'est l'anniversaire de moi et de <Dating.name>. Nous avons décidé d'aller dans un restaurant chic ensemble."
 karma += 10
 Loc = findNearbyBuilding(restaurant)
 moveTo(Loc)
 Dating.dress()
 Dating.show(2)
-"The dinner was great and <Dating.name> also gave me an expensive gift, but it's obvious what <Dating.name> truly wants from me as an anniversary gift ..."
-0:: "Invite <Dating.him_or_her> home for sex"
-1:: "Say goodbye"
+"Le dîner était super et <Dating.name> m'a également offert un cadeau assez coûteux, mais c'est évident ce que <Dating.name> veut vraiment comme cadeau d'anniversaire  ..."
+0:: "Inviter <Dating.name> à la maison"
+1:: "Dire au revoir"
 
 If 0
     Dating:attractiontoplayer += Random(0, 2)
     moveTo(home)
     Sex(Player, Dating)
     Dating.show(2)
-    "Anniversary sex is the best! I feel like nothing can separate us right now. May our relationship continue forever ...."
+    "Du sexe comme cadeau d'anniversaire c'est ce qu'il y a de mieux! J'ai l'impression que rien ne peut nous séparer pour le moment. Puisse notre relation se poursuivre pour toujours ...."
     karma += 2.5
 Else
-    "I just don't feel like it today. After the dinner, we went back to our respective homes instead. <Dating.name> was clearly disappointed."
+    "Je n'en ai tout simplement pas envie aujourd'hui. Après le dîner, nous sommes retournés chez nous. <Dating.name> était clairement déçu... Ont auraient peut-être dû baiser, mais bon..."
     Dating:attractiontoplayer -= Random(0, 10)
 Endif
 

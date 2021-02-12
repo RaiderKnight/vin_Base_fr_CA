@@ -1,5 +1,5 @@
 STAT_ID: brand
-STAT_NAME: Company's brand awareness; Only relevant for business owners. The higher this value, the higher your business revenue will be.
+STAT_NAME: Notoriété de l'entreprise; Uniquement pertinent pour les propriétaires d'entreprise. Plus cette valeur est élevée, plus les revenus de votre entreprise seront élevés.
 PLAYER_ONLY: true
 HIGHER_BETTER: true
 STAT_MIN: 0

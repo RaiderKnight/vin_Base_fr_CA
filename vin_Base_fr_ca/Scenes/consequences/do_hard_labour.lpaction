@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: do_hard_labour
-ACTION_NAME: Do hard labour
+ACTION_NAME: Faire du travail forcé
 WHERE: prison
 WHEN: 0 - 24
 MINUTES: 120 - 240

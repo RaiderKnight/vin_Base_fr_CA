@@ -5,15 +5,15 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "I haven't been feeling so good recently ... My body is aching all over and blisters are starting to appear on my skin."
-    0:: "See a doctor"
+    "Je ne me sens pas si bien ces temps-ci ... Mon corps me fait mal partout et des ampoules commencent à apparaître sur ma peau."
+    0:: "Voir un médecin"
     
     setBackground(hospital)
-    Player(Crying):: "No ....."
-    "Oh no, after some extensive testing, it's official: I've been diagnosed with a common sexually transmitted disease ... I guess the unprotected intercourses I've been having finally lead to consequences."
-    "This STD, while never fatal, will have a drastic impact on my level of fitness and energy throughout the day. I will also look like crap after a few years."
-    0:: "Accept my fate"
-    1:: "Get cured by the world's best doctor (consume ~50 karma)"
+    Player(Crying):: "Non ....."
+    "Oh non, après quelques tests approfondis, c'est officiel: on m'a diagnostiqué une maladie sexuellement transmissible ... Je suppose que mes relations sexuelles non protégées que j'ai eues ont finalement eu des conséquences."
+    "Cette MTS, bien qu'elle ne soit pas mortelle, aura un impact drastique sur mon niveau de forme physique et d'énergie tout au long de la journée. Je ressemblerai aussi à de la merde après quelques années"
+    0:: "Accepte mon destin"
+    1:: "Me faire soigner par le meilleur médecin du monde (coût ~ 50 karma)"
     
     If 0
         contractSTD()

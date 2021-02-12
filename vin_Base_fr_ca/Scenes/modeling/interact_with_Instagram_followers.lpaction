@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: interact_with_Instagram_followers
-ACTION_NAME: Interact with Instagram fans
+ACTION_NAME: Interagir avec les fans d'Instagram 
 WHERE: modeling
 WHEN: 0 - 24
 MINUTES: 40 - 120

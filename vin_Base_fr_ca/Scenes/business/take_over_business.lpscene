@@ -8,13 +8,13 @@ OTHER: none
     SceneStart()
     Rent = calculateRent()
     RentConverted = Rent.convertToLocalCurrency(true)
-    "The rent of this property for commercial use is <RentConverted> per month, and the current tenant is not renewing. Lease it?"
-    0:: "Yes"
-    1:: "No"
+    "Le loyer de cette propriété à usage commercial est à <RentConverted> par mois, et le locataire actuel ne le renouvelle pas. Est-ce que je le prend?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "I signed the lease on the property and took over the business."
-        "What should I name this business?"
+        "J'ai signé le bail de la propriété et j'ai pris le contrôle de l'entreprise. J'espère faire mieux que l'ancien propriétaire..."
+        "Comment dois-je nommer mon entreprise?"
         enterBusinessName()
         startBusiness()
         karma += 5

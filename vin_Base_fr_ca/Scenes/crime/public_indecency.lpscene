@@ -5,27 +5,27 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "That was rather risky doing that in public. I hope there weren't any cops around"
+    "C'était plutôt risqué de faire ça en public. J'espère qu'il n'y a pas de police dans les parages."
     If Random(0, 50) > sneak
-    "Sure enough, the cops promptly arrived at the scene."
-    "'Hands in the air, now! You're under arrest of public indecency'"
-    0:: "Run"
-    1:: "Surrender"
+    "Effectivement, la police est arrivé rapidement sur les lieux."
+    "'Mains en l'air, maintenant! Vous êtes en état d'arrestation pour indécence publique'"
+    0:: "Se sauver"
+    1:: "Se rendre"
     
     If 0
         If Random(0, 30) < fitness
-            "I managed to lose the cops. Phew, that was close."
+            "J'ai réussi à me pousser de la police. Ouf, ça a passé proche."
         Else
-            Player(Angry):: "You're not taking me alive."
+            Player(Angry):: "tu réussiras pas à m'attrapper, sale chien!"
             "Pow!"
             Player.hide()
-            "A cop fired his gun. It was a perfect shot ..."
+            "Un policier m'a tiré dessus avec son arme. C'était un tir parfait ..."
             followUp(death)
         Endif
     Else
         Player.animate(fightlost)
-        Player(Scared):: "Please, don't shoot!"
-        "I put my hands up and surrendered to the overwhelming number of cops."
+        Player(Scared):: "S'il vous plaît, ne tirez pas, ne tirez pas!"
+        "J'ai levé mes mains et me suis rendu au nombre de policier sur les lieux, je n'avais pas le choix!"
         sentence => Random(30, 90)
         followUp(imprisoned)
     Endif

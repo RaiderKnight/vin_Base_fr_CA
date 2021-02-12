@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: open_relationship
-ACTION_NAME: Propose open relationship
+ACTION_NAME: Proposer une relation ouverte
 WHERE: interaction
 WHEN: 0 - 24
 MINUTES: 5 - 10

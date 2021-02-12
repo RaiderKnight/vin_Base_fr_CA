@@ -1,5 +1,5 @@
 STAT_ID: bargain
-STAT_NAME: Company's bargaining power; Only relavant if you're running your own business. The higher this value, the lower your business expenses will be.
+STAT_NAME: Pouvoir de négociation de la cie; Uniquement pertinent si vous dirigez votre propre entreprise. Plus cette valeur est élevée, plus vos dépenses professionnelles seront faibles.
 PLAYER_ONLY: true
 HIGHER_BETTER: true
 STAT_MIN: 0

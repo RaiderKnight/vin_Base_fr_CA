@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: find_a_modeling_agency
-ACTION_NAME: Find a model agency
+ACTION_NAME: Trouvez une agence de modèles
 WHERE: modeling
 WHEN: 0 - 24
 MINUTES: 60 - 120

@@ -23,9 +23,9 @@ OTHER: none
         "Although to be fair, I would probably check out <Player.name> myself as a guy." 
         "Let's learn from the girls that rejected me in the past and not give this guy any attention whatsover. I have more important things to do right now."
         Actor.hide()
-        "Finally, I arrived at the hospital. I hope a doctor would be able to help me."
+        "Enfin, je suis arrivé à l'hôpital. J'espère qu'un médecin pourra m'aider."
         setBackground(hospital)
-        "A few hours later ..."
+        "Quelques heures plus tard ..."
         Actor:age += 20
         Actor.randomizeFace()
         Actor.dressExcept(Outerwear)

@@ -6,25 +6,25 @@ OTHER: !isWithCompanion() && money < 0
 
 SceneStart()
 
-"I have been struggling financially recently. Maybe I should ask <Dating.name> for help?"
-0:: "Yes"
-1:: "No"
+"J'ai des difficultés financières ces temps-ci. Devrais-je demander un peu d'argent à <Dating.name>?"
+0:: "Oui"
+1:: "Non"
 
 If 0
     Dating.dress()
     Dating.show(2)
     If Random(0, 200) < Dating:intelligence + Dating:interpersonal + Dating:attractiontoplayer
-        Dating(Happy):: "Of course, baby. Here, I'll transfer the money you need into your account right away. My money is your money!"
+        Dating(Happy):: "Bien sûr, bébé. Viens, je vais transférer l'argent dont tu as besoin sur ton compte tout de suite. Mon argent est ton argent!"
         money += Random(500, 3000)
     Else
-        Dating(Sad):: "I'm sorry, baby. I'd love to help you out, but I'm short on money myself ..."
+        Dating(Sad):: "Je suis désolé, bébé. J'aimerais beaucoup t'aider, mais je suis moi-même à court d'argent ..."
     Endif
     
     If Player.isDominantSex(Dating)
         Dating:attractiontoplayer -= Random(0, 10)
     Endif
 Else
-    "No, I can't do that. I'm an indepedent <Player.man_or_woman>. I shouldn't have to rely on my <Dating.boyfriend_or_girlfriend> to survive."
+    "Non, je ne peux pas faire ça. Je suis <Player.un_or_une> indépendan<Player.t_or_te>. Je ne devrais pas avoir à compter sur <Dating.mon_or_ma> <Dating.chum_or_blonde> pour survivre."
     karma += 2.5
 Endif
 

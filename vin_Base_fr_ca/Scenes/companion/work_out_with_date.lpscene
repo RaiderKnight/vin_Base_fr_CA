@@ -5,17 +5,17 @@ WHO: Actor = getCompanion(); If Player.isInterestedIn(Actor)
 OTHER: Random(20, 300) < perversion
 
     SceneStart()
-    "I'm working out together with <Actor.name>. There are plenty of excuses to get a bit touchy-feely here."
-    0:: "Feel <Actor.him_or_her> up a bit"
-    1:: "Behave myself and just work out"
+    "Je fais des exercices avec <Actor.name>. Il y a plein d'excuses pour profiter de la situation..."
+    0:: "Peloter <Actor.name>"
+    1:: "M'en tenir à l'exercice"
     
     If 0
         If Actor.isInterestedIn(Player) && Random(0, 200) < Actor:attractiontoplayer + Actor:perversion + Actor:incest
-            "I ended up basically groping <Actor.him_or_her>, but <Actor.he_or_she> didn't seem to mind at all ... Maybe <Actor.he_or_she> actually enjoys my touches."
+            "J'ai fini par tâtonner certaines de ces parties du corp, mais <Actor.il_or_elle> ne semblait pas du tout dérangé ... Peut-être qu'<Actor.il_or_elle> apprécie réellement mon pelotage."
             Actor:attractiontoplayer += Random(0, 1)
             Actor:incest += Random(0, 1)
         Else
-            "My behaviour seems to make <Actor.name> uncomfortable and <Actor.he_or_she> didn't seem a tiny bit receptive to my advances." 
+            "Ok, je crois qu'<Actor.il_or_elle> aime pas ça! Mon comportement semble rendre <Actor.name> inconfortable et qu'<Actor.il_or_elle> ne semble pas du tout réceptif à mes avances. Je vais peut-être trop vite!" 
             Actor:rapportwithplayer -= Random(0, 1)
             karma -= 1
         Endif

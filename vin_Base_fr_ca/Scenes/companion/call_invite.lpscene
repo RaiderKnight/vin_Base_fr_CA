@@ -8,27 +8,27 @@ sceneStart()
 
 Friend.dress()
 
-"My phone rang ... It's <Friend.name> calling."
+"Mon téléphone sonne ... C'est <Friend.name> qui m'appelle."
 SecondScreen(Friend)
 Friend.show(2)
 Dating = Friend.IsDating()
 If Dating
-    Friend:: "Baby, let's spend time together today!"
-    Date = "Go on a date"
+    Friend:: "Bébé, est-ce que ça te tente de passer du temps ensemble aujourd'hui!"
+    Date = "Certainement!"
 Else
-    Friend:: "Hey <Player.name>, it's <Friend.name>. Listen, do you want to hang out today?"
-    Date = "Hang out"
+    Friend:: "Salut <Player.name>, c'est <Friend.name>. Écoute, veux-tu sortir aujourd'hui?"
+    Date = "Certainement!"
 Endif
 "<Date> with <Friend.name>?"
-0:: "Yes"
-1:: "No"
+0:: "Oui"
+1:: "Non"
 
 If 0
-    Player:: "Of course. I'll see you in a bit!"
+    Player:: "Bien sûr, je m'en viens tout de suite!"
     If Dating
-        Friend:: "See you soon, darling!"
+        Friend:: "A bientôt, chérie!"
     Else
-        Friend:: "See you soon!"
+        Friend:: "A bientôt!"
     Endif
     passTime(0.25, 1)
     SecondScreen()
@@ -36,12 +36,12 @@ If 0
     timeout(12, call_invite)
 Else
     If Dating
-        Player:: "Not today, love. Call me again soon though ..."
-        Friend:: "Okay, baby. I'll see you later then."
+        Player:: "Pas aujourd'hui, chérie. Appelle-moi plus tard ..."
+        Friend:: "D'accord, bébé. Je t'appellerai plus tard alors."
         Friend:attractiontoplayer -= Random(0, 1)
     Else
-        Player:: "Sorry, I'm busy today. Maybe next time ..."
-        Friend:: "Oh? That's a shame. I'll see you around then."
+        Player:: "Désolé, je suis occupé aujourd'hui. Peut-être la plus tard ..."
+        Friend:: "Oh? C'est dommage. Je t'appellerai plus tard alors."
     Endif
     
     timeout(6, call_invite)

@@ -1,5 +1,5 @@
 ACTION_UNIQUEID: murder_someone
-ACTION_NAME: Murder someone
+ACTION_NAME: Assassiner quelqu'un
 WHERE: crime
 WHEN: 0 - 24
 MINUTES: 1 - 1
