@@ -8,29 +8,29 @@ OTHER: Random(0, 100) < 20
     Actor = generatePersonTemporary()
     Actor.dress()
     Actor.show(2)
-    "I saw someone really struggling to carry <Actor.his_or_her> shopping. Should I offer to help?"
-    0:: "Yes"
-    1:: "No"
+    "Je vois quelqu'un qui a vraiment de la difficulté a transporter ces sacs d'épicerie. Dois-je lui proposer de l'aider?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
         Actor.makePermanent()
-        Player(Happy):: "Hey there, do you want some help carrying those bags? You looked like you were struggling."
+        Player(Happy):: "S'cusez, tu veux de l'aide pour porter ces sacs? On dirait que tu as de la difficulté."
         karma += 2.5
-        Actor(Happy):: "Yes, please. Oh thank God. I bought way too much today."
-        "You helped the stranger carry <Actor.his_or_her> shopping back to <Actor.his_or_her> car."
-        Actor(Happy):: "Thank you again for your help. I don't know how I could have managed without you."
-        0:: "Exchange contacts"
-        1:: "Say goodbye"
+        Actor(Happy):: "Oui, s'il te plaît. Oh merci mon Dieu. J'ai acheté beaucoup trop aujourd'hui."
+        "Vous avez aidé l'inconnu à ramener ces courses à sa voiture."
+        Actor(Happy):: "Merci encore pour ton aide. Je ne sais pas comment j'aurais pu m'en sortir sans toi."
+        0:: "Échanger nos numéros"
+        1:: "Dites au revoir"
         
         If 0
-            Player(Happy):: "No problem. Glad that I was able to help. By the way, would you mind giving me your number? You seem like a cool <Actor.guy_or_girl> - we should hang out sometimes."
-            "We exchanged numbers and parted ways."
+            Player(Happy):: "Pas de problème. Je suis content d'avoir pu t'aider. Au fait, cela te dérangerait-il de me donner ton numéro? Tu as l'air d'être un <Actor.gars_or_fille> cool> - ont pourraient sortir quelque part..."
+            "Nous avons échangé nos numéros et nous nous sommes séparés."
             exchangeContact(Actor)
         Else
-            Player(Happy):: "No problem. Glad that I was able to help."
+            Player(Happy):: "Pas de problème. Heureux d'avoir pu vous aider."
         Endif
     Else
-        "I haven't got the time for that ..."
+        "Je n'ai pas le temps pour ça  ..."
     Endif
     SceneEnd()
     timeout(24, help_carry_grocery)

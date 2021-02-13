@@ -5,9 +5,9 @@ WHO: none
 OTHER: Random(0, 2000) < perversion + intelligence
 
     SceneStart()
-    "I've got some spare time. I could play around on a dating app ..."
-    0:: "Yes"
-    1:: "No"
+    "J'ai du temps libre. Devrais-je faire des recherches sur un site de rencontres ..."
+    0:: "Oui"
+    1:: "Non"
     
     If 0
         count = 0
@@ -15,36 +15,36 @@ OTHER: Random(0, 2000) < perversion + intelligence
             Actor = generatePerson()
             Actor.dress()
             Actor.show(2)
-            "What should I do?"
-            0:: "Swipe right"
-            1:: "Swipe left"
+            "Qu'est-ce que je fais?"
+            0:: "Glisser vers la droite 'Oui'"
+            1:: "Glisser vers la gauche 'Non'"
             
             If 0
-                "Let's hope <Actor.he_or_she> also swipes right."
-                "A while later ..."
+                "Espérons qu'<Actor.il_or_elle> a glissé également vers la droite."
+                "Un moment plus tard ..."
                 If Random(0, 50) < Actor:attractiontoplayer
-                    "And ... it's a match. Should I exchange numbers with <Actor.him_or_her> so that we can go on a date?"
-                    0:: "Yes"
-                    1:: "No"
+                    "Et ... c'est un match parfait. Dois-je échanger mon numéro avec <Actor.lui_or_elle> pour que nous puissions avoir un rendez-vous?"
+                    0:: "Oui"
+                    1:: "Non"
                     
                     If 0
-                        "We chat for a bit before exchanging contacts hopefully to meet each other offline."
+                        "Nous discutons un peu avant d'échanger nos contacts, espérons que nous allons nous rencontrer hors ligne."
                         exchangeContact(Actor)
                     Else
-                        "On second thought, <Actor.he_or_she> only looked good in that one photo."
+                        "Après réflexion, <Actor.il_or_elle> n'avait l'air bien que sur une photo. Quand je regarde ces autres photos, j'ai presque peur...."
                     Endif
                 Else
-                    "Still nothing ... <Actor.he_or_she> didn't find me attractive then."
+                    "Toujours rien ... <Actor.il_or_elle> ne m'a pas trouvé de son goût, j'imagine."
                 Endif
             Else
-                "Nah, not my type."
+                "Nah, pas mon genre."
             Endif
             Actor.hide()
             count += 1
         Endwhile
-        "That's enough mate surfing for today!"
+        "Assez de recherche pour aujourd'hui!"
     Else
-        "Dating apps are a waste of time. I'd rather go on a date with someone I met in real life."
+        "Les sites de rencontres sont une perte de temps. Je préfère aller à un rendez-vous avec quelqu'un que j'ai rencontré en personne."
     Endif   
     
     SceneEnd()

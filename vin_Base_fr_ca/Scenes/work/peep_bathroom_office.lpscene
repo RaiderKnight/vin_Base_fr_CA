@@ -6,38 +6,38 @@ OTHER:
 
     SceneStart()
     setBackground(shower)
-    "I was about to step into my cubicle at the office bathroom when I noticed some moaning from the cubicle next to mine ... Some office couple clearly couldn't wait until they get to a hotel or something and even risk getting fired by doing it at work."
-    0:: "Ignore"
-    1:: perversion > 20:: "Peep"
+    "J'étais sur le point d'entrer dans ma cabine de salle de bain des bureaux quand tout à coup j'entend des gémissements provenant de la cabine à côté de la mienne ... Certains couples de bureau ne peuvent clairement pas attendre d'être à l'hôtel pour baiser,... Ils pourraient perdre leur job juste pour cela!"
+    0:: "Ignorer"
+    1:: perversion > 20:: "Espionner"
         
     If 0
-        "There's nothing to see here. I 'did the business' as fast as I could and got the hell out of the bathroom. The couple were too busy fucking to ever notice me coming in and out."
+        "Il n'y a rien à voir ici. J'ai fait mes affaires aussi vite que j'ai pu et je suis sorti de la salle de bain sans faire trop de bruit. Le couple était trop occupé à baiser, qu'ils n'ont jamais remarqué que je suis entré ou sorti."
     Else
         perversion += Random(0, 0.5)
-        "Live pornography? Hell yeah, sign me up!"
+        "De la pornographie en direct? Je ne peux pas m'empêcher de regarder!"
         karma -= 1
-        "I stood up on top of the toilet seat cover and started peeping at them."
-        "Turns out it's my colleagues <Guy.name> and <Girl.name>"
+        "Je suis donc monté dessus le siège de la toilette et j'ai commencé à les regarder baiser."
+        "Il s'avère que ce sont mes collègues <Guy.name> et <Girl.name>"
         Sex(Guy, Girl)
         arousal += Random(0, 30)
         Guy.show(2)
         Girl.show(3)
         Player.show(0)
-        "That was hot. But it looks like they're already ready for another round ..."
-        0:: "Offer to join them"
-        1:: "Enough"
+        "Ok, ils sont full horny. On dirait qu'ils vont recommencer ..."
+        0:: "Proposez de les rejoindre"
+        1:: "Sortir des toilettes"
         
         If 0
             Player(Flirty):: "Looks like you guys are having some fun there? Mind if I join?"
             If Random(30, 100) < Guy:perversion || Random(30, 100) < Guy:attractiontoplayer
-                Guy(Flirty):: "Come on and join us then, what are you waiting for?"
+                Guy(Flirty):: "Bien sûr, viens nous rejoindre, plus il y a du monde plus on a du fun?"
                 Sex(Guy, Girl, Player)
                 Player:perversion += Random(0, 1)
             Else
-                Guy(Angry):: "What the fuck are you doing here, peeping Tom? Get out!"
+                Guy(Angry):: "Qu'est-ce que tu fous ici, en train de nous regarder? Dégage, pis té mieux de fermer ta gueule là-dessus!"
             Endif
         Else
-            "I should get out of here before I get caught."
+            "Je devrais sortir d'ici avant de me faire prendre."
         Endif
     Endif
 

@@ -6,30 +6,30 @@ OTHER: none
 
     SceneStart()
     If isAtHome()
-        "Am I sure that I want to move out from my current home?"
-        0:: "Yes"
-        1:: "No"
+        "Suis-je sûr de vouloir quitter mon maison actuelle?"
+        0:: "Oui"
+        1:: "Non"
         
         If 0
             Rent = getRent()
             If Rent > 0
-                "This apartment just wasn't for me. I decided to terminate my lease contract with the landlord."
+                "Cet appartement n'était tout simplement pas pour moi. J'ai décidé de résilier mon contrat de bail avec le propriétaire."
             Else
                 Difficulty = Random(0.25, 2)
                 Salary = getSalary()
                 Rent = Random(800, 1500)*CostOfLiving+Difficulty*Salary*0.25
                 Price = Rent*120
                 PriceConverted = Price.convertToLocalCurrency(true)
-                "I managed to sell the place for <PriceConverted>."
+                "J'ai réussi à vendre ma maison pour <PriceConverted>."
                 money => money + Price
             Endif
-            "Time to find a new place to live."
+            "Il est temps de trouver un nouvel endroit où vivre."
             loseHome()
         Else
-            "On second thought, I don't hate this place that much."
+            "Après réflexion, je ne déteste pas tellement cet endroit."
         Endif
     Else
-        "I'm not renting this home! There's no lease contract to terminate."
+        "Je ne loue pas cette maison! Il n'y a donc pas de contrat de bail à résilier."
     Endif
     
     SceneEnd()

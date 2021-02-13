@@ -17,28 +17,28 @@ OTHER: Random(0, 250)*Random(0, 250) < attractiveness*attractiveness
     Actor2 = generatePersonTemporary()
     Actor2.dress()
     Actor2.show(3)
-    "Here comes two Johns ..."
-    Actor(Flirty):: "How much for you to have fun with both of us?"
-    0:: "Turn <Actor.him_or_her> down"
-    1:: "Rip <Actor.him_or_her> off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give <Actor.him_or_her> a bargain (<P3C>)"
+    "Deux personnes s'approchent de moi pour me demander ..."
+    Actor(Flirty):: "Tu charge combien pour avoir du fun avec nous?"
+    0:: "Refuser l'invitation"
+    1:: "Les voler (<P1C>)"
+    2:: "Offrir un prix juste (<P2C>)"
+    3:: "Offrir un bargain (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but I'm not working right now ..."
+        Player(Sad):: "Désolé, mais je ne travail pas en ce moment ..."
     Elseif choice*attractiveness > Actor:intelligence + Actor:interpersonal
-        Actor(Flirty):: "It looks like we have a deal, darling."
+        Actor(Flirty):: "On dirait que nous avons un accord."
         If WHERE == brothel
-            "Soon enough, I was following them to one of the brothel's rooms."
+            "Aussitôt, nous nous sommes rencontrés dans une chambre de bordel dans laquelle nous nous sommes mis d'accord."
         Else
-            "Soon enough, I was following them to a nearby motel room."
+            "Aussitôt, nous nous sommes rencontrés dans une chambre de motel dans laquelle nous nous sommes mis d'accord."
             setBackground(home)
         Endif
         Sex(Actor, Player, Actor2)
         money => money + Dice/choice        
         perversion += 0.5
     Else
-        Actor(Angry):: "No way, that's too expensive! You have too high an opinion of yourself, honey. I'll find us another whore elsewhere."
+        Actor(Angry):: "Pas question, c'est trop ben trop cher! T'es pas la personne du siècle pour demander un prix si haut. Tu devrais regarder les profils des autres et voir combien ils facturent. Tu vas voir que tu es dans le champ!"
     Endif
     
     SceneEnd()

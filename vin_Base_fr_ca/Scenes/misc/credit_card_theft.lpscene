@@ -6,18 +6,18 @@ OTHER: Random(0, 100) < 1
 
     SceneStart()
 
-    "I noticed a creepy guy clearly looking over the shoulders of an unsuspecting bank customer withdrawing money from an ATM."
-    0:: "Ignore"
-    1:: "Stop him"
+    "J'ai remarqué un type effrayant qui regarde clairement par-dessus les épaules d'un client de banque sans méfiance retirant de l'argent d'un guichet automatique"
+    0:: "Ignorer"
+    1:: "Lui dire d'arrêter"
 
     If 0
-        "It's none of my business. I don't want to get in trouble."
+        "Ce ne sont pas mes affaires. Je ne veux pas avoir d'ennuis."
         masochist += Random(0, 0.5)
     Else
-        Player(Furious):: "Hey! What the fuck do you think you're doing? Everyone, we have a credit card thief here!"
+        Player(Furious):: "Hé! T'essais de faire quoi? Attention, <Actor.il_or_elle> essait de voir votre code NIP!"
         karma += 2.5
         masochist -= Random(0, 0.5)
-        "The guy ran away as soon as I shouted out and exposed his dirty trick - not fast enough for the bank's security guards though ..."
+        "<Actor.Le_or_La> <Actor.gars_or_fille> s'est enfui dès que j'ai crié et exposé ce qu'<Actor.il_or_elle> essayait de faire - sauf, trop vite pour les gardes de sécurité de la banque ..."
         Actor = generatePerson()
         Actor.dress()
         Actor.show(2)
@@ -26,15 +26,15 @@ OTHER: Random(0, 100) < 1
             Actor:attractiontoplayer += Random(0, 25)
         Endif
         
-        Actor(Happy):: "Oh my god! You saved me from that thief. I don't know how to thank you ..."
-        0:: "Nothing"
-        1:: "Ask for <Actor.his_or_her> number"
+        Actor(Happy):: "Oh mon dieu! Tu m'as sauvé de ce voleur. Je ne sais pas comment te remercier ..."
+        0:: "Rien"
+        1:: "Demander son numéro pour discuter"
         
         If 0
             karma += 2.5
-            Player(Happy):: "Don't worry about it. It's only the right thing to do."
+            Player(Happy):: "Bof. Ce n'est que la bonne chose à faire. Pas intéressé!"
         Else
-            "I suggested that we exchange numbers and hang out another day. Of course, <Actor.name> didn't hesitate to give <Actor.his_or_her> number to <Actor.his_or_her> savior."
+            "J'ai suggéré que nous échangions nos numéros et que nous sortions autre jour prendre un café ou autre. <Actor.name> n'a pas hésité à donner son numéro."
             exchangeContact(Actor)
         Endif
     Endif

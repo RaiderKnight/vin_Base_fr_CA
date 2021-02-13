@@ -6,29 +6,29 @@ OTHER: none
 
     SceneStart()
     If isTimingOut(stalk_facebook)
-        "I don't feel like doing more online stalking for now ... Maybe I'll be in the mood again in an hour or two."
+        "Je n'ai pas envie de faire plus de recherche sur les réseaux sociaux pour le moment ... Peut-être que je serai de nouveau d'humeur dans une heure ou deux."
     Else
         Actor = getSpecific(Impregnated)
-        "Should I try to look for <Actor.name> online? The first time we met, I didn't quite manage to get <Actor.his_or_her> contacts."
-        0:: "Yes"
-        1:: "No"
+        "Dois-je essayer de rechercher <Actor.name> en ligne? La première fois que nous nous sommes rencontrés, je n'ai pas tout à fait réussi à obtenir son numéro."
+        0:: "Oui"
+        1:: "Non"
         
         If 0
             intelligence += Random(0, 0.1)
             If Random(0, 100) < intelligence
-                "Ah, found <Actor.him_or_her>!"
+                "Ah, j'ai trouvé <Actor.name>!"
                 Actor.dress()
                 Actor.show(2)
-                "Let's send a friend request to <Actor.him_or_her>."
-                "An hour later ..."
+                "Envoyons une demande d'ami à <Actor.name>."
+                "Une heure plus tard ..."
                 If Random(0, 75) < Actor:attractiontoplayer || Random(0, 75) < Actor:rapportwithplayer || Actor:intelligence < Random(0, 50)
-                    "<Actor.name> accepted my friend request on Facebook. I knew I left a good first impression!"
+                    "<Actor.name> a accepté ma demande d'amitié sur Facebook. Je savais que j'avais laissé une bonne première impression!"
                     exchangeContact(Actor)
                 Else
-                    "Still no response ... <Actor.He_or_She> probably ignored my request."
+                    "Toujours pas de réponse ... <Actor.Il_or_Elle> a probablement ignoré ma demande."
                 Endif
             Else
-                "Damn, I've spent hours trying to find <Actor.name> among the billions of Facebook users, to no avail. I think I'll just give up."
+                "Merde, j'ai passé des heures à essayer de trouver <Actor.name> parmi les milliards d'utilisateurs de Facebook, en vain. Je pense que je vais abandonner."
             Endif
             timeout(2, stalk_facebook)
         Endif

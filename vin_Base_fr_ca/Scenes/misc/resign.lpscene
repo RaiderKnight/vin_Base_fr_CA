@@ -5,16 +5,16 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "Am I sure that I want to resign from my current job?"
-    0:: "Yes"
-    1:: "No"
+    "Suis-je sûr de vouloir démissionner de mon emploi actuel?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "This job just wasn't for me. I submitted a resignation letter to my boss."
-        "Time for a new chapter in my career."
+        "Ce travail n'était tout simplement pas pour moi. J'ai soumis une lettre de démission à mon patron."
+        "Il est temps pour un nouveau chapitre dans ma carrière."
         loseJob()
     Else
-        "On second thought, I can't afford to give up this job."
+        "Après réflexion, je ne peux pas me permettre d'abandonner ce travail."
     Endif
     
     SceneEnd()

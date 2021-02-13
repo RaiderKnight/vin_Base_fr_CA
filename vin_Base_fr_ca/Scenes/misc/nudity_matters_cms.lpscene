@@ -11,9 +11,9 @@ OTHER: Player.isNaked() && !Player.isAsexual()
     Endwhile
     Actor.dress()
     Actor:perversion => Random(70, 100)
-    Actor:: "I see you like to walk around naked. You must be a <Player.fuckboy_or_slut>. Let's smash?"
-    0:: "Yes"
-    1:: "No"
+    Actor:: "Salut bébé, je vois que tu aimes te promener nue. Est-ce que tu veux baiser avec moi?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
         Sex(Actor, Player)

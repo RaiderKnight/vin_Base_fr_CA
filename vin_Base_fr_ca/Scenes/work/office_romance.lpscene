@@ -12,18 +12,18 @@ Colleague2.dress()
 Colleague1.show(2)
 Colleague2.show(3)
 
-"From the way <Colleague1.name> looks at <Colleague2.name> in the office, it's easy to tell that <Colleague1.he_or_she> has quite a crush on <Colleague2.name>. However, their romance hasn't seemed to blossom at all."
-0:: "Do nothing"
-1:: "Encourage the romance"
-2:: "Discourage the romance"
+"De la façon dont <Colleague1.name> regarde <Colleague2.name> dans le bureau, il est facile de dire que <Colleague1.name> a le béguin pour <Colleague2.name>. Cependant, leur histoire d'amour ne semble pas évoluer du tout."
+0 :: "Ne rien faire"
+1 :: "Encourager la romance"
+2 :: "Décourager la romance"
 
 If 0
-    "Well, their romance is none of my business."
+    "Eh bien, leur romance ne me regarde pas."
 Elseif 1
-    "Encouraging romance between co-workers won't win me any favor from higher-ups, but I think it's the right thing to do."
-    Player(Happy):: "You know maybe <Colleague2.name> is just waiting for you to be more 'assertive' ..."
-    Colleague1(Embarassed):: "I guess you're right. I shouldn't be so shy and actually confess my feelings for <Colleague2.him_or_her>."
-    "It would take another month or so, but they eventually got together as a couple, all thanks to my matchmaking efforts."
+    "Encourager la romance entre collègues ne me gagnera aucune faveur de la part de mes supérieurs, mais je pense que c'est la bonne chose à faire."
+    Player(Happy):: "<Colleague1.name>, savais-tu que <Colleague2.name> n'attend que tu l'invite à sortir ... me semble que c'est assez évident!"
+    Colleague1(Embarassed):: "Je le sais mais je ne sais pas comment l'approcher. Je ne devrais pas être si timide et avouer mes sentiments à <Colleague2.name>."
+    "Cela a pris un mois environ, mais ils se sont finalement réunis en couple, tout cela grâce à mes efforts de jumelage. Cool..."
     Colleague1:rapportwithplayer += Random(0, 30)
     Colleague2:rapportwithplayer += Random(0, 20)
     jobperformance -= Random(0, 2)
@@ -34,12 +34,12 @@ Elseif 1
         Colleague2:attractiontoplayer => 0
     Endif
 Else
-    "Office romance is a can of worms that most companies try but often fail to avoid. That doesn't mean I shouldn't even try. My success in discouraging this romance could impress the bosses."
-    Player(Sad):: "<Colleague1.name>, I really don't think it's a good idea. Your relationship will be the center of attention for the office gossipers - and what if you guys end up arguing or breaking up, wouldn't that be a very awkward day at work? An attractive <Colleague1.guy_or_girl> like you could surely look for someone elsewhere and avoid all the troubles."
-    Colleague1(Sad):: "I guess you're right. Pursuing this romance is more troubles than it's worth ..."
+    "La romance au bureau est une chose que la plupart des entreprises essaient d'éviter comme la peste mais ne parviennent jamais à éviter. Mon succès à décourager cette romance pourrait peut-être impressionner mes patrons."
+    Player(Sad):: "Hey <Colleague1.name>, je ne pense vraiment pas que ce soit une bonne idée que tu sorte avec quelqu'un du bureau. Votre relation sera au centre de l'attention des commérages du bureau - et si vous vous disputiez ou rompiez, imagine le show, je voudrais pas vivre ça!" 
+    Player(Sad):: "<Colleague1.Un_or_Une> <Colleague1.gars_or_fille> comme toi mérite mieux que ça, je t'aime bien alors je veux juste t'éviter des problèmes, tu fais ce que tu veux, mais je t'aurai averti!"
+    Colleague1(Sad):: "Je suppose que tu as raison. Poursuivre cette romance risque de m'emmener plus de problèmes que d'autres choses ..."
     jobperformance += Random(0, 2)
 Endif
 
 SceneEnd()
 timeout(500, office_romance)
-

@@ -14,16 +14,16 @@ OTHER: none
     Actor = generatePersonTemporary()
     Actor.dress()
     Actor.show(2)
-    "A porn director wants to book <Actor3.name> for a scene with <Actor.name> ..."
-    0:: "Turn down the offer"
-    1:: "Rip the director off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give the director a bargain (<P3C>)"
+    "Un réalisateur porno veut réserver <Actor3.name> pour une scène porno avec <Actor.name> ..."
+    0 :: "Refuser l'offre"
+    1 :: "Voler le directeur (<P1C>)"
+    2 :: "Offrir un prix juste (<P2C>)"
+    3 :: "Offrir un prix réduit (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but <Actor3.he_or_she> has a holiday planned on the day of the shoot ..."
+        Player(Sad):: "Désolé, mais <Actor3.name> et moi avons des vacances prévues ensemble le jour du tournage ..."
     Elseif 3 || Random(0, 100) < choice*Actor3:pornfame
-        "The porn director accepted my demands and soon enough we were meeting at the shoot location that we agreed on."
+        "Le réalisateur porno a accepté mon offre et assez vite nous nous sommes rencontrés sur le lieu de tournage sur lequel nous nous sommes mis d'accord."
         Random
             setBackground(home)
             setBackground(bar)
@@ -56,7 +56,7 @@ OTHER: none
         Actor3:pornfame += 0.5
         Actor3:perversion += 0.25
     Else
-        "No way, that's way above the market rate for this type of shoots! You have too high an opinion of your talent. You should ask the other agents how much they charge."
+        "Pas question, c'est bien au-dessus du taux du marché pour ce type de tournage! Vous avez une opinion trop élevée de votre talent. Vous devriez demander aux autres agents combien ils facturent."
     Endif
     
     SceneEnd()

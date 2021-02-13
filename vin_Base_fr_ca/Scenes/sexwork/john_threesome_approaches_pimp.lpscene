@@ -18,30 +18,30 @@ OTHER: Random(0, 250)*Random(0, 250) < CurrentCompanion:attractiveness*CurrentCo
     Actor2 = generatePersonTemporary()
     Actor2.dress()
     Actor2.show(3)
-    "Here comes two Johns ..."
-    Actor(Flirty):: "How much for your <CurrentCompanion.handsome_or_pretty> <CurrentCompanion.stud_or_girl> to have fun with both of us?"
-    0:: "Turn <Actor.him_or_her> down"
-    1:: "Rip <Actor.him_or_her> off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give <Actor.him_or_her> a bargain (<P3C>)"
+    "Deux personnes m'approchent et me demandent ..."
+    Actor(Flirty):: "Tu charge combien pour que <CurrentCompanion.name> puisse avoir du fun avec nous?"
+    0:: "Refuser l'invitation"
+    1:: "Les voler (<P1C>)"
+    2:: "Offrir un prix juste (<P2C>)"
+    3:: "Offrir un bargain (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but <CurrentCompanion.he_or_she> is not working right now ..."
+        Player(Sad):: "Désolé, mais <CurrentCompanion.name> n'est pas disponible en ce moment ..."
     Elseif choice*CurrentCompanion:attractiveness > Actor:intelligence + Actor:interpersonal
-        Actor(Flirty):: "It looks like we have a deal."
-        "Soon enough, we were following them to a nearby motel room."
+        Actor(Flirty):: "On dirait que nous avons un accord."
+        "Aussitôt, nous nous sommes dirigé vers leur chambre d'hôtel dans laquelle nous nous sommes mis d'accord."
         setBackground(home)
         Dice => Dice*0.5
         money => money + Dice/choice
         CurrentCompanion:perversion += 0.5
-        0:: "Leave them to it"
-        1:: "Peep a bit"
+        0:: "Les laisser seuls"
+        1:: "Regarder le show"
         
         If 1
             Sex(Actor, CurrentCompanion, Actor2)
         Endif
     Else
-        Actor(Angry):: "No way, that's too expensive! You have too high an opinion of your whore. I'll find us another whore elsewhere."
+        Actor(Angry):: "Pas question, c'est trop ben trop cher! T'es pas l'escorte du siècle pour demander un prix si haut. Tu devrais regarder les profils des autres escortes et voir combien ils facturent. Tu vas voir que tu es dans le champ!"
     Endif
     
     SceneEnd()

@@ -11,17 +11,17 @@ OTHER: Random(1, 300) < pornfame && !Player.isAsexual()
     P2C = P2.convertToLocalCurrency(true)
     P3 = Dice/3
     P3C = P3.convertToLocalCurrency(true)
-    "A porn director wants to book me for a scene where I walk around naked in public and have sex with any strangers who become interested."    
-    "This is rather risky both in terms of STDs and in terms of getting arrested for public indecency ..."
-    0:: "Turn down the offer"
-    1:: "Rip the director off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give the director a bargain (<P3C>)"
+    "Un réalisateur de porno veut me réserver pour une scène où je me promène nue en public et baise avec des inconnus qui sont intéressés."    
+    "C'est assez risqué à la fois en termes de MTS et en termes d'arrestation pour indécence publique ..."
+    0 :: "Refuser l'offre"
+    1 :: "Voler le directeur (<P1C>)"
+    2 :: "Offrir un prix juste (<P2C>)"
+    3 :: "Offrir un prix réduit (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but I have a holiday planned on the day of the shoot ..."
+        Player(Sad):: "Désolé, mais j'ai des vacances prévues le jour du tournage ..."
     Elseif 3 || Random(0, 100) < choice*pornfame
-        "The porn director accepted my demands and soon enough we were meeting at the shoot location that we agreed on."
+        "Le réalisateur porno a accepté mon offre et assez vite nous nous sommes rencontrés sur le lieu de tournage sur lequel nous nous sommes mis d'accord."
         Random
             setBackground(bar)
             setBackground(hairdresser)
@@ -45,7 +45,7 @@ OTHER: Random(1, 300) < pornfame && !Player.isAsexual()
             setBackground(theatre)
         endRandom
         Player.strip()
-        "I removed all my clothes, to the shock of all members of the public there, except the porn crew. Soon though, I can tell some of the more perverted strangers start processing what's going on and considering whether they should participate."
+        "J'enlève tous mes vêtements, au grand choc de tous les membres du public sur la rue, à l'exception de l'équipe de tournage. Sauf que, je peux dire que certains des étrangers les plus pervers commencèrent à regarder ce qui se passe avec plaisir et à me demander s'ils peuvent toucher ou me fourrer."
         money => money + Dice/choice
         pornfame += 2
         perversion += 1
@@ -56,35 +56,35 @@ OTHER: Random(1, 300) < pornfame && !Player.isAsexual()
             If Player.isInterestedIn(Actor)
                 Actor.dress()
                 Actor.show()
-                "No longer able to hold back <Actor.his_or_her> arousal, a stranger approaches me ..."
+                "Ne pouvant plus retenir son excitation <Actor.name>, un inconnu, s'approche de moi et commence à me baiser devant tout le monde ..."
                 Sex(Actor, Player)
             Endif
             Actor.hide()
         Endwhile
-        "That's all for the shoot. That was an intense experience, and a very well-paid one at that ..."
+        "C'est tout pour le tournage. C'était une expérience intense et très bien payée en plus ..."
     Else
-        "No way, that's way above the market rate for this type of shoots! You have too high an opinion of yourself, honey. You should ask the other pornstars how much they charge."
-        0:: "Say nothing"
-        1:: "Cheap motherfucker!"
+        "Pas question, c'est bien au-dessus du taux du marché pour ce type de tournage! Vous avez une opinion trop élevée de vous-même, chérie. Vous devriez demander aux autres stars du porno combien elles facturent."
+        0:: "Ne rien dire"
+        1:: "Cheap looser!"
         
         If 1
             If Random(0, 100) < 30
-                "The director got pissed off and tried to hit me"
+                "Le réalisateur s'est énervé et a essayé de me frapper"
                 If Random(0, 100) < martial
-                    "Unfortunately for him, I was no pushover and gave him a good spanking."
-                    "As things would have it, our little incident went viral in the porn industry media and somehow made me even more popular. I guess no publicity is bad publicity. Besides, other directors will have to think twice now before trying to bully me in the future."
+                    "Malheureusement pour lui, je fais des arts martiaux et je lui ai donné une bonne volée."
+                    "Comme d'habitude qualqu'un a filmé notre altercation, notre petit incident est devenu viral dans les médias de l'industrie du porno et m'a rendu d'une manière ou d'une autre encore plus populaire. Je suppose qu'aucune publicité n'est une mauvaise publicité. À voir!"
                     pormfame += 2
                 Else
-                    "I tried to stand my ground but ..."
-                    "Unfortunately for me, he was a powerful man and I got quite seriously hurt."
-                    "As things would have it, our little incident went viral in the porn industry media and somehow made me a butt of jokes. No doubt this would affect my future prospects with other directors."
+                    "J'ai essayé de me défendre mais ..."
+                    "Malheureusement pour moi, c'était un homme puissant et il m'en sacré toute une, maintenant je suis gravement blessé."
+                    "Comme d'habitude qualqu'un a filmé notre altercation, notre petit incident est devenu viral dans les médias de l'industrie du porno et m'a fait en quelque sorte beaucoup de tort à ma carrière X, je suis devenue une cible à blagues. Cela affectera sans aucun doute mes perspectives d'avenir avec d'autres réalisateurs."
                     pormfame -= 2                
                 Endif
             Elseif Random(0, 100) < 50
-                "How dare you? You'll never work for this studio again!"
+                "Comment osez-vous? Vous ne travaillerez plus jamais pour ce studio!"
                 pornfame -= 1
             Else
-                "Fine, I changed my mind. Let's try negotiating again ..."
+                "Très bien, j'ai changé d'avis. Essayons de négocier à nouveau ..."
                 followUp(porn_shoot_streak)
             Endif
         Endif

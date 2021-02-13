@@ -17,32 +17,32 @@ OTHER: !isWithCompanion()
     Actor2 = generatePersonTemporary()
     Actor2.dress()
     Actor2.show(3)
-    "Two Johns messaged me on Adultwork ..."
-    Actor(Flirty):: "How much for <Actor3.name> to have fun with both of us?"
-    0:: "Turn <Actor.him_or_her> down"
-    1:: "Rip <Actor.him_or_her> off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give <Actor.him_or_her> a bargain (<P3C>)"
+    "Deux personnes m'ont envoyé un message sur Adultwork pour savoir si <Actor3.name> voulait baiser ..."
+    Actor(Flirty):: "Tu charge combien pour avoir du fun avec <Actor3.name>?"
+    0:: "Refuser l'invitation"
+    1:: "Les voler (<P1C>)"
+    2:: "Offrir un prix juste (<P2C>)"
+    3:: "Offrir un bargain (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but <Actor3.he_or_she>'s not in town today ..."
+        Player(Sad):: "Désolé, maisl <Actor3.il_or_elle> n'est pas en ville aujourd'hui ..."
     Elseif choice*Actor3:attractiveness > Actor:intelligence + Actor:interpersonal
-        Actor(Flirty):: "It looks like we have a deal."
-        "Soon enough, we were meeting at a motel room that we agreed on."
+        Actor(Flirty):: "On dirait que nous avons un accord."
+        "Aussitôt, nous nous sommes rencontrés dans une chambre de motel sur laquelle nous nous sommes mis d'accord."
         Actor3.dress()
         Actor3.show(1)
         setBackground(home)
         Dice => Dice*0.5
         money => money + Dice/choice
         Actor3:perversion += 0.5
-        0:: "Leave them to it"
-        1:: "Peep a bit"
+        0:: "Les laisser seuls"
+        1:: "Regarder le show"
         
         If 1
             Sex(Actor, Actor3, Actor2)
         Endif
     Else
-        Actor(Angry):: "No way, that's too expensive! You have too high an opinion of your whore. You should look at the others' profiles and see how much they charge."
+        Actor(Angry):: "Pas question, c'est trop ben trop cher! T'es pas l'escorte du siècle pour demander un prix si haut. Tu devrais regarder les profils des autres escortes et voir combien ils facturent. Tu vas voir que tu es dans le champ!"
     Endif
     
     SceneEnd()

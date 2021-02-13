@@ -17,17 +17,17 @@ OTHER: Random(1, 150) < pornfame
     Endwhile
     Actor.dress()
     Actor.show(2)
-    "A porn director wants to book me for a scene with <Actor.name> ..."
-    "This scene will be shot in public, with hired bystanders as well." 
-    0:: "Turn down the offer"
-    1:: "Rip the director off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give the director a bargain (<P3C>)"
+    "Un réalisateur porno veut me réserver pour une scène de sexe avec <Actor.name> ..."
+    "Cette scène sera tournée en public, avec des faux spectateurs embauchés pour cacher la scène aux autorités compétentes." 
+    0 :: "Refuser l'offre"
+    1 :: "Voler le directeur (<P1C>)"
+    2 :: "Offrir un prix juste (<P2C>)"
+    3 :: "Offrir un prix réduit (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but I have a holiday planned on the day of the shoot ..."
+        Player(Sad):: "Désolé, mais j'ai quelque chose de prévue cette semaine-là ..."
     Elseif 3 || Random(0, 100) < choice*pornfame
-        "The porn director accepted my demands and soon enough we were meeting at the shoot location that we agreed on."
+        "Le réalisateur porno a accepté mon offre et assez vite nous nous sommes rencontrés sur le lieu de tournage sur lequel nous nous sommes mis d'accord."
         setBackground(street)
         Actor.show()
         Actor2 = generatePersonTemporary()
@@ -36,22 +36,22 @@ OTHER: Random(1, 150) < pornfame
         Actor2.show()
         Actor3.show()
         Actor3.dress()
-        "Jeez, there are quite a few bystanders here. I suppose I was told beforehand."
+        "Bon sang, il y a pas mal de spectateurs ici. Je suppose qu'on aurait pu m'avertir d'avance."
         Sex(Actor, Player)
         money => money + Dice/choice
         pornfame += 0.5
         perversion += 0.25
-        "The bystanders look very excited about my performance, some of them seem keen to join in the fun ..."
-        0:: "Fuck two bystanders too"
-        1:: "Not part of the agreement"
+        "Les spectateurs ont l'air très enthousiasmés par ma performance, certains d'entre eux demandent de se joindre à la fête ..."
+        0:: "Baiser aussi avec deux spectateurs"
+        1:: "Ne fait pas partie de l'accord"
         
         If 0
-            "Porn fans love spontaneous sluts that would fuck anyone! This would do wonders for my popularity."
+            "Les fans de porno adorent voir des gens en manquent de sexe qui baisent avec n'importe qui! Du contenu parfait pour faire de la pub et augmenter ma popularité."
             Sex(Player, Actor2, Actor3)
             pornfame += 2
         Endif
     Else
-        "No way, that's way above the market rate for this type of shoots! You have too high an opinion of yourself, honey. You should ask the other pornstars how much they charge."
+        "Pas question, c'est bien au-dessus du taux du marché pour ce type de tournage! Vous avez une opinion trop élevée de vous-même, chérie. Vous devriez demander aux autres stars du porn combien elles chargent."
     Endif
     
     SceneEnd()

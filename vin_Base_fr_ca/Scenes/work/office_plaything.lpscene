@@ -7,9 +7,9 @@ OTHER: none
     SceneStart()
     Plaything = Plaything.getGlobal()
     If Plaything == 1
-        "I'm currently the office plaything. Everyone in the office knows it and those interested can use me whenever they want."
-        0:: "Continue being the office plaything"
-        1:: "Quit being the office plaything"
+        "Je suis actuellement le jouet sexuel du bureau, un rôle spécial très bien payé au sein de l'entreprise. Tout le monde au bureau le sait et toutes personnes intéressées peuvent m'utiliser quand elles le souhaitent."
+        0:: "Continuer d'être le jouet du bureau"
+        1:: "Arrêter d'être le jouet du bureau"
         
         If 0
             Actor2 = getSpecific(Colleague)
@@ -19,9 +19,9 @@ OTHER: none
             If !Actor2.isValid() || Random(0, 100) < 30
                 Actor.dress()
                 Actor.show()
-                "It's the boss <Actor.himself_or_herself> that requires the office plaything's touch today."
-                0:: "Fuck my boss in the office"
-                1:: "I'm not in the mood today"
+                "En ce moment, c'est <Actor.mon_or_ma> boss qui a besoin de jouer avec moi dans son bureau."
+                0:: "Baiser dans son bureau"
+                1:: "Je ne me sens pas bien aujourd'hui"
                 
                 If 0
                     Sex(Actor, Player)
@@ -34,9 +34,9 @@ OTHER: none
             Else
                 Actor2.dress()
                 Actor2.show()
-                "It's my colleague <Actor2.name> that requires the office plaything's touch today."
-                0:: "Fuck <Actor2.name> in the office"
-                1:: "I'm not in the mood today"
+                "En ce moment, c'est <Actor2.name> qui a besoin de jouer avec moi dans son bureau."
+                0:: "Baiser dans son bureau"
+                1:: "Je ne me sens pas bien aujourd'hui"
                 
                 If 0
                     Sex(Actor2, Player)
@@ -48,24 +48,26 @@ OTHER: none
                 Endif            
             Endif
         Else
-            "I told my boss that I'd rather move on from this special role within the company and just be a normal employee from now on. Reluctantly, <Actor.he_or_she> called a meeting to make the announcement which was reacted to with many disappointed faces."
+            "J'ai dit à <Actor.mon_or_ma> boss que je préférerais quitter ce rôle spécial au sein de l'entreprise et devenir un employé normal à partir de maintenant. À contrecœur, <Actor.il_or_elle> a convoqué une réunion pour faire l'annonce qui a suscité de nombreuses déceptions auprès des autres employés."
             perversion -= 3
             Plaything.setGlobal(0)
         Endif
     Else
         Actor.dress()
         Actor.show()
-        "I'm already sleeping with my boss. Maybe I should ask <Actor.him_or_her> to declare me as the office plaything and let the rest of my colleagues have their ways with it whenever they want."
-        "This could be a good way to make sure I keep advancing in this company without actually doing much actual work. After all, keeping 'employee satisfaction' high would be my very crucial contribution to the business."
-        0:: "Become the office plaything"
-        1:: "Let's think about this some more"
-        2:: "Never!"
+        "Je couche déjà avec <Actor.mon_or_ma> boss. Peut-être que je devrais demander à <Actor.name> d'obtenir le rôle spécial de 'jouet sexuel du bureau' et de baiser avec mes collègues de travail quand ils en ont besoin."
+        "Cela pourrait être un bon moyen de m'assurer de continuer à progresser dans cette entreprise sans vraiment faire beaucoup de travail. Après tout, maintenir la satisfaction des employés, à un salaire élevé n'est pas un problème pour moi, il y a personne de vraiment laid ici, pis j'aime le sexe, alors..."
+        "On pourra appelé cela ma contribution cruciale à l'entreprise. Alors, je le fais ou non?"
+        0:: "Devenir le jouet sexuel du bureau"
+        1:: "Je vais prendre du temps pour y penser"
+        2:: "Est-tu malade, jamais en cent ans!"
         
         If 0
             perversion += 3
-            Actor:: "Haha, it's good that you know your place and understand how best you can serve this company!"
-            Actor:: "Fine, let's schedule a team meeting soon where I will make an announcement about your new role."
-            "My boss stuck to <Actor.his_or_her> words, at the meeting, I was declared as the office plaything, always ready to be used by any of the other employees. While this announcement shocked some of my more conservative colleagues, it's clear that others immediately became very interested in the prospect of taking advantage of this new and more sensual method for bonus compensation from the company."
+            Actor:: "Vraiment content que vous voulez avoir ce poste, c'est bien de voir un employé devoué et prêt à servir ces collègues et cette entreprise à son mieux!"
+            Actor:: "Très bien, planifions bientôt une réunion d'équipe où je ferai l'annonce sur votre nouveau rôle."
+            "<Actor.Mon_or_Ma> boss est resté fidèle à ces paroles, lors de la réunion, j'ai été déclaré comme le jouet sexuel du bureau, toujours prêt à être utilisé par l'un des autres employés." 
+            "Bien que cette annonce ait choqué certains de mes collègues les plus conservateurs, il est clair que d'autres sont immédiatement devenus très intéressés par la perspective de profiter de mon corp et de cette nouvelle méthode de travail qui améliore considérablement les revenus de l'entreprise."
             Plaything.setGlobal(1)
         Elseif 2
             timeout(2000, office_plaything)

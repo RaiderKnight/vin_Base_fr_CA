@@ -8,30 +8,30 @@ OTHER: Random(0, 75)*Random(0, 75) < attractiveness*attractiveness
     Actor = generatePersonTemporary()
     Actor.dress()
     Actor.show(2)
-    "Here comes a John ..."
+    "Une personne s'approche de moi et me demande ..."
     
     If Random(0, 100) < 50 && [Actor.isMale() || [Actor.isTrans() && !Player.isMale()]] 
         If Random(0, 100) < 50
-            Actor(Flirty):: "How much for a blowjob?"
+            Actor(Flirty):: "Combien pour un blowjob?"
             Actor:likes_oral => Random(50, 100)
             Dice = Random(200, 300)
             Filter(Blowjob)
         Else
-            Actor(Flirty):: "How much for a handjob?"
+            Actor(Flirty):: "Combien pour un handjob?"
             Dice = Random(100, 200)
             Filter(Handjob)
         Endif
     Elseif Actor.isFemale() && Random(0, 100) < 25
-        Actor(Flirty):: "How much for you to eat my pussy?"
+        Actor(Flirty):: "Combien pour licher mon beau vagin?"
         Actor:likes_oral => Random(50, 100)
         Dice = Random(200, 300)
         Filter(LickPussy)        
     Else
         If Random(0, 100) < 50 || [Player.isFemale() && !Actor.isMale()]
-            Actor(Flirty):: "How much for me to do whatever I want to you?"
+            Actor(Flirty):: "Combien pour faire ce que je veux?"
             Dice = Random(300, 400)
         Else
-            Actor(Flirty):: "How much for anal?"
+            Actor(Flirty):: "Combien pour de l'anal?"
             Actor:likes_anal => Random(50, 100)
             Dice = Random(400, 500)
             Filter(Anal)
@@ -44,33 +44,33 @@ OTHER: Random(0, 75)*Random(0, 75) < attractiveness*attractiveness
     P3 = Dice/3
     P3C = P3.convertToLocalCurrency(true)
     
-    "How much should I charge <Actor.him_or_her>?"
-    0:: "Turn <Actor.him_or_her> down"
-    1:: "Rip <Actor.him_or_her> off (<P1C>)"
-    2:: "Offer a fair price (<P2C>)"
-    3:: "Give <Actor.him_or_her> a bargain (<P3C>)"
+    "Je charge combien pour avoir du fun avec?"
+    0:: "Refuser l'invitation"
+    1:: "Les voler (<P1C>)"
+    2:: "Offrir un prix juste (<P2C>)"
+    3:: "Offrir un bargain (<P3C>)"
     
     If 0
-        Player(Sad):: "Sorry, but I'm not working right now ..."
+        Player(Sad):: "Désolé, mais je ne travail pas en ce moment ..."
     Elseif choice*attractiveness > Actor:intelligence + Actor:interpersonal
-        Actor(Flirty):: "It looks like we have a deal, darling."
+        Actor(Flirty):: "On dirait que nous avons un accord."
         If WHERE == brothel
-            "Soon enough, I was following <Actor.him_or_her> to one of the brothel's rooms."
+            "Aussitôt, je l'ai suivi jusqu'à sa chambre au bordel pas très loin d'ici!"
         Else
-            "Soon enough, I was following <Actor.him_or_her> to a nearby motel room."
+            "Aussitôt, je l'ai suivi jusqu'à sa chambre d'hôtel pas très loin d'ici!"
             setBackground(home)
         Endif
         Sex(Actor, Player)
         money => money + Dice/choice
         If Random(5, 30) < Actor:attractiontoplayer
-            "Aside from our agreed fee, the John also gave me a big tip."
+            "À part notre accord monétaire, j'ai reçu un très bon pourboire!"
             money += Dice/choice/2
-            "I can't help but notice how smitten this John has become with me after sex ... looks like <Actor.he_or_she> is going to become a regular customer ..."
+            "Je ne peux pas m'empêcher de remarquer à quel point cette personne est devenu adoration avec moi après notre rapport sexuel ... on dirait que <Actor.name> va devenir <Actor.un_or_une> clien<Actor.t_or_te> régulie<Actor.r_or_re> ..."
             Actor.makePermanent()
             Actor.setActorVar(tag_john, 1)
         Endif
     Else
-        Actor(Angry):: "No way, that's too expensive! You have too high an opinion of yourself, honey. I'll find myself another whore elsewhere."
+        Actor(Angry):: "Pas question, c'est trop ben trop cher! T'es pas la personne du siècle pour demander un prix si haut. Tu devrais regarder les profils des autres et voir combien ils facturent. Tu vas voir que tu es dans le champ!"
     Endif
     
     SceneEnd()
