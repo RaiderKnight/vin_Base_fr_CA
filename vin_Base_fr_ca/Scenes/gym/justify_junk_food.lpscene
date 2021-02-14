@@ -5,16 +5,16 @@ WHO: none
 OTHER: fitness < Random(0, 100)*Random(0, 1)*Random(0, 1)  
 
 SceneStart()
-"That was a good workout, but it left me starving and I had a sudden craving for some junk food right now. Have I earned it?"
-0:: "Yes"
-1:: "No"
+"C'était un bon entraînement, mais cela m'a donné une faim de loup et j'ai une envie soudaine de malbouffe en ce moment. Est-ce que je le mérite?"
+0:: "Oui"
+1:: "Non"
 
 If 0
-    "I worked hard for this guilty pleasure of life. I deserved some sweet and fatty food once in a while!"
+    "J'ai travaillé dur, je peux me permettre ce plaisir coupable de la vie. J'ai quand même le droit de manger de temps en temps de la nourriture sucrée et grasse!"
     fitness -= Random(0, 0.5)
     mood += Random(0, 50)
 Else
-    "No way, I must stay disciplined and not get complacent with my diet."
+    "Pas question, je dois rester discipliné et respecter mon régime. Je vais tout gâcher sinon...!"
     mood -= Random(0, 25)
     fitness += Random(0, 0.5)
 Endif

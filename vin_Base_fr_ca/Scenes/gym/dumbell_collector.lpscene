@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I couldn't help noticing a <Actor.guy_or_girl> doing supersets and pilling up half of the gym's dumbbells around <Actor.him_or_her>, including the pair I need right now."
-0:: "Ignore"
-1:: "Mock <Actor.him_or_her>"
+"Je n'ai pas pu m'empêcher de remarquer <Actor.un_or_une> <Actor.gars_or_fille> faire des supersets et s'approprie la moitié des haltères du gymnase autour de <Actor.lui_or_elle>, y compris ceux dont j'ai besoin en ce moment."
+0:: "L'ignorer"
+1:: "Lui lancer un commentaire"
 
 If 0
-    "It's none of my business. I'll just do something else while waiting for <Actor.him_or_her> to finish."
+    "Bof, je m'en fou. Je vais juste faire autre chose en attendant qu'<Actor.il_or_elle> ait fini."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "You know that other people need to use them too, right?"
+    Player(Angry):: "Hey <Actor.le_or_ma> <Actor.gros_or_grande>! Tu sais que t'es pas <Actor.le_or_la> <Actor.seul_or_seule> à vouloir les utiliser!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

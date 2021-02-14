@@ -12,21 +12,21 @@ OTHER:
     Endwhile
     Actor.dress()
     Actor.show()
-    "One of the customers I serve seem clearly attracted to me and is really trying to make a conversation."
+    "L'un des clients que je sers semble clairement attiré par moi et essaie vraiment d'engager une conversation."
     If Random(0, 100) < Actor:perversion
-        Actor:: "You make me so horny, darling. How about coming back home with me after work? I'll make it worth your while"
+        Actor:: "Tu me rends tellement fou, bébé. Pourquoi ne pas venir à la maison avec moi après ta job? Tu vas voir ont va avoir du fun!"
         0:: "Fuck the customer"
-        1:: "Report to the bouncer"
+        1:: "Appeler le bouncer"
         
         If 0
             setBackground(home)
             Sex(Player, Actor)
             money += 200
         Else
-            "I'm not a prostitute! I immediately went to the bouncer, who forcefully asked the frisky patron to leave."
+            "Ok, je pense que tu as assez bu! Je ne suis pas une poupée gonflable...! Je suis immédiatement allé voir le bouncer, qui a demandé avec force au client de partir."
         Endif
     Else
-        "Thankfully, the customer was well behaved and never harassed me in any way even when intoxicated, just some harmless flirting here and there. <Actor.He_or_She> even left me a big tip."
+        "Heureusement, le client s'est bien comporté et ne m'a pas harcelé de quelque façon que ce soit, même en état d'ébriété, juste un flirt inoffensif ici et là. <Actor.Il_or_Elle> m'a même laissé un gros pourboire."
         money += 10
     Endif
     SceneEnd()

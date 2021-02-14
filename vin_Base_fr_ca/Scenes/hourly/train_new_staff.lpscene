@@ -8,17 +8,17 @@ OTHER: Random(50, 1000) < interpersonal
     Actor = generatePerson()
     Actor.dress()
     Actor.show(2)
-    "<Actor.name> just joined the team. I have been asked to train <Actor.him_or_her> on the job."
-    0:: "Train <Actor.him_or_her> enthusiastically"
-    1:: "Focus on my own work"
+    "<Actor.name> vient de rejoindre l'équipe. On m'a demandé de <Actor.le_or_la> former sur le tas."
+    0:: "Former  <Actor.name> avec enthousiasme"
+    1:: "Focuser sur mon propre travail"
     
     If 0
-        "I decided to be a good trainer, passing on my experience to the newcomer. <Actor.name> got on very well thanks to my efforts."
+        "J'ai décidé d'être un bon entraîneur, en transmettant mon expérience au nouveau venu. <Actor.name> s'est très bien débrouillé grâce à mes efforts."
         Actor:rapportwithplayer += 10
         Actor:attractiontoplayer += 5
         karma += 2.5
     Else
-        "In this service industry, turnover rate is high and people come and go easily. Who cares? Why should I waste much time training someone who might quit next week."
+        "Dans mon département, le taux de roulement est élevé et les gens vont et viennent constamment. Qui s'en soucie? Pourquoi devrais-je perdre mon temps à former quelqu'un qui pourrait arrêter la semaine prochaine."
         Actor:rapportwithplayer -= 10
     Endif
     SceneEnd()

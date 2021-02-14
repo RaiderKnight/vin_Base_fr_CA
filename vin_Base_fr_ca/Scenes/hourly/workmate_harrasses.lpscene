@@ -5,15 +5,15 @@ WHO: none
 OTHER: Random(30, 1000) < attractiveness
 
     SceneStart()
-    "I attract quite a bit of attention at work. One of my coworkers is quite a pervert and has been getting touchy with me at every given opportunity recently."
-    0:: "Complain to the manager"
-    1:: "Ignore"
+    "J'attire beaucoup d'attention au travail par ma beauté. Un de mes collègues est un fucking pervers et me lâche pas d'une semelle ces temps-ci."
+    0:: "Me plaindre au boss"
+    1:: "L'ignorer"
     
     If 0
         masochist -= Random(0, 0.25)
-        "I told the boss all about my perverted coworker, accusing <Player.her_or_him> of sexual harassments. The <Player.girl_or_guy> didn't get fired but get a warning, enough to put <Player.her_or_him> off me, at least for the time being."
+        "J'ai tout raconté au patron au sujet de mon collègue pervers, l'accusant de harcèlement sexuel. <Player.Il_or_Elle> n'a pas été renvoyé mais a reçu un avertissement, assez pour <Player.le_or_la> mettre loins de moi, au moins pour le moment."
     Else
-        "It's just some harmless workplace flirting. Besides, I kinda enjoy the attention."
+        "C'est juste un flirt inoffensif au travail. En plus, j'apprécie quand même ces commentaires cochons."
         masochist += Random(0, 0.25)
         perversion += Random(0, 0.1)
     Endif

@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I couldn't help noticing a <Actor.guy_or_girl> pilling up way too much weight on <Actor.his_or_her> bar and then proceeding to barely do half-reps with terrible form."
-0:: "Ignore"
-1:: "Mock <Actor.him_or_her>"
+"Je n'ai pas pu m'empêcher de remarquer <Actor.un_or_une> <Actor.gars_or_fille> qui mett beaucoup trop de poids sur sa barre et qui fait à peine des demi-répétitions avec une technique pénible à regarder."
+0:: "L'ignorer"
+1:: "Lui lancer un commentaire"
 
 If 0
-    "It's none of my business. Besides, <Actor.he_or_she> just has a big ego and wants to stroke it a bit."
+    "Ce ne sont pas mes affaires. De plus, <Actor.il_or_elle> a juste un gros ego et veut juste le montrer un peu."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "You're lifting way too heavy. Leave your ego at home!"
+    Player(Angry):: "Tu soulève ben trop lourd pour ta grosseur. Laisse ton égo chez vous!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

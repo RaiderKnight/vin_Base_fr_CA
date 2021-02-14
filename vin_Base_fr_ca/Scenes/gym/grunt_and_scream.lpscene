@@ -10,15 +10,15 @@ Actor.dress()
 Actor.show(2)
 
 Actor(Furious):: "Argh!"
-"There's a <Actor.guy_or_girl> at the power rack who has been grunting and screaming for the last 10 minutes. <Actor.He_or_She> isn't even lifting that much!"
-0:: "Ignore"
-1:: "Mock <Actor.him_or_her>"
+"Il y a <Actor.un_or_une> <Actor.gars_or_fille> qui soulève des poids et qui grogne et hurle depuis 10 minutes. <Actor.Il_or_Elle> ne soulève même pas grand chose, genre 100lb!"
+0:: "L'ignorer"
+1:: "Lui laisser un commentaire"
 
 If 0
-    "It's none of my business. Some people just like a bit of attention, I guess."
+    "Ce ne sont pas de mes affaires. Certaines personnes aiment juste un peu d'attention, je suppose."
     masochist += Random(0, 0.5)
 Else
-    Player(Sarcastic):: "Screaming doesn't help you lift more weights, you know?"
+    Player(Sarcastic):: "Hey <Actor.le_or_ma> <Actor.gros_or_belle>, crier ne t'aideras pas à soulever plus de poids!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

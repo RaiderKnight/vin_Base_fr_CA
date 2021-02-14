@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I couldn't help noticing a <Actor.guy_or_girl> working right off the dumbbell rack while admiring <Actor.himself_or_herself> in the mirror. It's blocking everyone else's access to the dumbells."
-0:: "Ignore"
-1:: "Scold <Actor.him_or_her>"
+"Je n'ai pas pu m'empêcher de remarquer qu'<Actor.un_or_une> <Actor.gars_or_fille> travaillant dans la section des haltères, admirant ces muscles et courbes dans le miroir. Sauf que, cela bloque l'accès aux autres haltères."
+0:: "L'ignorer"
+1:: "Lui dire de se tasser"
 
 If 0
-    "It's none of my business. Besides, it's understandable considering the social media age we're living in."
+    "Ce ne sont pas mes affaires. De plus, c'est compréhensible compte tenu de l'ère des médias sociaux dans laquelle nous vivons."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "Step back, <Actor.dude_or_girl>! You're in everyone's way."
+    Player(Angry):: "Hey <Actor.le_or_ma> <Actor.gros_or_chère>! Tu es dans le chemin de tout le monde. Fais juste te tasser un peu, tout le monde va être content!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

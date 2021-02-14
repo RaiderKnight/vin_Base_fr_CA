@@ -12,15 +12,15 @@ Endwhile
 Actor.makePermanent()
 Actor.show(2)
 
-"I'm in the gym locker room and there's a completely naked <Actor.guy_or_girl> standing in there shamelessly."
-0:: "Ignore"
-1:: "Scold <Actor.him_or_her>"
+"Je suis dans le vestiaire du gymnase et il y a <Actor.un_or_une> <Actor.gars_or_fille> complètement nue qui se promène sans pudeur."
+0:: "L'ignorer"
+1:: "Lui dire de s'habiller"
 
 If 0
-    "It's none of my business. Besides, some people are exhibitionists, or just don't care."
+    "Ce ne sont pas mes affaires. De plus, certaines personnes sont exhibitionnistes ou s'en moquent. Pis de toute façon, c'est cool voir de la nudité!"
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "Put some towel on, damn it. Nobody needs to see that!"
+    Player(Angry):: "S'cuse, mets une serviette sur toi, bon sang. T'es tout seul pis personne n'a besoin de voir ça!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

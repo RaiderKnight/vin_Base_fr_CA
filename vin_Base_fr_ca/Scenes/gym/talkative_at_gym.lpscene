@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I was getting on with my workout when a talkative <Actor.guy_or_girl> approached me to chat on and on and on ... It's getting pretty annoying now."
-0:: "Ignore"
-1:: "Scold <Actor.him_or_her>"
+"Je continuais mon entraînement quand <Actor.un_or_une> <Actor.gars_or_fille> très <Actor.bavard_or_bavarde> s'approche de moi pour discuter encore et encore ... Ça devient assez étourdissant maintenant."
+0:: "L'ignorer"
+1:: "Lui fermer la gueule"
 
 If 0
-    "I pretended to listen and waited it out until <Actor.he_or_she> finished the 'conversation'."
+    "J'ai fait semblant de l'écouter et j'ai attendu jusqu'à ce qu'<Actor.il_or_elle> termine son 'inter' 'minable sujet' de conversation."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "<Actor.Dude_or_Girl>, I'm here to work out, not to chat."
+    Player(Angry):: "S'cuse <Actor.le_or_la> <Actor.gland_or_glande>, euh <Actor.le_or_la> <Actor.grand_or_grande>, je suis ici pour m'entraîner, pas pour faire du social."
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

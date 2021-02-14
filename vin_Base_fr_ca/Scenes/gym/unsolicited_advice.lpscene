@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I was getting on with my workout when a <Actor.guy_or_girl> approached me to point out my apparently poor form and give unsolicited advice. I'm pretty sure I'm doing fine though."
-0:: "Ignore"
-1:: "Tell <Actor.him_or_her> to fuck off"
+"Je continuais mon entraînement quand <Actor.un_or_une> <Actor.gars_or_fille> m'approche pour me signaler ma technique apparemment médiocre et me donne des conseils non sollicités. Je suis à peu près sûr que je vais bien, mais bon..."
+0:: "L'ignorer"
+1:: "lui dire de se faire foutre"
 
 If 0
-    "I pretended to listen and waited it out until <Actor.he_or_she> finished giving me <Actor.his_or_her> 'wisdom'."
+    "J'ai fait semblant d'écouter et j'ai attendu jusqu'à ce qu'<Actor.il_or_elle> ait fini de me donner toute sa sagesse."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "I know what I'm doing. Fuck off!"
+    Player(Angry):: "Je t'es tu demandé de l'aide? Je ne pense pas! Dégage ti-joe!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

@@ -8,20 +8,20 @@ OTHER:
     Work = Actor.getBuilding(work)
     Cur = Actor.getBuilding(current)
     If Work.isSameBuilding(Cur)
-        "I'm working the night shift today. Thankfully, my workmate <Actor.name> was there to keep me company."
+        "Je travaille de nuit aujourd'hui. Heureusement, mon collègue <Actor.name> était là pour me tenir compagnie."
         Actor:rapportwithplayer += 2
         Actor:attractiontoplayer += 2
         If Actor.isInterestedIn(Player) && [Actor:perversion > 50 || Actor:attractiontoplayer > 50 || Actor.hadSex()]
-            Actor:: "This is sooo boring! Let's sneak into the back storage and fuck, what do you say?"
-            0:: "Yes"
-            1:: "No"
+            Actor:: "C'est tellement ennuyeux! Allons dans l'entrepôt en arrière jouer au sexe, Ça te tente-tu?"
+            0:: "Oui"
+            1:: "Non"
             
             If 0
                 Sex(Player, Actor)
             Endif
         Endif
     Else
-        "I'm working the night shift today. It's boring as hell."
+        "Je travaille de nuit aujourd'hui. C'est ennuyeux comme l'enfer."
         mood -= 2
     Endif
     SceneEnd()

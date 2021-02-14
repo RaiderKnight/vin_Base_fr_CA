@@ -9,20 +9,20 @@ OTHER: Random(0, 1000) < 1
     Actor.dress()
     Actor.show(2)
     Player(Furious):: "Ah ...."
-    "I was carrying a tray of drinks when I tripped over a customer's leg and fell over. Some red wine was spilled all over the customer's clothes."
-    Actor(Angry):: "Clumsy idiot! Look what you've done! You ruined my clothes. I want to see the manager!"
+    "Je portais un plateau de boissons lorsque j'ai trébuché sur la jambe d'un client et je suis tombé. Du vin rouge s'est répandu sur les vêtements du client."
+    Actor(Angry):: "Tabarnak, regarde où tu marche! Regarde ce que tu as fait! Tu as scrapé mes vêtements. Je veux voir le gérant!"
     mood -= Random(0, 30)
-    "How should I deal with the situation?"
-    0:: "Apologize"
-    1:: "Blame <Actor.him_or_her>"
+    "Comment dois-je gérer la situation?"
+    0:: "S'Excuser"
+    1:: "Blâmer le client"
     
     If 0
-        Player(Anxious):: "Oh my god, I'm so sorry. It was a horrible accident!"
+        Player(Anxious):: "Oh mon Dieu, je suis vraiment désolé. C'était un horrible accident!"
         masochist += Random(0, 0.5)
     Else
-        Player(Angry):: "Maybe you shouldn't have left your leg hanging like that then ..."
-        "Customer is always right - my ass! I'm not getting shouted at for doing nothing wrong!"
-        "I argued back and made it clear to the entitled customer that I'm no pushover."
+        Player(Angry):: "Peut-être que si t'avais pas laisser ta jambe en plein millieu du chemin ... On est dans un bar, pense-tu que j'ai des yeux aux pieds..."
+        "Le client a toujours raison - mon cul! On ne me crie pas dessus pour rien!"
+        "J'ai répliqué et j'ai fait comprendre au client que ces vêtement seront lavés au frais du bar, donc de se calmer ou partir."
         masochist -= Random(0, 0.5)
         karma -= 2.5
     Endif

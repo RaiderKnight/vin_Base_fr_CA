@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"Damn. I needed to use a machine and the <Actor.guy_or_girl> who used it before me was very sweaty and didn't bother to wipe the machine down."
-0:: "Ignore"
-1:: "Scold <Actor.him_or_her>"
+"Dégueulasse! J'arrive pour prendre la machine qu'<Actor.un_or_une> <Actor.gars_or_fille> vient juste quitté pour une autre machine. Je pense qu'<Actor.il_or_elle> était très en sueur car la machine en est remplie."
+0:: "On essuit c'est tout"
+1:: "Lui dire qu'<Actor.il_or_elle> est dégueulasse"
 
 If 0
-    "I just quietly wiped the machine down myself before getting on with my workout."
+    "J'ai juste essuyé tranquillement la machine moi-même avant de commencer mon entraînement."
     masochist += Random(0, 0.5)
 Else
-    Player(Angry):: "<Actor.Dude_or_Girl>! This is disgusting. Wipe off your sweat for god's sake."
+    Player(Angry):: "Hey <Actor.le_or_petite> <Actor.gros_or_soeur>! C'était-tu trop complqué d'essuyer ta sueur dégueulasse! C'est vraiment dégoûtant. Essuie ta sueur la prochaine fois, m'a t'aimer!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

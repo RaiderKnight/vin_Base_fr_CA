@@ -7,8 +7,8 @@ OTHER: isAtHome()
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    Actor(Happy):: "How are you doing, my dear <Actor.callplayer>? Just dropping by to visit. It's been a while."
-    "My <Actor.relationship> paid me a surprise visit. How nice of <Actor.him_or_her>! Life can be tough but it's comforting to know that my family is always right behind me."
+    Actor(Happy):: Comment vas-tu, mon cher <Actor.callplayer>? Je viens te voir pour te rendre visite. Ça fait un moment que je ne t'ai pas vu!"
+    "<Actor.name> m'a rendu une visite surprise. Comme c'est gentil de sa part! La vie peut être difficile mais c'est réconfortant de savoir que ma famille est toujours juste derrière moi."
     Actor:rapportwithplayer += Random(0, 1)
     mood += Random(0, 10)
     

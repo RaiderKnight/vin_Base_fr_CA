@@ -8,15 +8,15 @@ OTHER: none
     Dating.dress()
     Dating.show(2)
 
-    "My <Dating.relationship> is a workaholic, rarely leaving the office, and has been neglecting family recently."
-    0:: "Accept it"
-    1:: "Ask <Dating.him_or_her> to spend more time with the family"
+    "<Player.Ma_or_Mon> <Player.blonde_or_chum> est un workaholique, quittant rarement le bureau et récemment, je trouve qu'<Player.elle_or_il> néglige sa famille."
+    0:: "L'accepter"
+    1:: "Lui demander de passer plus de temps avec la famille"
 
     If 0
-        "I'm happy to see that my <Dating.relationship> is such a career-oriented person. Hopefully, <Dating.he_or_she> will become successful thanks to <Dating.his_or_her> hard work."
+        "Je suis heureux de voir que <Player.ma_or_mon> <Player.blonde_or_chum> est une personne tellement orientée vers sa carrière. J'espère qu'<Player.elle_or_il> réussira grâce à son travail acharné."
         Dating:rapportwithplayer += Random(0, 2)
     Else
-        "I complained about how little time my <Dating.relationship> had been spending with the family recently and accused <Dating.him_or_her> of prioritizing <Dating.his_or_her> career over family."
+        "Je me suis plaint du peu de temps qu'<Player.elle_or_il> passe avec sa famille et je l'ai accusé de donner trop de priorité à sa carrière au détriment de sa famille."
         Dating:rapportwithplayer -= Random(0, 2)
     Endif
 

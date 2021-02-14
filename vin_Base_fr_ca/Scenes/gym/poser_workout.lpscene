@@ -9,15 +9,15 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I couldn't help noticing a <Actor.guy_or_girl> spending all <Actor.his_or_her> time in the gym posing and taking selfies instead of actually working out."
-0:: "Ignore"
-1:: "Mock <Actor.him_or_her>"
+"Je n'ai pas pu m'empêcher de remarquer qu'<Actor.un_or_une> <Actor.gars_or_fille> passait tout son temps dans la salle de sport à se poser et à prendre des selfies au lieu de faire de l'exercice."
+0:: "L'ignorer"
+1:: "Taquiner <Actor.name>"
 
 If 0
-    "It's none of my business. Besides, it's understandable considering the social media age we're living in."
+    "Ce ne sont pas mes affaires. De plus, c'est compréhensible compte tenu de l'ère des médias sociaux dans laquelle nous vivons. Le monde on besoin d'attention..."
     masochist += Random(0, 0.5)
 Else
-    Player(Sarcastic):: "Did you know that each phone curl burns 100 calories?"
+    Player(Sarcastic):: "Savais-tu qu'à chaque pose tu brûles 100 calories? J'espère que tu vas m'envoyer une photo!"
     masochist -= Random(0, 0.5)
     Actor:rapportwithplayer -= Random(0, 5)
 Endif

@@ -8,19 +8,19 @@ OTHER: Random(0, 100)*Random(0, 1)*Random(0, 1) > interpersonal
     Actor = generatePersonTemporary()
     Actor.dress()
     Actor.show(2)
-    Actor(Angry):: "This is terrible customer service! I want to see the manager!"
-    "Damn it. Some customers are annoying <Actor.assholes_or_bitches> who complain about absolutely everything!"
+    Actor(Angry):: "C'est un service client épouvantable ici! Je veux voir le directeur!"
+    "Bon sang. Certains clients sont qui vraiment ennuyeux, viennent ce plaindre pour des conneries!"
     mood -= Random(0, 30)
-    "How should I deal with the complaint?"
-    0:: "Apologize"
-    1:: "Hold my ground"
+    "Comment dois-je traiter la plainte?"
+    0:: "S'excuser"
+    1:: "Agir professionnellement"
     
     If 0
-        Player(Anxious):: "Please accept my sincerest apologies. We were just very busy so we couldn't attend to your request within an acceptable timeframe."
+        Player(Anxious):: "Veuillez accepter mes plus sincères excuses. Nous étions juste très occupés et nous n'avons donc pas pu répondre à votre demande dans un délai acceptable."
         masochist += Random(0, 0.5)
     Else
-        "Customer is always right - my ass! I'm not getting shouted at for doing nothing wrong!"
-        "I argued back and made it clear to the entitled customer that I'm no pushover."
+        "Le client a toujours raison - mon cul! On ne me crie pas après pour ne rien!"
+        "J'ai répliqué et j'ai fait comprendre au client devant moi qu'il y a une façon de parler aux gens et que nous avons plus de 100 clients par jours, il se peut qu'il y est un délai dans nos réponses."
         masochist -= Random(0, 0.5)
     Endif
     SceneEnd()

@@ -9,22 +9,22 @@ Actor = generatePerson()
 Actor.dress()
 Actor.show(2)
 
-"I couldn't help noticing a <Actor.guy_or_girl> having terrible form with one of <Actor.his_or_her> lifts. <Actor.He_or_She> is going to hurt <Actor.himself_or_herself> one of these days ..."
-0:: "Ignore"
-1:: "Correct <Actor.his_or_her> form"
+"Je n'ai pas pu m'empêcher de remarquer qu'<Actor.un_or_une> <Actor.gars_or_fille> avait une technique terrible avec l'un des ascenseurs. <Actor.Il_or_Elle> va se blesser un de ces jours ..."
+0:: "L'ignorer"
+1:: "L'aider dans sa technique"
 
 If 0
-    "It's none of my business. Besides, I don't want to come across as a know-it-all."
+    "Ce ne sont pas mes affaires. De plus, je ne veux pas passer pour un ti-joe connaissant."
     masochist += Random(0, 0.5)
 Else
-    "I decided to give <Actor.him_or_her> some advice to improve <Actor.his_or_her> form and protect <Actor.himself_or_herself> from injuries."
+    "J'ai décidé de donner à <Actor.name> quelques conseils pour améliorer sa technique et <Actor.le_or_la> protéger des blessures."
     masochist -= Random(0, 0.5)
     If Random(0, 100) < Actor:muscle
         Actor:rapportwithplayer -= Random(0, 5)
-        "However, <Actor.he_or_she> smirked at my advice and didn't seem to listen much."
+        "Cependant, <Actor.il_or_elle> a souri à mes conseils et n'a pas semblé écouter beaucoup."
     Else
         Actor:rapportwithplayer += Random(0, 5)
-        "<Actor.He_or_She> thanked me for pointing out <Actor.his_or_her> bad form and followed my advice."
+        "<Actor.Il_or_Elle> m'a remercié de l'avoir averti de sa mauvaise technique et a suivi mes conseils."
         karma += 2.5
     Endif
 Endif
