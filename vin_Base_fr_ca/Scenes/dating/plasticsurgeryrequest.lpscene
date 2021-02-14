@@ -9,21 +9,21 @@ secondScreenIfHidden(Dating)
 Dating.dress()
 Dating.show(2)
 
-"<Dating.name> is that type of <Dating.boyfriend_or_girlfriend> that goes 'You would look really hot if ...' an awful lot. In fact, <Dating.He.or_She> has been trying to get me to get some plastic surgery which, to be fair, <Dating.he_or_she> offers to pay for."
-0:: "Accept"
-1:: "Decline"
+"<Dating.name> est ce type de <Dating.chum_or_blonde> qui dit:'Tu aurais l'air vraiment sexy si ...'. En fait, <Dating.il_or_elle> a essayé de me convaincre d'avoir une chirurgie plastique qui, pour être honnête, <Dating.il_or_elle> propose de payer."
+0:: "Accepter"
+1:: "Refuser"
 
 If 0
-    "Free silicone! Yay!"
+    "Du silicone gratuit! Ouais!"
     Loc = findNearbyBuilding(hospital)
     moveTo(Loc)
     attractiveness += Random(0, 5)
     Dating:attractiontoplayer += Random(0, 10)
     fitness -= Random(0, 2.5)
     masochist += Random(0, 10)
-    "The surgery is done. Now that I look better, I hope that <Dating.name> will love me more."
+    "L'opération est terminée. Maintenant que j'ai l'air mieux, j'espère que <Dating.name> m'aimera davantage."
 Else
-    "No way I'm doing that! <Dating.name> doesn't get to control how I look and what I do with my body."
+    "Pas question que je fasse ça! <Dating.name> ne contrôlera pas mon apparence et ce que je fais de mon corps."
     Dating:attractiontoplayer -= Random(0, 3)
     masochist -= Random(0, 2)
 Endif  

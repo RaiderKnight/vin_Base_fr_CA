@@ -8,22 +8,22 @@ SceneStart()
 secondScreenIfHidden(Dating)
 Dating.dress()
 Dating.show(2)
-"I must admit: my <Dating.boyfriend_or_girlfriend> <Dating.name> is far more experienced sexually than me and is rather adventurous in bed. I sometimes feel like the prude in the relationship."
-0:: "Ask <Dating.name> to 'train' me"
-1:: "Do nothing"
+"Je dois admettre: Que <Dating.mon_or_ma> <Dating.chum_or_blonde> <Dating.name> est beaucoup plus expérimenté sexuellement que moi et est plutôt aventureux au lit. Je me sens parfois incompéten<Player.t_or_te> au lit!"
+0:: "Demander à <Dating.name> de m'entraîner"
+1:: "Ne rien faire"
 
 If 0
     If Random(0, 50) < Dating:attractiontoplayer
-        "<Dating.name> agreed to teach me a thing or two in bed. Practice makes perfect!"
+        "<Dating.name> a accepté de m'apprendre une chose ou deux au lit. La pratique rend le sexe meilleur!"
         perversion += Random(0, 1)
         Dating:attractiontoplayer += Random(0, 2)
         setBackground(home)
         Sex(Dating, Player)
     Else
-        "Although <Dating.name> promised to help me, <Dating.he_or_she> ended up being too busy to have sex with me more often."
+        "Bien que <Dating.name> ait promis de m'aider, <Dating.il_or_elle> a fini par être trop occupée pour avoir des relations sexuelles avec moi plus souvent."
     Endif
 Else
-    "It doesn't matter. I'm proud of who I am and <Dating.name> should be too."
+    "Cela n'a pas d'importance. Je suis fier de qui je suis et <Dating.name> devrait l'être aussi."
     Dating:attractiontoplayer -= Random(0, 1)
 Endif
 

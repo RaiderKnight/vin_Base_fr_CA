@@ -8,21 +8,21 @@ SceneStart()
 secondScreenIfHidden(Dating)
 Dating.dress()
 Dating.show(2)
-"I must admit: my <Dating.boyfriend_or_girlfriend> <Dating.name> isn't the most intelligent person in the world and is rather ignorant on many topics. Worse, <Dating.he_or_she> has very few intellectual pursuits."
-0:: "Encourage <Dating.name> to read more"
-1:: "Do nothing"
+"Je dois admettre: Que <Dating.mon_or_ma> <Dating.chum_or_blonde> <Dating.name> n'est pas la personne la plus intelligente du monde et est plutôt ignoran<Dating.t_or_te> sur de nombreux sujets. Pire encore, <Dating.il_or_elle> ne cherche pas à l'être plus!"
+0:: "Encourager <Dating.name> à lire plus"
+1:: "Ne rien faire"
 
 If 0
     If Random(0, 150) < interpersonal + intelligence 
-        "Motivated by my encouragements, <Dating.name> developed somewhat of a habit of reading and has become more knowledgeable on many subjects as a result."
+        "Motivé par mes encouragements, <Dating.name> a développé une sorte d'habitude de lecture et est devenu plus informé sur de nombreux sujets."
         Dating:intelligence += Random(0, 2)
         karma += 2.5
     Else
-        "Unfortunately, despite my encouragements, <Dating.name> still refused to improve <Dating.his_or_her> general knowledge. <Dating.He_or_She> even accused me of intellectual snobbery."
+        "Malheureusement, malgré mes encouragements, <Dating.name> refuse d'améliorer ces connaissances générales. <Dating.Il_or_Elle> m'a même accusé de snobisme intellectuel."
         Dating:attractiontoplayer -= Random(0, 2)
     Endif
 Else
-    "It doesn't matter. I like <Dating.name> just the way <Dating.he_or_she> is."
+    "Cela n'a pas d'importance. J'aime <Dating.name> comme <Dating.il_or_elle> est!"
     Dating:attractiontoplayer += Random(0, 1)
 Endif
 

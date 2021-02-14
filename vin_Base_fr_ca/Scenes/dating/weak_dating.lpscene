@@ -8,21 +8,21 @@ SceneStart()
 secondScreenIfHidden(Dating)
 Dating.dress()
 Dating.show(2)
-"I must admit: my <Dating.boyfriend_or_girlfriend> <Dating.name> isn't the healthiest person in the world and is rather unfit. Worse, <Dating.he_or_she> has very few athletic pursuits."
-0:: "Encourage <Dating.name> to exercise more"
-1:: "Do nothing"
+"Je dois admettre: Que <Dating.mon_or_ma> <Dating.chum_or_blonde> <Dating.name> n'est pas la personne la plus en santé au monde et est plutôt inapte en sport. Pire encore, <Dating.il_or_elle> ne veut pas faire des exercice du sport. Son prétexte: Quand on baise c'est comme faire du sport...."
+0:: "L'encourager à faire plus d'exercice"
+1:: "Ne rien faire"
 
 If 0
     If Random(0, 150) < interpersonal + fitness 
-        "Motivated by my encouragements, <Dating.name> took up a few sports and adopted a healthier lifestyle."
+        "Motivé par mes encouragements, <Dating.name> a fait quelques sports et a adopté un mode de vie plus sain."
         Dating:fitness += Random(0, 2)
         karma += 2.5
     Else
-        "Unfortunately, despite my encouragements, <Dating.name> still refused to exercise. <Dating.He_or_She> even accused me of being a gym nut."
+        "Malheureusement, malgré mes encouragements, <Dating.name> a toujours refusé de faire de l'exercice. <Dating.Il_or_Elle> m'a même accusé d'être <Dating.un_or_une> freak de gym."
         Dating:attractiontoplayer -= Random(0, 2)
     Endif
 Else
-    "It doesn't matter. I like <Dating.name> just the way <Dating.he_or_she> is."
+    "Cela n'a pas d'importance. Je l'aime exactement comme <Dating.il_or_elle> est."
     Dating:attractiontoplayer += Random(0, 1)
 Endif
 

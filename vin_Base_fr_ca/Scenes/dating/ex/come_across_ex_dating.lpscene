@@ -5,7 +5,7 @@ WHO: Actor = getSpecific(ExDating); If !Actor.isAsexual() && Actor:masochist < 0
 OTHER: none
 
     SceneStart()
-    "I was just walking when I spotted a familiar figure hand in hand with someone else."
+    "Je marchais tranquillement quand tout à coup, je repère une silhouette familière main dans la main avec quelqu'un d'autre."
     Actor.dress()
     Actor.show(2)
     NewDating = Actor.getRelatedPerson(Dating, Spouses)
@@ -19,17 +19,17 @@ OTHER: none
     Endif
     NewDating.dress()
     NewDating.show(3)
-    "It's my ex <Actor.name>! <Actor.He_or_She> recognized me right away. To rub salt into the injury, <Actor.he_or_she> suddenly leaned over and kissed the <NewDating.man_or_woman> <Actor.he_or_she> was with. It must be <Actor.his_or_her> new <NewDating.boyfriend_or_girlfriend>."
-    0:: masochist < 50:: "Ignore"
-    1:: "Cry"
+    "C'est mon ex <Actor.name>! <Actor.Il_or_Elle> m'a tout de suite reconn<Actor.u_or_ue>. Question de tourner le fer dans la plaie, <Actor.il_or_elle> s'est soudainement penché pour embrasser <NewDating.son_or_sa> <NewDating.chum_or_blonde> devant moi. Ça doit être assez réçent pour qu'ils s'embrassent autant!>."
+    0:: masochist < 50:: "Ignorer"
+    1:: "Crier son noms"
     
     If 0
-        "Who cares? The new <NewDating.guy_or_girl> is ugly as hell! <Actor.name> certainly has had to lower <Actor.his_or_her> standards after me."
-        "I ignored them and kept walking, as if I never recognized <Actor.name> at all."
+        "Je m'en fou, c'est son choix? Anyway, je <NewDating.le_or_la> comprend pas, <NewDating.son_or_sa> <NewDating.chum_or_blonde> est <NewDating.laid_or_laide> comme l'enfer! <Actor.name> a dû baisser ces standards de sélection après moi. Pff...!"
+        "Je les ai ignorés et j'ai continué de marcher, comme si je n'avais jamais rien vu du tout."
         masochist -= Random(0, 2)
     Else
         Player(Crying):: "..."
-        "I just couldn't hold back the tears. Seeing my ex with another <NewDating.man_or_woman> was too hurtful."
+        "Je ne pouvais tout simplement pas retenir mes larmes. Voir mon ex avec une autre personne était trop blessant."
         masochist += Random(0, 2)
     Endif
     

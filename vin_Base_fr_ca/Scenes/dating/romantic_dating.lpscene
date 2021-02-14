@@ -9,15 +9,15 @@ OTHER: none
     Dating.dress()
     Dating.show(2)
 
-    "<Dating.name> is in love with me, but sometimes <Dating.he_or_she> is just too ... cheesy. <Dating.He_or_She> says things to me that sounds like they belong in a medieval poem, a Broadway musical or an Ed Sheeran's song!"
-    0:: "Play along"
-    1:: "Tell <Dating.him_or_her> to stop being so cheesy"
+    "<Dating.name> est amoureux de moi, mais parfois <Dating.il_or_elle> est tout simplement trop ... <Dating.licheux_or_licheuse>. <Dating.Il_or_Elle> me dit des choses qui semblent appartenir à un poème médiéval, une comédie musicale de Broadway ou une chanson d'Ed Sheeran!"
+    0:: "Jouer au jeu"
+    1:: "Dites lui d'arrêter d'être si <Dating.licheux_or_licheuse>"
 
     If 0
-        "I like it that <Dating.name> is such a romantic soul. Besides, who doesn't fantasize about a fair-tale romance."
+        "J'aime le fait que <Dating.name> soit une âme si romantique. De plus, qui ne fantasme pas sur une romance de conte de fées."
         Dating:attractiontoplayer += Random(0, 2)
     Else
-        "I told <Dating.name> that <Dating.he_or_she> was being too cheesy and it made me uncomfortable."
+        "J'ai dit à <Dating.name> que <Dating.il_or_elle> était trop <Dating.licheux_or_licheuse> et cela me met mal à l'aise."
         Dating:attractiontoplayer -= Random(0, 2)
     Endif
 

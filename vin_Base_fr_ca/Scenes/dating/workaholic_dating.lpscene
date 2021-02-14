@@ -9,16 +9,16 @@ OTHER: none
     Dating.dress()
     Dating.show(2)
 
-    "<Dating.name> is a workaholic, rarely leaving the office, and has been neglecting me recently."
-    0:: "Accept it"
-    1:: "Demand <Dating.him_or_her> to spend more time with me"
+    "<Dating.name> est un bourreau de travail, quitte rarement le bureau et me néglige beaucoup ces temps-ci!"
+    0:: "L'accepter"
+    1:: "Demander de passer plus de temps avec moi"
 
     If 0
-        "I like it that <Dating.name> is such a career-oriented person. I'll be happy to see my <Dating.boyfriend_or_girlfriend> become successful thanks to <Dating.his_or_her> hard work."
+        "J'aime que <Dating.name> soit une personne tellement orientée vers sa carrière. Je serai heureux de voir mon <Dating.chum_or_blonde> réussir grâce à son travail acharné!"
         Dating:attractiontoplayer += Random(0, 2)
         karma += 2.5
     Else
-        "I complained about how little time <Dating.name> had been spending with me recently and accused <Dating.him_or_her> of priotizing <Dating.his_or_her> career over me."
+        "Je me suis plaint du peu de temps que <Dating.name> passe avec moi ces temps-ci et je l'ai accusé d'avoir priotisé sa carrière avant moi."
         Dating:attractiontoplayer -= Random(0, 2)
     Endif
 
