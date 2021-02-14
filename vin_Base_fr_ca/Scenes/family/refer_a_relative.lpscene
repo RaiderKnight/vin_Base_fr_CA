@@ -6,28 +6,28 @@ OTHER: Random(0, 1000) < jobexperience
 
     SceneStart()
     Actor.dress()
-    "In an effort to attract talent, my company is asking their current employees to refer people they know to be interviewed for positions. If they turn out to be the successful candidate, the person who introduced them would receive a bonus."
+    "Dans un effort pour attirer les talents, mon entreprise demande à ses employés actuels de recommander des personnes qu'ils connaissent pour être interviewées pour un poste. S'ils s'avèrent être le candidat retenu, la personne qui l'a référé recevra une prime."
     Actor.show(2)
-    "This made me think of my <Actor.relationship> right away, who I knew was smart and unhappy with <Actor.his_or_her> current job."
-    "Should I recommend <Actor.name> to my company?"
-    0:: "Yes"
-    1:: "No"
+    "Cela m'a fait penser tout de suite à <Actor.name>, qui, je le sais, est intelligent et mécontent de son travail actuel."
+    "Dois-je recommander <Actor.name> à mon entreprise?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "I decided to go ahead and wrote a letter recommending my <Actor.relationship> for the company, which earned <Actor.him_or_her> an interview."
+        "J'ai décidé d'aller de l'avant et j'ai écrit une lettre recommandant <Actor.name> à mon boss, ce qui lui a valu une entrevue."
         karma += 2.5
-        "A few weeks later ..."
+        "Quelques semaines plus tard ..."
         If Random(0, 100) < Actor:intelligence
-            "Great news! <Actor.name> has been successful in the interview and will join my company soon. We are now also colleagues. What's more: I received a small bonus for having recommended a new staff member."
+            "Bonne nouvelle! <Actor.name> a réussi son entrevue et rejoindra bientôt mon entreprise. Nous sommes maintenant aussi collègues. De plus: j'ai reçu un petit bonus pour avoir recommandé un nouveau membre du personnel."
             Actor:rapportwithplayer += Random(0, 10)
             money += Random(500, 4000)
             Actor.addColleague()
         Else
-            "Unfortunately, <Actor.name> couldn't quite live up to the company's expectations in the interview and had no choice but to stay at <Actor.his_or_her> current job. This reflected a bit badly on me."
+            "Malheureusement, <Actor.name> n'a pas pu être à la hauteur des attentes de l'entreprise lors de son entrevue et n'a pas eu d'autre choix que de rester à son emploi actuel. Je pense que mon boss va être méfiant avec la prochaine personne que je vais lui référer."
             jobperformance -= Random(0, 0.5)
         Endif
     Else
-        "On second thought, I'm not entirely sure if my <Actor.relationship> is a good fit for this company."
+        "Après réflexion, je ne suis pas tout à fait sûr que <Actor.name> convienne pour cette compagnie."
     Endif
 
     SceneEnd()

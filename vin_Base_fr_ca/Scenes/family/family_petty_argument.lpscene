@@ -8,16 +8,16 @@ OTHER: none
     Dating.dress()
     Dating.show(2)
 
-    "My <Dating.relationship> and I are having a pretty silly argument over some trivial things. How should I act?"
-    0:: "Back down"
-    1:: "Try to win"
+    "<Dating.name> et moi avons une dispute assez stupide sur des choses insignifiantes. Comment dois-je agir?"
+    0:: "Lui donner raison"
+    1:: "Gagner mon point"
 
     If 0
-        "I decided to just let it go and went easy on <Dating.him_or_her> this time."
+        "J'ai décidé de laisser tomber et je lui ai donné raison sur toute la ligne, question de passer à autre chose!"
         masochist += Random(0, 0.5)
         karma += 2.5
     Else
-        "No way I'm backing down. I made sure that my <Dating.relationship> knew that I was not a pushover of a <Dating.callplayer>."
+        "Pas question que je recule. Je me suis assuré que <Dating.name> sache c'est qui le boss dans la maison!"
         Dating:rapportwithplayer -= Random(0, 1)
     Endif
 

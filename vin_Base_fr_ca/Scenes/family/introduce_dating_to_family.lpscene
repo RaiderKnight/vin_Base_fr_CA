@@ -7,25 +7,25 @@ OTHER: !isPlayerMarried()
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    "I have been going out with <Actor.name> for a while and so far it looks like we might have a future together. Maybe I should start gradually introducing <Actor.him_or_her> to my family. I'm seeing my <Actor2.relationship> today, perhaps I should take <Actor.name> with me?"
-    0:: "Yes"
-    1:: "No"
+    "Je sors avec <Actor.name> depuis un moment et jusqu'à présent, il semble que nous pourrions avoir un avenir ensemble. Peut-être que je devrais commencer progressivement à présenter <Actor.name> à ma famille. Je vois ma famille aujourd'hui, je devrais peut-être emmener <Actor.name> avec moi?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
-        "This is a perfect opportunity to show how commited I am to the relationship."
+        "C'est une occasion parfaite de montrer à quel point je suis engagé dans ma relation."
         karma += 2.5
         Loc = Actor2.getBuilding(home)
         moveTo(Loc)
-        "Later on ..."
+        "Plus tard nous arrivons chez ma famille ..."
         Actor2.dress()
         Actor2.show(3)        
-        Player(Embarassed):: "<Actor2.Relationship>, this is my <Actor.boyfriend_or_girlfriend>, <Actor.name>."
-        Actor(Happy):: "Nice to meet you finally in person. <Player.name> has never stopped going on about how amazing <Player.his_or_her> <Actor2.relationship> is."
-        Actor2(Happy):: "Nice to meet you too, <Actor.name>. You guys sure are a cute couple."
+        Player(Embarassed):: "<Actor2.name>, voici mon <Actor.frere_or_soeur>, <Actor.name>."
+        Actor (Happy) :: "Ravi de vous rencontrer enfin en personne. <Player.name> me parle toujours de toi et comment tu es incroyable."
+        Actor2(Happy):: "Ravi de vous rencontrer aussi, <Actor.name>."
         Actor:attractiontoplayer += Random(0, 3)
         Actor2:rapportwithplayer += Random(0, 2)
     Else
-        "No, it's too early in the relationship to do that. We could break up anytime. How would I explain that to my <Actor2.relationship> then?"
+        "Non, il est trop tôt dans ma relation pour faire ça. Nous pourrions rompre à tout moment. Comment pourrais-je expliquer cela à ma famille...?"
         Actor:attractiontoplayer -= Random(0, 1)
     Endif
     SceneEnd()
