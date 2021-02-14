@@ -5,7 +5,7 @@ WHO: Ex = getSpecific(ExDating); If !Ex.isColleague() && !Ex.isBoss() && !Ex.has
 OTHER: Random(0, 200) < jobexperience
 
     SceneStart()
-    "I was sent to an industry conference today. The day was uneventful until ..."
+    "J'ai été envoyé à une conférence industrielle aujourd'hui. La journée s'est déroulée sans incident jusqu'à ..."
     Actor = generatePerson()
     Actor:age => Ex:age + Random(10, 40)
     Actor.randomizeFace()
@@ -13,26 +13,26 @@ OTHER: Random(0, 200) < jobexperience
     addNpcRelationship(BossEmployee, Actor, Ex)
     Actor.dress()
     Actor.show(2)
-    Actor(Happy):: "I'm <Actor.name>. Nice to meet you. I'm the managing director of ..."
-    "Wait, isn't that where my ex <Ex.name> works. Could this be <Ex.his_or_her> boss?"
-    Player(Surprised):: "Do you know <Ex.name> <Ex.name_last> by any chance?"
-    Actor(Happy):: "Of course, that's one of my junior employees. Do you know <Ex.name> then?"
-    0:: "Yeah ..."
-    1:: "<Ex.name> is my ex"
+    Actor(Happy):: "Salut, Je suis <Actor.name>. Ravi de vous rencontrer. Je suis le directeur général de ..."
+    "Attendez, n'est-ce pas là où mon ex <Ex.name> travail. Serait-ce <Ex.lui_or_elle> <Ex.le_or_la> boss?"
+    Player(Surprised):: "Connaissez-vous <Ex.name> <Ex.name_last> par hasard?"
+    Actor(Happy):: "Bien sûr, c'est l'un de mes employés subalternes. Vous le connaissez?"
+    0:: "Ouais ..."
+    1:: "<Ex.name> est mon ex"
     
     If 0
-        Player(Embarassed):: "Yeah, just an acquaintance. I don't know <Ex.him_or_her> that well to be honest."
+        Player(Embarassed):: "Ouais, c'est plus une connaissance. J'ai travaillé avec quelque fois pour être honnête."
     Else
-        Player(Sad):: "We used to be in a relationship ..."
-        "I don't even know why I was being so honest about it. My admission made the conversation awkward real quick ..."
+        Player(Sad):: "Avant, nous étions en couple ..."
+        "Je ne sais même pas pourquoi j'ai été si honnête à ce sujet. Mon aveu a rendu la conversation très brève ..."
         Actor:attractiontoplayer -= Random(0, 40)
     Endif
-    "We continued the conversation for a little while. The conference is winding down now ..."
-    0:: "Exchange business cards"
-    1:: "Maybe not"
+    "Nous avons continué la conversation pendant un petit moment. La conférence se termine maintenant ..."
+    0:: "Échanger nos cartes d'affaire"
+    1:: "Peut-être pas"
     
     If 0
-        "Before we went our separate ways, we exchanged business cards."
+        "Avant de nous séparer, nous avons échangé nos cartes d'affaire."
         exchangeContact(Actor)
     Endif
     SceneEnd()

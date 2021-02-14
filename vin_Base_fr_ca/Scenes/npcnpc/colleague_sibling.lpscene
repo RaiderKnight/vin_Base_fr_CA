@@ -7,7 +7,8 @@ OTHER: none
     SceneStart()
     Actor.dress()
     Actor.show(4)
-    "That was a long day at work. It's time to head home. <Actor.name> was also heading out - <Actor.he_or_she> told me <Actor.he_or_she> was taking <Actor.his_or_her> family out for dinner tonight and they should already be waiting outside our building."
+    "C'était une longue journée de travail. Il est temps de rentrer à la maison. <Actor.name> part aussi en même temps"
+    "<Actor.Il_or_Elle> m'a dit plutôt dans la journée qu'<Actor.il_or_elle> emmenait des membres de sa famille souper ce soir et ils devraient déjà attendre devant l'immeuble."
     setBackground(street)
     dice = Random(0, 100)
     Actor2 = Actor.generatePersonMatchRace()
@@ -20,15 +21,16 @@ OTHER: none
         Actor3.dress()
         addNpcRelationship(Siblings, Actor, Actor3)    
     Endif
-    Actor(Happy):: "<Player.name>, let me introduce you to my <Actor2.brother_or_sister>, <Actor2.name>."
+    "Effectivement, la famille l'attend avec un sourire!"
+    Actor(Happy):: "<Player.name>, permettez-moi de vous présenter <Actor2.mon_or_ma> <Actor2.frere_or_soeur>, <Actor2.name>."
     If dice < 30
-        Actor(Happy):: "And also my <Actor3.brother_or_sister>, <Actor3.name>."
+        Actor(Happy):: "Et aussi <Actor3.mon_or_ma> <Actor3.frere_or_soeur>, <Actor3.name>."
         Actor3.show(2)
-        Actor3(Happy):: "Hey there. Good to meet you."
+        Actor3(Happy):: "Salut. Ravi de vous rencontrer."
     Endif
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you, <Player.name>."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de vous rencontrer, <Player.name>."
+    Player(Happy):: "Ravi de vous rencontrer aussi."
 
     SceneEnd()
     timeout(250, colleague_sibling)

@@ -5,7 +5,7 @@ WHO: Actor = getSpecific(Neighbour); If Actor:age > 45 && !Actor.hasRelationship
 OTHER: isAtHome() && !isWithCompanion()
 
     SceneStart()
-    "I was walking past my neighbour <Actor.name>'s apartment. There seemed to be more people there than usual. Some sort of family gathering perhaps."
+    "Je passais devant l'appartement de mon voisin <Actor.name>. Il semblait y avoir plus de monde que d'habitude. Une sorte de réunion de famille peut-être."
     dice = Random(0, 100)
     Actor2 = Actor.generatePersonMatchRace()
     Actor2.matchLastName(Actor)
@@ -28,14 +28,14 @@ OTHER: isAtHome() && !isWithCompanion()
     
     Actor.dress()
     Actor.show(4)
-    Actor(Happy):: "<Player.name>, come over, let me introduce you to my <Actor2.son_or_daughter>, <Actor2.name>. <Actor2.name>, this is my neighbour <Player.name>."
+    Actor(Happy):: "<Player.name>, venez, laissez-moi vous présenter <Actor2.mon_or_ma> <Actor2.fils_or_fille>, <Actor2.name>. <Actor2.name>, voici mon voisin <Player.name>."
     If dice < 30
-        Actor(Happy):: "And also my <Actor3.son_or_daughter>, <Actor3.name>."
+        Actor(Happy):: "And also <Actor3.mon_or_ma> <Actor3.fils_or_fille>, <Actor3.name>."
         Actor3.show(2)
-        Actor3(Happy):: "Hey there. Good to meet you. Sorry if we made too much noise."
+        Actor3(Happy):: "Salut. Ravi de vous rencontrer. Désolé si ont fait trop de bruit."
     Endif
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you, <Player.name>."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de vous rencontrer, <Player.name>!"
+    Player(Happy):: "Ravi de vous rencontrer!"
     SceneEnd()
     timeout(350, neighbour_sibling, neighbour_child)

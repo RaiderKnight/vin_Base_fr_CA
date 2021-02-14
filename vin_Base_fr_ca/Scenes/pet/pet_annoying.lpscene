@@ -7,21 +7,21 @@ OTHER: isAtHome()
     SceneStart()
     Actor.show(2)
     Player.closeEyes(true)
-    Actor:: "Wuff! Wuff! Wuff!"
+    Actor:: "Wouff! Wouff! Wouff!"
     Player.closeEyes(false)
-    "Come on, shut up! I'm trying to sleep here."
-    "Oh well, this is a side effect of having a dog I guess."
-    0:: "Tell <Actor.him_or_her> off"
-    1:: "Just bear it"
+    "Allez, tais-toi <Actor.name>! J'essaye de dormir ici."
+    "Eh bien, c'est ce qui arrive lorsque tu as un chien, je suppose."
+    0:: "Couche toi <Actor.name>"
+    1:: "Le laisser japper"
     
     If 0
-        Player(Angry):: "Bad doggy! Shut it, now!"
+        Player(Angry):: "Couche toi <Actor.name>! <Player.Maman_or_Papa> veut dormir!"
         Actor:rapportwithplayer -= Random(0, 2)
         Actor:attractiontoplayer -= Random(0, 2)
         Actor:sneak += Random(0, 2)
         energy -= Random(0, 10)
     Else
-        "Dogs bark. That's what they do. Let's just try to get back to sleep."
+        "Les chiens aboient. C'est ce qu'ils font. Essayons juste de se rendormir."
         energy -= Random(0, 20)
     Endif
 

@@ -5,30 +5,30 @@ WHO: Actor = getCompanionCreature(); If Actor.isCreatureType(Dog) && Random(0, 2
 OTHER: none
 
     SceneStart()
-    Actor:: "Wuff! Wuff! Wuff!"
-    "<Actor.name> seems to be barking for my attention and is asking me to follow <Actor.him_or_her>."
-    0:: "Follow <Actor.his_or_her> lead"
-    1:: "Maybe not"
+    Actor:: "Wouff! Wouff! Wouff!"
+    "<Actor.name> semble aboyer pour attirer mon attention et me demande de <Actor.le_or_la> suivre vers un objet par terre."
+    0:: "<Actor.Le_or_La> suivre"
+    1:: "Pas le temps!"
     
     If 0
         setBackground(street)
-        Player(Happy):: "Fine, I'll follow you. You'd better not bring me to anywhere dangerous!"
-        "A few moments later ..."
-        "Hmm, what's this <Actor.name>?"
-        Player(Happy):: "Ah, someone dropped their wallet. Good <Actor.boy_or_girl>!"
-        0:: "Take the cash"
-        1:: "Hand it in to a police station"
+        Player(Happy):: "Très bien, je vais te suivre. Tu ferais mieux de ne pas m'emmener dans un endroit dangereux!"
+        "Quelques instants plus tard ..."
+        "Hmm, qu'est-ce que c'est <Actor.name>?"
+        Player(Happy):: "Ah, quelqu'un a laissé tomber son portefeuille!"
+        0:: "Prendre l'argent"
+        1:: "Le remettre à un poste de police"
         
         If 0
-            "I feel slightly guilty, but I need the money."
+            "Je me sens légèrement coupable, mais j'ai besoin de l'argent."
             money += Random(20, 200)
-            Player(Evil):: "Well done, <Actor.boy_or_girl>. Keeping sniffing out lost wallets like this and we'll be filthy rich in no time."
+            Player(Evil):: "Bien joué, <Actor.name>. Continue à flairer les portefeuilles perdus comme celui-ci et nous serons très riches en un rien de temps."
         Else
-            "I feel good about doing this. It's the right thing to do."
+            "Je me sens bien de faire ça. C'est la bonne chose à faire."
             mood += Random(0, 40)
         Endif
     Else
-        "No way, the last thing I want right now is to be led to a dead body or something."
+        "Pas question, la dernière chose que je veux en ce moment, c'est d'être lié à un cadavre ou quelque chose comme ça."
     Endif
     SceneEnd()
     timeout(48, pet_finds_wallet)

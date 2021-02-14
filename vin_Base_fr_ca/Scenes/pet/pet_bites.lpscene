@@ -8,23 +8,23 @@ OTHER: none
     Actor2 = generatePersonTemporary()
     Actor2.dress()
     Actor2.show(2)
-    Actor2(Angry):: "Damn, I hate dogs. Dumb and annoying animals."
-    "The <Actor2.asshole_or_bitch> just sucker-kicked <Actor.name>. Seriously, what's <Actor2.his_or_her> problem?"
-    Actor:: "Wuff! Wuff! Wuff!"
-    "<Actor.name> responded in kind ... by taking a bite out of <Actor2.his_or_her> leg."
+    Actor2(Angry):: "Ah non, je déteste les chiens. Ce sont des animaux stupides et ennuyeux."
+    "Woah! <Actor2.Le_or_La> cave vient de donner un coup de pied à <Actor.name>. Sérieusement, c'est quoi son problème?"
+    Actor:: "Wouff! Wouff! Wouff! Grrrrrrr!"
+    "<Actor.name> de façon spontanée ... en y mordant la jambe!"
     Actor2(Pain):: "Ahhhhhhhhhhhhhhhh ..."
-    Actor2(Furious):: "Fuck this rabid dog! How dare you bite me? You there, how could you let your stupid dog bite people like this?"
-    0:: "Apologize"
-    1:: "Defend <Actor.name>"
+    Actor2(Furious):: "Fuck ce chien est enragé! Dit à ton chien de me lâcher! Comment peux-tu laisser ton stupide de chien mordre les gens comme ça?"
+    0:: "S'excuser"
+    1:: "Défendre <Actor.name>"
     
     If 0
-        Player(Scared):: "Oh my god! I'm so sorry."
-        Player(Angry):: "Bad doggy! You'd better behave yourself before I put a muzzle on you."
+        Player(Scared):: "Oh mon Dieu! Je suis absolument désolé."
+        Player(Angry):: "Mauvais chien! Tu ferais mieux de bien te comporter avant que je ne te mette une muselière."
         masochist += Random(0, 2)
         Actor:rapportwithplayer -= Random(0, 2)
         Actor:attractiontoplayer -= Random(0, 2)        
     Else
-        Player(Angry):: "You deserved that! You provoked <Actor.him_or_her>! Fuck off!"
+        Player(Angry):: "Tu t'attendais à quoi, si tu kick mon chien attend toi à te faire mordre! Tu l'as provoqué! Faque, va te faire foutre!"
         masochist -= Random(0, 1)
         Actor:rapportwithplayer += Random(0, 2)
         Actor:attractiontoplayer += Random(0, 2)

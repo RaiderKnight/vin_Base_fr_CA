@@ -12,7 +12,7 @@ OTHER: none
         SceneStart()
         Boss.dress()
         Boss.show(2)
-        Boss(Embarassed):: "Baby, I think my <Actor.husband_or_wife> is starting to suspect us ... Let's keep our affair on the down low for a while ..."
+        Boss(Embarassed):: "Bébé, je pense que <Actor.mon_or_ma> <Actor.mari_or_femme> commence à soupçonner notre relation ... Mettons notre liaison sur pause pendant un moment ..."
         SceneEnd()
     Endif
     timeout(100, boss_spouse_discovers_affair)

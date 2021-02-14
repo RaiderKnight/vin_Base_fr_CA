@@ -8,28 +8,28 @@ OTHER: Random(0, 200) < intelligence
     Actor = generatePerson()
     Actor.dress()
     Actor.show(2)
-    Actor(Excited):: "This book is such a masterpiece ..."
-    0:: "Play it safe"
-    1:: "Show off my book knowledge"
+    Actor(Excited):: "Ce livre est un tel chef-d'œuvre ..."
+    0:: "Répondre prudemment"
+    1:: "Montrer mes connaissances en littérature"
     
     If 0
-        Player(Happy):: "Yes it is a good book indeed ..."
-        "My knowledge of books leaves a lot to be desired and I know it. No point trying to sound sophisticated here ..."
+        Player(Happy):: "Oui, c'est un bon livre en effet ..."
+        "Mes connaissances en littérature sont totalement nuls. Inutile d'essayer de paraître sophistiqué ici  ..."
     Else
-        "I tried my best to show off extensive reading to engage in a intelligent discussion with <Actor.name>."
+        "J'ai fait de mon mieux pour montrer mon savoir en littérature approfondies pour engager une discussion intelligente avec <Actor.name>."
         If Random(0, 100) < intelligence
-            Actor(Happy):: "It's rare nowadays to meet someone with the same appreciation of literature. Let's exchange numbers."
-            0:: "Yes"
-            1:: "No"
+            Actor(Happy):: "Il est rare de nos jours de rencontrer quelqu'un avec la même appréciation de la littérature. Échangeons nos numéros."
+            0:: "Oui"
+            1:: "Non"
             
             If 0
-                Player(Happy):: "Of course, I'd love to exchange numbers."
+                Player(Happy):: "Bien sûr, j'aimerais bien, échangeons nos numéros."
                 exchangeContact(Actor)
             Else
-                Player(Sad):: "Sorry, but I don't normally exchange numbers with someone I just met."
+                Player(Sad):: "Désolé, mais normalement je n'échange pas mon numéros avec quelqu'un que je viens de rencontrer."
             Endif
         Else
-            "Unfortunately, my knowledge of literature really wasn't deep enough to hold an intelligent conversation about it. From <Actor.his_or_her> facial expression, I could tell that <Actor.he_or_she> saw right through me as a dumb-ass."
+            "Malheureusement, ma connaissance de la littérature n'était vraiment pas assez profonde pour tenir une conversation intelligente à ce sujet. D'après l'expression du visage de <Actor.name>, je pouvais dire qu'<Actor.il_or_elle> me voyait comme un idiot."
             Actor:attractiontoplayer -= Random(0, 20)
             Actor:rapportwithplayer -= Random(0, 20)
         Endif

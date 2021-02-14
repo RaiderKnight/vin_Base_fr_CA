@@ -8,28 +8,28 @@ OTHER: Random(0, 200) < intelligence
     Actor = generatePerson()
     Actor.dress()
     Actor.show(2)
-    Actor(Excited):: "What do you think God would think about what society has become in the 21st century?"
-    0:: "Play it safe"
-    1:: "Show off my religious knowledge"
+    Actor(Excited):: "Que pensez-vous que Dieu penserait de ce qu'est devenue la société au 21ème siècle?"
+    0:: "Répondre prudemment"
+    1:: "Montrer mes connaissances religieuses"
     
     If 0
-        Player(Happy):: "Well, God would still love us all, I'm sure."
-        "My knowledge of religions leaves a lot to be desired and I know it. No point trying to sound sophisticated here ..."
+        Player(Happy):: "Eh bien, Dieu nous aimerait toujours, j'en suis sûr."
+        "Ma connaissance des religions laisse beaucoup à désirer et je le sais. Inutile d'essayer de paraître sophistiqué ici ..."
     Else
-        "I tried my best to show off my knowledge of religious texts to engage in a sophisticated discussion with <Actor.name>."
+        "J'ai fait de mon mieux pour montrer ma connaissance des textes religieux pour engager une discussion sophistiquée avec <Actor.name>."
         If Random(0, 100) < intelligence
-            Actor(Happy):: "It's rare nowadays to meet someone with the same spiritual approach to life. Let's exchange numbers."
-            0:: "Yes"
-            1:: "No"
+            Actor(Happy):: "Il est rare de nos jours de rencontrer quelqu'un avec la même approche spirituelle de la vie. Échangeons nos numéros."
+            0:: "Oui"
+            1:: "Non"
             
             If 0
-                Player(Happy):: "Of course, I'd love to exchange numbers."
+                Player(Happy):: "Bien sûr, j'aimerais échanger nos numéros."
                 exchangeContact(Actor)
             Else
-                Player(Sad):: "Sorry, but I don't normally exchange numbers with someone I just met."
+                Player(Sad):: "Désolé, mais normalement je n'échange pas de numéros avec quelqu'un que je viens de rencontrer."
             Endif
         Else
-            "Unfortunately, my spiritual knowledge really wasn't deep enough to hold an intelligent conversation about it. From <Actor.his_or_her> facial expression, I could tell that <Actor.he_or_she> saw right through me as a blind worshipper."
+            "Malheureusement, mes connaissances n'étaient vraiment pas assez profonde pour tenir une conversation intelligente à ce sujet. D'après l'expression du visage de <Actor.name>, je pouvais dire qu'<Actor.il_or_elle> me voyait comme un adorateur aveugle."
             Actor:attractiontoplayer -= Random(0, 20)
             Actor:rapportwithplayer -= Random(0, 20)
         Endif

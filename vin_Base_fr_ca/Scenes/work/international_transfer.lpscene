@@ -12,15 +12,15 @@ Transfer.addColleague()
 Transfer.dress()
 Transfer.show(2)
 
-"My company has offices in many countries and occasionally a staff member from one country is transferred to another. The latest case is <Transfer.name>, who is joining my department today."
-"How should I treat <Transfer.name>?"
-0:: "Like everyone else"
-1:: "Impress <Transfer.him_or_her> with my cultural awareness"
+"Mon entreprise a des bureaux dans de nombreux pays et parfois un membre du personnel d'un pays est muté dans un autre. Le dernier cas est <Transfer.name>, qui rejoint mon service aujourd'hui."
+"Comment dois-je traiter <Transfer.name>?"
+0:: "Comme tout le monde"
+1:: "Impressionner <Transfer.name> avec mes connaissances culturelles."
 
 If 0
-    "It's best to not try to be a smart ass or risk embarrassing myself."
+    "Il vaut mieux ne pas essayer de jouer a être une personne intelligente ou risquer de me mettre dans l'embarras."
 Elseif intelligence > Random(0, 100)
-    "I impressed <Transfer.name> with my knowledge of <Transfer.his_or_her> country and culture. As a result, I became <Transfer.name>'s closest friend in the office and <Transfer.he_or_she> even taught me a basic command of <Transfer.his_or_her> language."
+    "J'ai impressionné <Transfer.name> par ma connaissance du pays et de la culture de son pays. En conséquence, je suis devenu l'ami le plus proche de <Transfer.name> au bureau et <Transfer.il_or_elle> m'a même appris les bases de sa langue maternelle."
     exchangeContact(Transfer)
     interpersonal += Random(0, 1)
     intelligence += Random(0, 0.5)
@@ -29,7 +29,7 @@ Elseif intelligence > Random(0, 100)
         Transfer:attractiontoplayer += Random(0, 15)
     Endif
 Else
-    "I tried very hard to impress but failed miserably. It turned out everything I knew about <Transfer.name>'s country were silly stereotypes hated by the locals. Instead of making friends with <Transfer.name>, I came across as ignorant and even slightly racist."
+    "J'ai essayé très fort d'impressionner mais j'ai échoué lamentablement. Il s'est avéré que tout ce que je savais sur le pays de <Transfer.name> était des stéréotypes idiots détestés par les habitants. Au lieu de me lier d'amitié avec <Transfer.name>, je suis apparu comme ignorant et même légèrement raciste."
     Transfer:rapportwithplayer -= Random(0, 10)
     Transfer:attractiontoplayer -= Random(0, 5)
 Endif

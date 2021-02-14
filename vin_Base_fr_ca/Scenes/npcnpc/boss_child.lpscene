@@ -14,17 +14,18 @@ OTHER: none
     Actor2.dress()
     addNpcRelationship(ParentChild, Actor, Actor2)
     Actor2.show(2)
-    "Today my boss's <Actor2.son_or_daughter> <Actor2.name> joined the company for a short-term internship. Nepotism at its best!"
-    0:: "Get close to <Actor2.name>"
-    1:: "Who cares?"
+    "Aujourd'hui, <Actor2.le_or_la> <Actor2.fils_or_fille> de mon patron a rejoint l'entreprise pour un stage de courte durée. Le népotisme à son meilleur!"
+    0:: "Me rapprocher de <Actor2.name>"
+    1:: "On s'en câliss?"
     
     If 0
         If !Actor2.isInterestedIn(Player) || Actor2:attractiontoplayer > 20
-            "Over the course of <Actor2.name>'s internship, I managed to get quite close to <Actor2.him_or_her>. We even exchanged numbers to hang out outside of work. Let's hope <Actor2.he_or_she> will put in a few good words for me in front of the boss."
+            "Au cours du stage de <Actor2.name>, j'ai réussi à me rapprocher de <Actor2.lui_or_elle>. Nous avons même échangé nos numéros pour se rencontrer hors du travail. Que de bons mots pour moi devant le patron."
             exchangeContact(Actor2)
             jobperformance += Random(0, 5)
         Else
-            "Unfortunately, the arrogant <Actor2.prince_or_princess> had no time for company with a lowly peasant like me. <Actor2.He_or_She> probably thought I was trying to hit on <Actor2.him_or_her> too. Let's just hope <Actor.he_or_she> won't bad-mouth me in front of the boss ..."
+            "Malheureusement, je n'ai pas réussi à me rapprocher de l'arrogan<Actor2.t_or_te> <Actor2.petit_or_petite> <Actor2.prince_or_princesse>"
+            "J'avoue, qu'<Actor2.il_or_elle> n'a surement pas le temps de passer du temps avec <Actor2.un_or_une> pauvre comme moi. <Actor2.Il_or_Elle> ne m'a au moins pas rapporté au boss ..."
             jobperformance -= Random(0, 10)
         Endif
     Endif

@@ -5,17 +5,18 @@ WHO: none
 OTHER:
 
     SceneStart()
-    "My place I work at offers a delivery menu as well. I've been asked to make a takeout delivery ... Not my favorite part of the job, but it must be done."
+    "Mon lieu de travail propose un menu de livraison. On m'a demandé d'aller livrer une commande à emporter ... Ce n'est pas ma partie préférée de mon travail, mais cela doit être fait."
     setBackgroundCustom(livingroom)
     Actor = generatePersonTemporary()
     If Random(0, 100) < Actor:perversion
         Actor.show()
         Actor.makeInterested(Player)
         Actor:attractiontoplayer => 30
-        "The customer opened the door to receive the delivery, completely naked!"
-        Actor:: "You know ... I've been very lonely recently after my last breakup ... having to eat takeout all alone. You wouldn't mind keeping me company for a while, would you?"
-        0:: "Fuck the customer"
-        1:: "Just take the money and leave"
+        "J'arrive chez le client, cogne à sa porte..."
+        "Le client ouvre la porte pour recevoir sa livraison, mais <Actor.il_or_elle> est complètement nu!"
+        Actor:: "Tu sais ... Si tu veux, tu peux rester un petit mmoment avec moi manger... c'est un peu platte manger tout seul. Ça te tente-tu me tenir compagnie pendant un moment?"
+        0:: "Ok mais, c'est autre chose que je veux manger..."
+        1:: "Donne-moi le cash avant que j'appel la police"
         
         If 0
             Sex(Player, Actor)
@@ -23,7 +24,7 @@ OTHER:
     Else
         Actor.dress()
         Actor.show()
-        "It was just an usual delivery and I even received some tips."
+        "C'était juste une livraison habituelle et j'ai même reçu un très bon pourboire."
         money += 5
     Endif
     SceneEnd()

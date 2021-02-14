@@ -20,20 +20,20 @@ OTHER: !isPlayerMarried()
     
     Actor.dress()
     Actor.show(4)
-    Actor(Happy):: "Baby, let me introduce you to my <Actor2.brother_or_sister>, <Actor2.name>."
+    Actor(Happy):: "Bébé, permettez-moi de vous présenter <Actor2.mon_or_ma> <Actor2.frere_or_soeur>, <Actor2.name>."
     If dice < 30
-        Actor(Happy):: "And also my <Actor3.brother_or_sister>, <Actor3.name>."
+        Actor(Happy):: "Et aussi <Actor3.mon_or_ma> <Actor3.frere_or_soeur>, <Actor3.name>."
         Actor3.show(2)
-        Actor3(Happy):: "Hey there. Good to meet you at last."
+        Actor3(Happy):: "Salut. Ravi de vous rencontrer enfin."
     Endif
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you finally, <Player.name>. <Actor.name> couldn't stop talking about you."
-    Player(Happy):: "Nice to meet you too."
-    0:: "Let me add you on Facebook"
-    1:: "Say nothing"
+    Actor2(Happy):: "Ravi de vous rencontrer enfin, <Player.name>. <Actor.name> n'a pas arrêter de parler de vous."
+    Player(Happy):: "Ravi de vous rencontrer aussi."
+    0:: "Laissez-moi vous ajouter sur Facebook"
+    1:: "Ne rien dire"
     
     If 0
-        "It was a friendly enough offer to be accepted right away. It's always nice to get on the good side of my <Actor.boyfriend_or_girlfriend>'s family."
+        "C'était une offre suffisamment amicale pour être acceptée tout de suite. C'est toujours agréable d'être du bon côté de la famille de <Actor.mon_or_ma> <Actor.chum_or_blonde>."
         exchangeContact(Actor2)
         If dice < 30
             exchangeContact(Actor3)

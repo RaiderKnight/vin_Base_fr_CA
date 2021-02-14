@@ -8,28 +8,28 @@ OTHER: Random(0, 200) < intelligence
     Actor = generatePerson()
     Actor.dress()
     Actor.show(2)
-    Actor(Excited):: "It's beautiful, isn't it? Such a masterpiece ..."
-    0:: "Play it safe"
-    1:: "Show off my art knowledge"
+    Actor(Excited):: "C'est-tu assez merveilleux, n'est-ce pas? Un vrai chef-d'œuvre ..."
+    0:: "Répondre prudemment"
+    1:: "Montrer mes connaissances sur les arts"
     
     If 0
-        Player(Happy):: "Yes it is beautiful indeed ..."
-        "My knowledge of the arts leaves a lot to be desired and I know it. No point trying to sound sophisticated here ..."
+        Player(Happy):: "Oui c'est beau en effet ..."
+        "Ma connaissance dans les arts laisse beaucoup à désirer et je le sais. Inutile d'essayer de paraître sophistiqué ici ..."
     Else
-        "I tried my best to show off my knowledge of the arts to engage in a sophisticated discussion with <Actor.name>."
+        "J'ai fait de mon mieux pour montrer ma connaissance des arts pour engager une discussion sophistiquée avec <Actor.name>."
         If Random(0, 100) < intelligence
-            Actor(Happy):: "It's rare nowadays to meet someone with the same appreciation of the arts. Let's exchange numbers. I wouldn't mind keeping you company in your next museum or gallery visit."
-            0:: "Yes"
-            1:: "No"
+            Actor(Happy):: "Il est rare de nos jours de rencontrer quelqu'un avec la même appréciation des arts. Échangeons nos numéros. Cela me ferait plaisir de te tenir compagnie lors de ta prochaine visite au musée ou à la galerie."
+            0:: "Oui"
+            1:: "Non"
             
             If 0
-                Player(Happy):: "Of course, I'd love to exchange numbers."
+                Player(Happy):: "Bien sûr, j'aimerais bien, échangeons nos numéros."
                 exchangeContact(Actor)
             Else
-                Player(Sad):: "Sorry, but I don't normally exchange numbers with someone I just met."
+                Player(Sad):: "Désolé, mais normalement je n'échange pas mon numéros avec quelqu'un que je viens de rencontrer."
             Endif
         Else
-            "Unfortunately, my knowledge of the arts really wasn't deep enough to hold an intelligent conversation about it. From <Actor.his_or_her> facial expression, I could tell that <Actor.he_or_she> saw right through me as a pretentious artistic illiterate."
+            "Malheureusement, ma connaissance des arts n'était vraiment pas assez profonde pour tenir une conversation intelligente à ce sujet. D'après l'expression faciale de <Actor.name>, je pouvais dire qu'<Actor.il_or_elle> voyait à travers moi comme un illettré artistique prétentieux."
             Actor:attractiontoplayer -= Random(0, 20)
             Actor:rapportwithplayer -= Random(0, 20)
         Endif

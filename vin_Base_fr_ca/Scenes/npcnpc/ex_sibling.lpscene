@@ -5,7 +5,7 @@ WHO: Ex = getSpecific(ExDating); If !Ex.hasRelationship(Siblings)
 OTHER: Random(0, 200) < jobexperience
 
     SceneStart()
-    "I was sent to an industry conference today. The day was uneventful until ..."
+    "J'ai été envoyé à une conférence industrielle aujourd'hui. La journée s'est déroulée sans incident jusqu'à ..."
     Actor = Ex.generatePersonMatchRace()
     Actor:age => Ex:age + Random(-10, 10)
     Actor:age += 1
@@ -15,23 +15,23 @@ OTHER: Random(0, 200) < jobexperience
     addNpcRelationship(Siblings, Actor, Ex)
     Actor.dress()
     Actor.show(2)
-    Actor(Happy):: "I'm <Actor.name>. Nice to meet you."
-    "We continued the conversation for a little while. The conference is winding down now ..."
-    0:: "Exchange business cards"
-    1:: "Maybe not"
+    Actor(Happy):: "Bonjour, je suis <Actor.name>. Ravi de vous rencontrer."
+    "Nous avons continué la conversation pendant un petit moment. La conférence se termine maintenant ..."
+    0:: "Échanger nos cartes d'affaire"
+    1:: "Peut-être pas"
     
     If 0
         exchangeContact(Actor)
-        Player(Surprised):: "Your last name is <Actor.name_last> ... You don't know <Ex.name> <Ex.name_last> by any chance, do you?"
-        Actor(Surprised):: "Of course I know <Ex.name>. <Ex.He_or_She> is my <Ex.brother_or_sister>. Do you know my <Ex.brother_or_sister> then?"
-        0:: "Yeah ..."
-        1:: "<Ex.name> is my ex"
+        Player(Surprised):: "Votre nom de famille est <Actor.name_last> ... Vous ne connaissez pas <Ex.name> <Ex.name_last> par hasard?"
+        Actor(Surprised):: "Bien sûr que je connais <Ex.name>. <Ex.Il_or_Elle> est <Ex.mon_or_ma> <Ex.frere_or_soeur>. Vous connaissez <Ex.mon_or_ma> <Ex.frere_or_soeur> alors?"
+        0:: "Ouais  ..."
+        1:: "<Ex.name> est mon ex"
         
         If 0
-            Player(Embarassed):: "Yeah, just an acquaintance. I don't know <Ex.him_or_her> that well to be honest."
+            Player(Embarassed):: "Ouais, juste une connaissance. Je ne <Ex.le_or_la> connait pas si bien pour être honnête."
         Else
-            Player(Sad):: "We used to be in a relationship ... <Ex.name> never bothered telling <Ex.his_or_her> family about me then ..."
-            "I don't even know why I was being so honest about it. My admission made the conversation awkward real quick ..."
+            Player(Sad):: "Avant, nous étions en couple ... <Ex.name> ne t'a jamais parler de moi, j'imagine ta famille alors ..."
+            "Je ne sais même pas pourquoi j'ai été si honnête à ce sujet. Mon aveu a rendu la conversation très difficile après ..."
             Actor:attractiontoplayer -= Random(0, 40)
         Endif
     Endif

@@ -11,17 +11,17 @@ OTHER: Random(1, 100) < modelfame || Random(1, 100) < pornfame
     Actor:attractiontoplayer += 50
     Actor:rapportwithplayer += 50
     
-    "I was stopped by a fan and asked for a picture. <Actor.He_or_She> introduced <Actor.himself_or_herself> as <Actor.name>"
-    0:: "Take a photo with the fan"
-    1:: "Ignore and walk away quickly"
+    "J'ai été arrêté par un fan et me demande de prendre une photo. <Actor.Il_or_Elle> se nomme <Actor.name>"
+    0:: "Prendre une photo avec le fan"
+    1:: "L'ignorer et m'éloigner rapidement"
     
     If 0
-        "It's the fans that keep my career going after all so it's not too much to ask to take the occasional selfies with them."
-        0:: "Ask for the fan's number"
-        1:: "Say goodbye"
+        "Ce sont les fans qui font avancer ma carrière après tout, donc ce n'est pas trop demander de prendre des selfies occasionnels avec eux."
+        0:: "Demander le numéro de tel. du fan"
+        1:: "Dire au revoir"
         
         If 0
-            "The fan was absolutely star-struck that I asked for <Actor.his_or_her> number and of course gave it to me without hesitation."
+            "Le fan a été absolument frappé par le fait que je lui demande son numéro de tel. et bien sûr que <Actor.il_or_elle> me l'a donné sans hésitation."
             Actor.makePermanent()
             exchangeContact(Actor)
         Endif

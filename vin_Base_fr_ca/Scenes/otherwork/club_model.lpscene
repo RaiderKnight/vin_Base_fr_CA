@@ -6,13 +6,15 @@ OTHER: Random(0, 1000) < attractiveness
 
 
     SceneStart()
-    "I was in one of the fancier clubs in town where I notice a group of well-dressed guys having their own VIP table with bottle service and the finest alcohol in the house, their arms around girls that look like they could be models or B-movie stars. No doubt they are high-flying bankers, lawyers or management consultants trying to impress potential mates and feel superior to the rest by throwing their money around."
-    0:: "Join them"
-    1:: "Ignore"
+    "J'étais dans l'un des clubs les plus chics de la ville où j'ai remarqué un groupe de gars bien habillés ayant leur propre table VIP avec service de bouteilles et la meilleure alcool de la maison, leurs bras autour des filles qui semblent être des mannequins, actrices ou des stars de cinéma."
+    "Ce sont sans aucun doute des banquiers de haut niveau, des avocats ou des consultants en gestion qui essaient d'impressionner et se sentent supérieurs aux autres en jetant leur argent dans les airs."
+    0:: "Les rejoindre"
+    1:: "Ignorer"
     
     If 0
         If Random(0, 100) < attractiveness
-            "As soon as I approached the table, one of the <Player.girls_or_guys> seemed smitten with me and invited me to sit down. I spent the night hanging out with the rich and beautiful, getting a few numbers and a lot of expensive alcohol for free as a result."
+            "Dès que je me suis approché de la table, l'<Actor.une_or_un> des <Actor.filles_or_gars> semble avoir un kick sur moi et car <Actor.il_or_elle> m'invite à les rejoindre et à m'asseoir avec eux."
+            "J'ai passé la nuit à traîner avec ces riches et ces filles, réussi à obtenir quelques numéros et à boire beaucoup d'alcool coûteux gratuitement."
             intoxication += Random(0, 50)
             count = 0
             While count < 5
@@ -25,11 +27,11 @@ OTHER: Random(0, 1000) < attractiveness
 
             interpersonal += Random(0, 0.5)
         Else
-            "I tried to hang out with them, but none of them paid any attention to me - some even smirked at me. Eventually, I got the message and left, embarrassed. Maybe I didn't quite live up to their standards of attractiveness."
+            "J'ai essayé de passer du temps avec eux, mais aucun d'entre eux n'a prêté attention à moi - c'est à peine si quelqu'un me regardait. Finalement, j'ai reçu le message et je suis parti, un peu embarrassé. Peut-être que je n'ai pas tout à fait été à la hauteur de leurs critères d'attrait ou d'intelligence."
             mood -= Random(0, 30)
         Endif
     Else
-        "VIP table? Bottle service? Expensive champagne? All far too pretentious for my taste."
+        "Table VIP! Service de bouteilles hors prix! Champagne! Trop prétentieux à mon goût!"
     Endif
     
     SceneEnd()

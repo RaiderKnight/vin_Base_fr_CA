@@ -9,28 +9,28 @@ OTHER: Random(50, 100) < pornfame
     Actor2 = generatePersonTemporary()
     Actor.show()
     Actor2.show()
-    "By chance, I was approached by a couple. One of them is a huge fan of me as a pornstar ..."
-    Actor:: "My god, I can't believe I finally meet you my <Player.king_or_goddess> ... I have fantasized about this moment since the first time I saw you in a video ..."
-    "Wow, this <Actor.guy_or_girl> is a bit cringey ... almost creepy in <Actor.his_or_her> adoration of me ..."
-    "And <Actor.he_or_she> is saying all of this in front of <Actor2.his_or_her> <Actor2.boyfriend_or_girlfriend> too, who doesn't seem too bothered."
-    Actor:: "Honestly, I would give away all my money just to spend one night with you ..."
-    "Okay, this is going too far ... or is it?"
-    0:: "Just sign an autograph and leave"
-    1:: "Fuck <Actor.him_or_her>"
-    2:: "I'm more interested in <Actor.his_or_her> <Actor2.boyfriend_or_girlfriend> ..."
+    "Par hasard, je me fais approcher par un couple. L'un d'eux est un grand fan de moi en tant que star du porno ..."
+    Actor:: "Mon dieu, je ne peux pas croire que je vous rencontre enfin <Player.mon_or_ma> <Player.dieu_or_reine> du sexe ... J'ai fantasmé sur ce moment depuis la première fois que je vous ai vu dans une vidéo sur ..."
+    "Wow, cette personne est un peu licheuse ... presque effrayante, tellement <Actor.il_or_elle> est en adoration avec moi ..."
+    "Et <Actor.il_or_elle> dit tout cela devant <Actor2.son_or_sa> <Actor2.chum_or_blonde>, qui ne semble pas trop <Actor2.le_or_la> déranger."
+    Actor:: "Honnêtement, je donnerais tout mon argent juste pour passer une nuit avec toi ..."
+    "D'accord, ça va trop loin ... ou c'est ok?"
+    0:: "Signer simplement un autographe et partir"
+    1:: "L'inviter à baiser"
+    2:: "Je suis plus intéressé par <Actor.son_or_sa> <Actor2.chum_or_blonde> ..."
     
     If 0
-        Player:: "Sorry, I don't do escorts ..."
+        Player:: "Désolé, je n'offre pas de service d'escorte ..."
     Elseif 1
-        Player:: "Alright ... since you're such a big fan ..."
-        Actor:: "Oh my god ... I can't believe this is happening ..."
+        Player:: "Très bien ... puisque vous êtes un si grand fan ..."
+        Actor:: "Oh mon dieu ... je ne peux pas croire que cela arrive ..."
         money += 2000
         setBackground(home)
         Sex(Actor, Player)
     Else
-        Player:: "Don't care much for the money ... but wouldn't mind spending some time with your lovely <Actor2.boyfriend_or_girlfriend> here."
-        Player:: "You can watch of course ... I'm sure you enjoy watching, don't you?"
-        "The <Actor2.boyfriend_or_girlfriend> was happy to go along to fulfil the fan's fantasy ..."
+        Player:: "Peu importe l'argent ... mais ça ne me dérangerait pas de passer du temps avec votre adorable <Actor2.chum_or_blonde> ici."
+        Player:: "Vous pouvez regarder bien sûr ... Je suis sûr que vous aimez regarder, n'est-ce pas?"
+        "<Actor2.name> était <Actor2.heureux_or_heureuse> de m'accompagner dans le fantasme du fan ..."
         setBackground(home)
         Sex(Player, Actor2)        
     Endif

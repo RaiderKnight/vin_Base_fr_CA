@@ -21,12 +21,13 @@ OTHER: none
     Actor2.dress()
     addNpcRelationship(Spouses, Actor, Actor2)
 
-    "That was a long day at work. It's time to head home. My boss <Actor.name> was also heading out - <Actor.he_or_she> told me <Actor.he_or_she> was going out with <Actor.his_or_her> <Actor2.husband_or_wife> for dinner tonight and <Actor2.he_or_she> should already be waiting outside our building."
+    "C'était une longue journée de travail. Il est temps de rentrer à la maison. Mon boss <Actor.name> part également"
+    "<Actor.Il_or_Elle> m'a dit qu'<Actor.il_or_elle> sortait avec <Actor.sa_or_son> <Actor.femme_or_mari> pour le dîner de ce soir et <Actor2.elle_or_il> devrait déjà attendre devant notre immeuble. "
 
-    Actor(Happy):: "<Player.name>, let me introduce you to my <Actor2.husband_or_wife>, <Actor2.name>."
+    Actor(Happy):: "<Player.name>, permettez-moi de vous présenter <Actor.ma_or_mon> <Actor.femme_or_mari>, <Actor2.name>."
     Actor2.show(3)
-    Actor2(Happy):: "Nice to meet you, <Player.name>."
-    Player(Happy):: "Nice to meet you too."
+    Actor2(Happy):: "Ravi de vous rencontrer, <Player.name>."
+    Player(Happy):: "Ravi de vous rencontrer aussi."
 
     SceneEnd()
     timeout(1000, boss_spouse)
