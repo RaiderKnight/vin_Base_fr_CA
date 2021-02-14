@@ -7,16 +7,16 @@ OTHER: Random(80, 200) < interpersonal
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    "My <Actor.relationship> has a YouTube channel for vlogs. <Actor.He_or_She> is asking me to make a cameo on <Actor.his_or_her> latest video."
-    0:: "Yes"
-    1:: "No"
+    "<Actor.name> a une chaîne YouTube qui lui sert de vlog. <Actor.Il_or_Elle> me demande de faire une apparition sur sa prochaine vidéo."
+    0:: "J'accepte"
+    1:: "Je refuse"
     
     If 0
         Actor:rapportwithplauer += Random(0, 1)
-        "I agreed to appear on my <Actor.relationship>'s video. It was a fun experience."
+        "J'ai accepté d'apparaître sur la vidéo de ma <Actor.relationship>. C'était une expérience amusante."
         karma += 2.5
     Else
-        "I'd rather not get involved in this whole thing."
+        "Je ne préfère pas, je n'aime pas faire ce genre de vidéo..."
         Actor:rapportwithplayer -= Random(0, 0.5)
     Endif
     SceneEnd()

@@ -8,9 +8,9 @@ OTHER: none
         setBackground(home)
         SceneStart()
         OldPlayer = getSpecific(OldPlayer)
-        "I struggled hard to put on the women's clothes."
-        Player(Sad):: "I guess that has to do ..."
-        "Let's head to the hospital and hopefully figure out what's going on right now ..."
+        "J'ai du mal à mettre mes vêtements de femme, surtout les bas de nylon..."
+        Player(Sad):: "Je suppose que ça doit faire, j'ai l'air cute ..."
+        "Allons à l'hôpital et avec un peu de chance découvrir ce qui se passe et pourquoi je suis une femme du jour au lendemain ..."
         setBackground(street)
         Actor = generatePersonTemporary()
         While !Actor.isMale()
@@ -19,9 +19,9 @@ OTHER: none
         Actor.dress()
         Actor.show(2)
         Actor(Flirty):: "..."
-        "Is that guy checking me out and eye-banging me? Ew ... that's creepy ..."
-        "Although to be fair, I would probably check out <Player.name> myself as a guy." 
-        "Let's learn from the girls that rejected me in the past and not give this guy any attention whatsover. I have more important things to do right now."
+        "Est-ce que ce type me regarde en me pelotant des yeux? Ew ... come-on retiens-toi...."
+        "Bien que pour être honnête, c'est moi qui capote car en fait, il me voit comme en tant que femme et non en tant que gars. J'avoue que je suis sexy..." 
+        "Apprenons des filles qui m'ont rejeté dans le passé et n'accordons aucune attention à ce type. J'ai des choses plus importantes à faire en ce moment que de m'attarder à un douchebag..."
         Actor.hide()
         "Enfin, je suis arrivé à l'hôpital. J'espère qu'un médecin pourra m'aider."
         setBackground(hospital)
@@ -31,60 +31,61 @@ OTHER: none
         Actor.dressExcept(Outerwear)
         Actor.dress(Doctor-Coat_M)
         Actor.show(2)
-        Actor(Sad):: "All your organs are fully female and healthy. No doctor is capable of performing such a perfect gender reassignment surgery ... You're a woman and have always been a woman and there's no evidence to suggest you were ever a man as you claimed."
-        Actor(Sad):: "We would suggest you seek help from psychiatrist for your gender dysphoria."
+        Actor(Sad):: "Tous vos organes sont entièrement féminins et sains. Aucun médecin n'est capable de pratiquer une opération de changement de sexe aussi parfaite ... Vous êtes une femme et avez toujours été une femme et il n'y a aucune preuve pour suggérer que vous avez été un homme comme vous le prétendez."
+        Actor(Sad):: "Nous vous suggérons de demander l'aide à un psychiatre pour vérification de votre santé mentale."
         Actor.delete()
-        "And just like that, the doctor left, basically just politely calling me crazy and wasting his time ... I suspect he was only so patient and polite to me because I was now an attractive woman. If it had been <OldPlayer.name> 'Average Joe' <OldPlayer.name_last> in front of him, he would have told me to fuck off."
-        "Dejected and without any plans left, I slowly walked back home."
+        "Et juste comme ça, le médecin est parti, me traitant simplement poliment de fou et montrant que je lui ai fait perdre son temps ..."
+        "Je suppose qu'il était patient et poli avec moi parce que j'étais maintenant une femme séduisante. Si cela avait été <OldPlayer.name > 'le gars ben ordinaire' devant lui, il m'aurait dit de me faire foutre et surement traiter de pervers...."
+        "Déprimé et sans aucune alternatives, je suis rentré lentement chez moi."
         setBackground(street)
-        "Then it hit me: what's so bad about being a woman anyway?"
-        "I mean everyone seems to be much nicer to me. If it was <OldPlayer.name> screaming in his room this morning, people would just tell him to shut up. If it was <OldPlayer.name> walking down the street, no guy, or girl for that matter, would look at him twice ..."
-        "Wasn't I just wondering what life would be like a woman yesterday?"
-        "Didn't I come to this city to start a new life, a fresh start? This life, as <Player.name>, couldn't possibly be any 'fresher'."
-        "Maybe I will be more happy as a woman, as <Player.name>."
+        "À bien y penser: qu'est-ce qu'il y a de si mauvais d'être une femme de toute façon?"
+        "Je veux dire que tout le monde semble être beaucoup plus gentil avec moi. Si <OldPlayer.name> criait dans sa chambre ce matin, les gens lui diraient simplement de se fermer la gueule. Si c'était <OldPlayer.name> qui marcherait nue dans la rue, les gars et les fille lui diraient d'aller se cacher ou appeleraient la police ..."
+        "C'est pas ce que je me demandais il y a quelques jours, ce que serait la vie dans le corps d'une femme?"
+        "Ne suis-je pas venu dans cette ville pour commencer une nouvelle vie, un nouveau départ? Cette vie, en tant que <Player.name>, ne pouvait pas plus tomber au bon moment!"
+        "Peut-être que je serai plus heureuse en tant que femme, en tant que <Player.name>."
         Actor = getSpecific(Dating)
         If Actor.isValid()
             setBackgroundCustom(livingroom)
             Actor.makeInterested(Player)
             Actor.dress()
             Actor.show(2)
-            Actor(Happy):: "<Player.name>! You're back. You haven't responded to my texts all day. Is everything okay?"
-            "It's my <Actor.boyfriend_or_girlfriend> <Actor.name> ..."
-            "So even my own <Actor.boyfriend_or_girlfriend> has forgotten about me ... or should I say, forgotten about <OldPlayer.name>."
-            "<Actor.He_or_She>'s <Player.name>'s <Actor.boyfriend_or_girlfriend> now ... "
-            "Which is interesting ... I didn't even know <Actor.he_or_she> was into <Player.guys_or_girls>. I'm not sure I should feel jealous of <Player.name> ..."
-            "But if I'm truly <Player.name> now, I can't be jealous of myself, can I?"
-            Player(Sad):: "Sorry babe, I just had a long day and just want to get some early sleep. We'll hang out tomorrow, okay?" 
+            Actor(Happy):: "<Player.name>! Tu es de retour. Tu n'a pas répondu à mes SMS de la journée. Tout va bien?"
+            "C'est <Player.ma_or_mon> <Player.blonde_or_chum> <Actor.name>  ..."
+            "Même <Player.ma_or_mon> propre <Player.blonde_or_chum> m'a oublié ... ou devrais-je dire, oublié <OldPlayer.name>. Des fois, je me demande si je ne suis pas dans un rêve..."
+            "<Actor.name> est maintenant <Player.ma_or_mon> <Player.blonde_or_chum> ... "
+            "Fait intéressant ... Je ne savais même pas que je trippait sur les deux sexes. Juste penser à une queue me fait mouiller, même chose quand je pense à une fille..."
+            "Mais si je suis vraiment devenue Bi maintenant, ça veut dire que je peux et peux me faire baiser par n'importe qui, humm, n'est-ce pas?"
+            Player(Sad):: "Désolé bébé, j'ai passé une longue journée et je veux juste dormir maintenant. On va sortir demain, d'accord?" 
             Actor.hide()
         Endif
         setBackground(home)
-        "Eventually, I'm back in my room ... I didn't even bother with dinner. Let's just head to bed."
+        "Finalement, je suis de retour dans ma chambre ... Je n'ai même pas pris la peine de dîner. Je me suis tout de suite couché."
         Player.strip()
         If !Player.isTrans()
-            "Staring at my new naked woman's body, a thought comes to my mind ..."
-            0:: "Explore my new body"
-            1:: "Just get some sleep"
+            "En regardant mon nouveau corps nue de femme, une pensée me vient à l'esprit ..."
+            0:: "Explorer mon corps"
+            1:: "Juste dormir"
             
             If 0
-                "I suppose it's my body now, I might as well get used to it."
+                "Je suppose que c'est mon corps maintenant, autant m'y habituer et commencer à jouer avec, j'ai tellement goût de me masturber!"
                 Filter(Solo)
                 Sex(Player)
                 perversion += Random(0, 1)
                 Player.show(0)
             Endif
         Endif
-        "Exhausted, I drifted off to sleep ..."
+        "Trop épuisé, je me suis endormi ..."
         Player.closeEyes(true)
         "Zzzzzzzzzzzzzzz ..."
-        "The next morning ..."
+        "Le lendemain matin ..."
         Player.closeEyes(false)
-        "It's a new day and ... I'm still a woman."
-        "I think I'm starting to accept that whatever magic was performed on me and everyone I know, I'm stuck in this female body and have no choice to make the most of it."
-        "Maybe I can make a better life as <Player.name> than <OldPlayer.name> ..."
-        "(From here, you can do whatever you want with your female character. Click on markers around the map to select buildings and choose from a list of actions to interact with them and guide <Player.name> through life as a woman)"
-        "(As a suggestion, maybe start by getting a job. LifePlay has many career paths but the office job (office chair icon) has the most content.)"
-        "(Conditional and random events will happen as you do things as part of your life, some will lead to sex.)"
-        "(Pay attention to the tutorial tooltips top-left of your screen which will explain the various mechanics of the game)"
+        "C'est un nouveau jour et ... je suis toujours une femme."
+        "Je pense que je commence à accepter le sort qui a été jeté sur moi et sur tous ceux que je connais depuis l'événement, je suis coincée dans ce corps féminin et je n'ai pas le choix d'en tirer le meilleur parti."
+        "Peut-être que ma vie en tant que <Player.name> sera meilleure que quand j'étais <OldPlayer.name> ..."
+        "(À partir de là, vous pouvez faire ce que vous voulez avec votre personnage féminin. Cliquez sur les marqueurs autour de la carte pour sélectionner des bâtiments et choisissez parmi une liste d'actions pour interagir avec eux et guider <Player.name> dans sa nouvelle vie de femme)"
+        "(À titre de suggestion, commencez peut-être par trouver un emploi. LifePlay a de nombreux cheminements de carrière, mais l'emploi de bureau (icône de chaise de bureau) a le plus de contenu.)"
+        "(Des événements conditionnels et aléatoires se produiront lorsque vous faites des choses dans le cadre de votre vie, certains mèneront au sexe.)"
+        "(Faites attention aux infobulles du tutoriel en haut à gauche de votre écran qui vous expliqueront les différents mécanismes du jeu)"
         SceneEnd()
         ResetTutorials()
     Endif   

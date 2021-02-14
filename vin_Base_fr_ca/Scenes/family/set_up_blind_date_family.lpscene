@@ -10,23 +10,23 @@ OTHER: none
     Actor2.dress()
     Actor2.show(3)
     
-    "My <Actor.relationship> <Actor.name> is single. I reckon my friend <Actor2.name> would be a good match for <Actor.him_or_her>."
-    0:: "Set up a blind date"
-    1:: "Nevermind"
+    "<Actor.name> est célibataire. Je pense que mon ami <Actor2.name> serait un bon match pour <Actor.lui_or_elle>."
+    0:: "Organiser un blind date"
+    1:: "Pas de mes affaires"
     
     If 0
         If Random(0, 100) < interpersonal
-            "I managed to talk them into going on a blind date with each other, which apparently went quite well. Who knows? This could be the start of something special."
+            "J'ai réussi à les convaincre d'aller à un blind date ensemble, ce qui s'est apparemment assez bien passé. Qui sait? Cela pourrait être le début de quelque chose de spécial."
             Actor:rapportwithplayer += Random(0, 5)
             Actor2:rapportwithplayer += Random(0, 5)
             addNpcRelationship(Dating, Actor, Actor2)
             karma += 2.5
         Else    
-            "Despite my best efforts, I couldn't quite get them to agree to a blind date."
+            "Malgré tous mes efforts, je n'ai pas pu les convaincre d'accepter un blind date."
             mood -= 5
         Endif
     Else
-        "I'm not too keen on matchmaking and getting involved with other people's personal lives."
+        "Je n'aime pas trop les blind dates et m'impliquer dans la vie personnelle des autres."
     Endif
     
     SceneEnd()

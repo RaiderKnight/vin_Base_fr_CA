@@ -7,20 +7,20 @@ OTHER: isAtHome() && Random(0, 200) < intelligence
     SceneStart()
     Actor.dress()
     Actor.show(2)
-    Actor(Excited):: "What do you think about the release of the latest ..."
-    0:: "Play it safe"
-    1:: "Show off my technology knowledge"
+    Actor(Excited):: "Que pensez-vous de la sortie du dernier ..."
+    0:: "Répondre prudemment"
+    1:: "Montrer mes connaissances technologiques"
     
     If 0
-        Player(Happy):: "I'm very excited about it ..."
-        "My knowledge of technology leaves a lot to be desired and I know it. No point trying to sound smart here ..."
+        Player(Happy):: "Je suis très excité à ce sujet  ..."
+        "Ma connaissance de la technologie laisse beaucoup à désirer et je le sais. Inutile d'essayer de paraître intelligent ici ..."
     Else
-        "I tried my best to show off my knowledge of technology to engage in a sophisticated discussion with my <Actor.relationship>."
+        "J'ai fait de mon mieux pour montrer ma connaissance de la technologie pour engager une discussion sophistiquée avec <Actor.name>."
         If Random(0, 100) < intelligence
-            Actor(Happy):: "I'm glad we share the same passion for technology."
+            Actor(Happy):: "Je suis content que nous partagions la même passion pour la technologie."
             Actor:rapportwithplayer += Random(0, 2)
         Else
-            "Unfortunately, my knowledge of technology really wasn't deep enough to hold an intelligent conversation about it. From <Actor.his_or_her> facial expression, I could tell that <Actor.he_or_she> saw right through me as a pretentious tech illiterate."
+            "Malheureusement, ma connaissance de la technologie n'était vraiment pas assez profonde pour tenir une conversation intelligente à ce sujet. D'après l'expression du visage de <Actor.name>, je pouvais lire qu'<Actor.il_or_elle> me voyait comme un prétentieux analphabète de la technologie."
             Actor:rapportwithplayer -= Random(0, 1)
         Endif
     Endif

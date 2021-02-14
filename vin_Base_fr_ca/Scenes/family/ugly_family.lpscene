@@ -8,21 +8,21 @@ OTHER: attractiveness > 70
     secondScreenIfHidden(Dating)
     Dating.dress()
     Dating.show(2)
-    "My <Dating.relationship> isn't the most attractive person in the world and is also rather clueless on fashion. Worse, <Dating.he_or_she> seems to make no attempts to dress better."
-    0:: "Encourage my <Dating.relationship> to be better-dressed"
-    1:: "Do nothing"
+    "<Player.Ma_or_Mon> <Player.copine_or_copain> n'est pas la personne la plus attirante du monde et <Dating.il_or_elle> est aussi assez ignoran<Dating.t_or_te> de la mode. Pire encore, <Dating.il_or_elle> ne semble pas tenter de mieux s'habiller."
+    0:: "Encourager <Dating.name> à s'habiller mieux"
+    1:: "C'est son droit"
 
     If 0
         If Random(0, 150) < interpersonal + attractiveness 
-            "Motivated by my encouragements, my <Dating.relationship> became a bit more fashionable and at least tries to look good in public."
+            "Motivé par mes encouragements, <Player.ma_or_mon> <Player.copine_or_copain> est devenue un peu plus à la mode et essaie au moins de bien paraître en public."
             Dating:attractiveness += Random(0, 2)
             karma += 2.5
         Else
-            "Unfortunately, despite my encouragements, my <Dating.relationship> still refused to wear decent clothes. <Dating.He_or_She> even accused me of being shallow."
+            "Malheureusement, malgré mes encouragements, <Player.ma_or_mon> <Player.copine_or_copain> refuse toujours de porter des vêtements décents. <Dating.Il_or_Elle> m'a même accusé d'être superficielle."
             Dating:rapportwithplayer -= Random(0, 2)
         Endif
     Else
-        "It doesn't matter. That's just the way my <Dating.relationship> is."
+        "Cela n'a pas d'importance. C'est comme ça que je l'aime. Aussi, moins de chance de me <Dating.le_or_la> faire voler..."
         Dating:rapportwithplayer += Random(0, 1)
     Endif
 

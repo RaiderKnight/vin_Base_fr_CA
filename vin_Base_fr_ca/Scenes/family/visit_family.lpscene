@@ -5,22 +5,22 @@ WHO: Actor = getRelative(); If !Actor.livesWithPlayer() && Random(0, 100) < Acto
 OTHER: isAtHome() && Random(0, 1000) < interpersonal
 
     SceneStart()
-    "It's been a while since I last saw my <Actor.relationship>. I wonder how <Actor.he_or_she> is doing. Maybe I should find some time to pay <Actor.him_or_her> a visit?"
-    0:: "Yes"
-    1:: "No"
+    "Cela fait un moment que je n'ai pas vu <Actor.name>. Je me demande comment <Actor.il_or_elle> va? Peut-être que je devrais trouver un peu de temps pour rendre lui visite?"
+    0:: "Oui"
+    1:: "Non"
     
     If 0
         Actor.dress()
         Actor.show(2)
-        Player(Happy):: "How are you doing, my dear <Actor.relationship>? Just dropping by to visit. It's been a while."
-        Actor(Happy):: "Good to see you, <Player.name>. Come right in!"
+        Player(Happy):: "Hey <Actor.name>! Comment vas-tu? Je passais devant chez toi, je me suis dit, pourquoi pas lui rendre une petite visite?"
+        Actor(Happy):: "Ravi de te voir, <Player.name>. Entre!"
         Actor:rapportwithplayer += Random(0, 3)
         interpersonal += Random(0, 0.5)
         mood += Random(0, 5)
         energy -= Random(0, 20)
         karma += 2.5
     Else
-        "Maybe another day. I'm far too busy right now."
+        "Peut-être un autre jour. Je suis bien trop occupé en ce moment."
         Actor:rapportwithplayer -= Random(0, 1)
     Endif
     

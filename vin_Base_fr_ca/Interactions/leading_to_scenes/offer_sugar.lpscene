@@ -5,78 +5,79 @@ WHO: none
 OTHER: none
 
     SceneStart()
-    "What kind of sugar dating arrangement with <Actor.name> do I have in mind?"
-    0:: "<Actor.name> as the <Actor.sugardaddy_or_sugarmomma>"
-    1:: "Me as the <Player.sugardaddy_or_sugarmomma>"
+    "Qui va faire le <Player.sugardaddy_or_sugarmommy> entre nous deux?"
+    0:: "<Actor.name> va être le <Actor.sugardaddy_or_sugarmommy>"
+    1:: "Je vais être le <Player.sugardaddy_or_sugarmommy>"
     
     If 0
         SugarParent = SugarParent.getGlobal()
         If SugarParent > 0
-            "I should keep in mind that I already have a sugar dating arrangement going on. If <Actor.name> ends up as my <Actor.sugardaddy_or_sugarmomma>, it's almost certain that <Actor.he_or_she> will want our arrangement to be exclusive and demand I get rid of the other arrangement. I can't have the cake and eat it too!"
+            "Je dois garder à l'esprit que j'ai déjà un arrangement avec quelqu'un. Si <Actor.name> devient <Actor.mon_or_ma> <Actor.sugardaddy_or_sugarmommy>, il est presque certain qu'<Actor.il_or_elle> voudra que notre arrangement soit exclusif et je ne peux pas briser l'autre arrangement maintenant. Je ne peux pas avoir le pain et le beurre en même temps!"
         Endif
         If Actor.isInterestedIn(Player) && Actor:intelligence + Actor:interpersonal + Actor:perversion + attractiveness - Actor:attractiveness + Actor:age - age > 150
-            Actor(Flirty):: "Well, I'm no stranger to being a <Actor.sugardaddy_or_sugarmomma> and I like how direct you are to approach me."
-            Actor(Flirty):: "How about a first date to sort out our arrangement?"
-            0:: "Yes"
-            1:: "No"
+            Actor(Flirty):: "Eh bien, je ne suis pas contre de devenir <Actor.ton_or_ta> <Actor.sugardaddy_or_sugarmommy> et j'aime à quel point tu es direct à me le demander."
+            Actor(Flirty):: "Que diriez-vous d'une première rencontre question de régler notre arrangement?"
+            0:: "Oui"
+            1:: "Non"
             
             If 0
-                "Why not? I'm sure <Actor.he_or_she> will be extra generous on the first date."
+                "Pourquoi pas? Je suis sûr que <Actor.name> sera très génér<Actor.eux_or_euse> à notre première rencontre."
                 Loc = findNearbyBuilding(restaurant)
                 moveTo(Loc)
-                "<Actor.name> took me to a really fancy restaurant and wined and dined me like money was no object. Afterwards, <Actor.he_or_she> suggested that we go to a suite <Actor.he_or_she> had booked at a 5-star hotel nearby."
-                0:: "Yes"
-                1:: "No"
+                "<Actor.name> m'a emmené dans un restaurant très chic et m'a payé un verre et un dîner comme si l'argent n'était pas un problème. Ensuite, <Actor.il_or_elle> a suggéré que nous allions dans une suite qu'<Actor.il_or_elle> avait réservé dans un hôtel 5 étoiles à proximité."
+                0:: "Oui"
+                1:: "Non"
                 
                 If 0
                     Loc = findNearbyBuilding(hotel)
                     moveTo(Loc)
                     setBackground(home)
                     Actor.makePermanent()
-                    "Wow, this is a nice hotel suite! Must have cost a fortune. And I know very well what <Actor.name> is expecting from me for <Actor.his_or_her> generousity."
+                    "Wow, c'est une belle suite d'hôtel! Cela a dû coûter une fortune. Et je sais très bien ce que <Actor.name> attend de moi pour sa générosité."
                     Sex(Actor, Player)
                     perversion += Random(0, 0.5)
                     Actor.show(2)
-                    "The sex wasn't too bad. We spent the night together. The morning after, <Actor.name> paid for breakfast, and before heading off to work, told me that <Actor.he_or_she> will call me soon and left me a generous envelope. Needless to say, <Actor.name> is now my <Actor.sugardaddy_or_sugarmommy>."
+                    "Le sexe n'était pas trop mal. Nous avons passé la nuit ensemble. Le lendemain matin, <Actor.name> a payé le petit-déjeuner, et avant de partir travailler, <Actor.il_or_elle> m'a dit qu'<Actor.il_or_elle> m'appellerait bientôt et me laisserait une enveloppe avec un peu d'argent. Inutile de vous dire qu'<Actor.il_or_elle> est maintenant <Actor.mon_or_ma> <Actor.sugardaddy_or_sugarmommy>."
                     money += Random(100, 500)
                     SugarParent = Actor.getID()
                     SugarParent.setGlobal(SugarParent)
                 Else
-                    "I turned down <Actor.name>'s offer to go back to the hotel. <Actor.He_or_She> was obviously disappointed and needless to say, never got in contact with me again."
+                    "J'ai refusé l'offre de <Actor.name> d'aller à l'hôtel. <Actor.name> était visiblement déçu et il va sans dire qu'<Actor.il_or_elle> ne m'a plus jamais contacté."
                 Endif
             Else
-                "Ew, on second thought, even for money, I can't sleep with someone that old and ugly."
+                "Ew, après réflexion, même pour de l'argent, je ne peux pas coucher avec quelqu'un d'aussi vieux et lai<Actor.d_or_de>."
             Endif            
         Else
-            Actor(Sarcastic):: "Sorry, but you must have mistaken me for some millionaire with cash to burn. I must say I'm a bit flattered though." 
+            Actor(Sarcastic):: "Désolé, mais vous avez dû me prendre pour un millionnaire avec de l'argent à brûler. Je dois dire que je suis un peu flatté. Mais non!" 
         Endif
     Else
         SugarBabe = SugarBabe.getGlobal()
         If SugarBabe > 0
-            "I should keep in mind that I already have a sugar dating arrangement going on. If <Actor.name> ends up as my <Actor.sugardick_or_sugarbabe>, I'll probably need to get rid of the other arrangement. Two sugarbabes at the same time are just way out of my budget."
+            "Je dois garder à l'esprit que j'ai déjà un arrangement avec quelqu'un côté sugar dating. Si <Actor.name> devient <Actor.mon_or_ma> <Actor.sugarboy_or_sugargirl>, je devrai probablement me débarrasser de l'autre arrangement. Deux en même temps, c'est tout simplement hors de mon budget."
         Endif
         If Actor.isInterestedIn(Player) && Actor:perversion - Actor:intelligence + Actor:attractiontoplayer > 50
-            Actor(Flirty):: "Well, I've been broke for ... like ... forever! I like how direct you are to approach me."
-            Player(Flirty):: "How about a first date to sort out our arrangement?"
-            "I'll be sure to be extra generous on the first date."
+            Actor(Flirty):: "Eh bien, je suis fauché alors ... Ok pourquoi pas! J'aime à quel point tu es direct avec moi."
+            Player(Flirty):: "Que diriez-vous d'un premier rendez-vous pour régler notre arrangement?"
+            "Je vais m'arranger pour être très génér<Player.eux_or_euse> lors du premier rendez-vous."
             Loc = findNearbyBuilding(restaurant)
             moveTo(Loc)
-            "I took <Actor.name> to a really fancy restaurant and wined and dined <Actor.him_or_her> like money was no object. Afterwards, I suggested that we head to a suite I had booked at a 5-star hotel nearby."
+            "J'ai emmené <Actor.name> dans un restaurant vraiment chic et j'ai tout payé pour <Actor.name> comme si l'argent poussait dans les arbres. Ensuite, je lui ai suggéré que nous nous allions dans une suite que j'avais réservée dans un hôtel 5 étoiles à proximité."
 
             Loc = findNearbyBuilding(hotel)
             moveTo(Loc)         
             setBackground(home)
             Actor.makePermanent()
-            "This hotel suite cost me a fortune. And I hope that <Actor.name> knows what I'm expecting from <Actor.him_or_her> for my generousity."
+            "Cette suite d'hôtel m'a coûté une fortune. Et j'espère que <Actor.name> sait ce que j'attends de <Actor.lui_or_elle> en échange de ma générosité."
             Sex(Player, Actor)
             perversion += Random(0, 0.5)
             Actor.show(2)
-            "We spent the night together. The morning after, I paid for breakfast, and before heading off to work, I told <Actor.name> that I will call <Actor.him_or_her> soon and left <Actor.him_or_her> a generous envelope. Needless to say, <Actor.name> is now my sugarbabe."
+            "Nous avons passé la nuit ensemble. Le lendemain matin, j'ai payé le petit-déjeuner et avant de partir travailler, j'ai dit à <Actor.name> que je l'appellerai bientôt et que je laisserai une enveloppe généreuse sur la table. Inutile de dire que <Actor.name> est maintenant <Actor.mon_or_ma> <Actor.sugarboy_or_sugargirl>."
             money -= Random(100, 500)
             SugarBabe = Actor.getID()
             SugarBabe.setGlobal(SugarBabe)
         Else
-            Actor(Angry):: "I'm not that cheap and love cannot be bought. Pretty sure there are websites you can go to for this kind of things - you don't need to approach random people so shamelessly showing off your money."
+            Actor(Angry):: "Je ne suis pas si pauvre que cela et l'amour ne s'achète pas. À peu près sûr, il existe des sites Web sur lesquels vous pouvez vous rendre pour ce genre de choses - vous n'avez pas besoin d'approcher des jeunes au hasard pour les fourrer en échange de cadeaux."
+            Player(Happy)::"Bon, bon, regarde la chochotte, c'était seulement une question, pas obligé dans faire un cas!"
             Actor:rapportwithplayer -= Random(0, 5)
         Endif
     Endif

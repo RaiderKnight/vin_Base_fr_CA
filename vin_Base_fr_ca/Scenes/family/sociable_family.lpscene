@@ -8,20 +8,20 @@ OTHER: interpersonal < Random(0, 60)
     secondScreenIfHidden(Dating)
     Dating.dress()
     Dating.show(2)
-    "My <Dating.relationship> is far better-spoken and more outgoing than me and is rather comfortable in social situations. I sometimes feel like the socially awkward one in the family."
-    0:: "Ask my <Dating.relationship> for help"
-    1:: "Do nothing"
+    "<Dating.name> a un beau parlé et est plus extravertie que moi et est plutôt à l'aise dans les situations sociales. Je me sens parfois comme la personne la plus socialement maladroite dans la famille."
+    0:: "Lui demander de l'aide"
+    1:: "On s'en fou, je suis comme ça!"
 
     If 0
         If Random(0, 50) < Dating:rapportwithplayer
-            "My <Dating.relationship> agreed to help me become more confident socially. <Dating.He_or_She> took me with <Dating.him_or_her> to many social events and taught me many party tricks."
+            "<Dating.name> a accepté de m'aider à devenir plus confiant socialement. <Dating.Il_or_Elle> m'a emmené avec <Dating.lui_or_elle> à de nombreux événements sociaux et m'a appris de nombreuses astuces pour discuter de tout et de rien."
             interpersonal += Random(0, 1)
             Dating:rapportwithplayer += Random(0, 2)
         Else
-            "Although my <Dating.relationship> promised to help me, <Dating.he_or_she> ended up being too busy to really spend time as my social mentor."
+            "Bien que <Dating.name> ait promis de m'aider, <Dating.il_or_elle> a fini par être trop occupée pour vraiment passer du temps en tant que mentor social."
         Endif
     Else
-        "It doesn't matter. I'm proud of who I am and my family should be too."
+        "Cela n'a pas d'importance. Je suis fier de qui je suis et ma famille devrait l'être aussi."
         Dating:rapportwithplayer -= Random(0, 1)
     Endif
 
