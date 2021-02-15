@@ -10,22 +10,22 @@ OTHER: jobperformance > 50
     Colleague.dress()
     Colleague.show(2)
 
-    "It's no secret that <Colleague.name> is a lazy ass. <Colleague.He_or_She> is always the last one to arrive at the office and the first to leave, and spends whole days browsing the web."
-    0:: "Just let <Colleague.him_or_her> slack off"
-    1:: "Convince <Colleague.him_or_her> to change <Colleague.his_or_her> ways"
-    2:: "Complain to my boss"
-    3:: "Blackmail <Colleague.him_or_her> for sex"
+    "Ce n'est un secret, tout le monde le sait que <Colleague.name> est ultra lâche. <Colleague.Il_or_Elle> est toujours le dernier à arriver au bureau et le premier à partir, et passe ces journées entières à naviguer sur le Web."
+    0:: "Le laisser tranquille"
+    1:: "Convaincre <Colleague.name> de travailler"
+    2:: "Me plaindre au boss"
+    3:: "Lui faire du chantage avec du sexe"
 
     If 0
-        "It's none of my business. I'll just leave <Colleague.him_or_her> be."
+        "Ce ne sont pas mes affaires. Je vais simplement laisser <Colleague.name> se pogner le cul!"
     Elseif 1
-        "I tried to convince <Colleague.name> to be more responsible and stop taking the mickey at work everyday."
+        "J'ai essayé de convaincre <Colleague.name> d'être plus responsable et d'arrêter de passer ces journées entières à naviguer sur le Web!"
         If Colleague:rapportwithplayer + interpersonal > Random(0, 150)
-            Colleague(Happy):: "I guess you're right. I will lose my job sooner or later if I continue on like this."
+            Colleague(Happy):: "Je suppose que vous avez raison. Je perdrai mon travail tôt ou tard si je continue comme ça!"
             Colleague:rapportwithplayer += Random(0, 2)
             Colleague:intelligence => 51
         Else
-            Colleague(Angry):: "Who told you I was slacking off? Frankly, I work harder than anyone else here!"
+            Colleague(Angry):: "Qui vous a dit que je me pognais le cul? Franchement, je travaille plus que quiconque ici!"
             Colleague:rapportwithplayer -= Random(0, 2)
         Endif
     Elseif 2
@@ -34,29 +34,30 @@ OTHER: jobperformance > 50
         Boss = getSpecific(Boss)
         Boss.dress()
         Boss.show(2)
-        Boss(Happy):: "Thank you for telling me about this, <Player.name>. I will talk to the other staff and deal with <Colleague.name> accordingly."
+        Boss(Happy):: "Merci de m'en avoir parlé, <Player.name>. Je vais parler aux autres membres du personnel et traiter avec <Colleague.name> en conséquence."
         Boss.hide()
         If Colleague:intelligence - Boss:rapportwithplayer < Random(0, 50) || Boss.isDating()
-            "A few days later, I received an e-mail announcing that <Colleague.name> had been let go by the company. Was it too harsh or did <Colleague.he_or_she> deserve it?"
+            "Quelques jours plus tard, j'ai reçu un e-mail annonçant que <Colleague.name> avait été licencié par l'entreprise. Était-ce trop dur ou <Colleague.name> le méritait?"
             Colleague:rapportwithplayer -= Random(0, 50)
             Colleague.removeColleague()
         Else
-            "<Colleague.name> was issued a warning by the boss for <Colleague.his_or_her> behaviour. I hope that will be enough for <Colleague.him_or_her> to get off <Colleague.his_or_her> lazy ass."
+            "<Colleague.name> a reçu un avertissement du patron concernant son comportement de lâche. J'espère que ce sera suffisant pour que <Colleague.name> commence à travailler pour de vrai!"
             Colleague:rapportwithplayer -= Random(0, 10)
             If Random(0, 100) < 50
                 Colleague:intelligence => 51
             Endif
         Endif
     Else
-        "I threatened to tell the boss about <Colleague.name>'s lazy attitude unless <Colleague.he_or_she> sleeps with me."
+        "J'ai menacé de le stooler au patron par son attitude paresseuse mais je lui ai dit que je ne le ferai pas si <Colleague.il_or_elle> couche avec moi."
         Colleague:rapportwithplayer -= 10
         If Random(0, 100) < Colleague:perversion
-            Colleague:: "Okay ..."
+            Colleague:: "Ok, pas vraiment le choix ..."
             Sex(Player, Colleague)
             Colleague:perversion += 1
         Else
-            Colleague:: "Now that you've made that threat, I have one of my own: You either keep your mouth shut about my slacking off, or I'll tell HR about you sexually harrassing me ... Let them judge whether sexual harrassment is a more serious offence than being simply lazy ..."
-            "Damn ... <Colleague.he_or_she> is cleverer than I thought."
+            Colleague:: "Maintenant que vous m'avez fait cette menace, j'en ai une moi aussi: vous fermez votre grande bouche sur mon pognage de cul, ou je vais dire aux RH que vous me harcelez sexuellement ... Tu les laisseras juger si le harcèlement sexuel est plus grave que d'être simplement paresseux ..."
+            Colleague:: "Je te laisse une chance..."
+            "Merde ... <Collègue.il_or_elle> est plus vite que je ne le pensais."
         Endif
     Endif
 

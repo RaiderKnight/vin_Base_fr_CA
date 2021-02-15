@@ -12,35 +12,35 @@ OTHER: Random(0, 100) < 0.1*interpersonal
     Colleague1.show(2)
     Colleague2.show(3)
 
-    "Two of my colleagues, <Colleague1.name> and <Colleague2.name>, recently had a major argument over a project. As a result, they stopped talking and are acting openly hostile towards each other in the office."
-    0:: "Try to mediate via talking"
-    1:: "Try to mediate through sex"
-    2:: "Maybe not"
+    "Deux de mes collègues, <Colleague1.name> et <Colleague2.name>, ont récemment eu une dispute majeure sur un projet. En conséquence, ils ont cessé de ce parler et se montrent ouvertement hostiles l'un envers l'autre au bureau."
+    0 :: "Essayer de régler la dispute en parlant"
+    1 :: "Essayer de régler la dispute par le sexe"
+    2:: "Qu'ils s'arrangent"
 
     If 0
-        "I decided to talk to both of them and be the middle <Player.man_or_woman> to resolve the conflict."
+        "J'ai décidé de leur parler et d'être la personne intermédiaire pour résoudre leur conflit."
         If Random(0, 200) < interpersonal + Colleague1:rapportwithplayer + Colleague2:rapportwithplayer 
-            "I managed to talk them into resolving the conflict and return to talking terms. News of my successful effort greatly pleased the boss."
+            "J'ai réussi à les convaincres de résoudre le conflit et de revenir aux termes de discussion. La nouvelle de mes efforts fructueux a grandement plu au patron."
             Colleague1:rapportwithplayer += Random(0, 3)
             Colleague2:rapportwithplayer += Random(0, 3)
             jobperformance += Random(0, 2)
         Else
-            "My mediation effort did not go well at all ... Not only do they still hate each other, my relationship with each of them also suffered."
+            "Mon effort de médiation ne s'est pas du tout bien passé ... Non seulement ils se détestent encore plus, mais ma relation avec chacun d'eux a également souffert."
             Colleague1:rapportwithplayer -= Random(0, 2)
             Colleague2:rapportwithplayer -= Random(0, 2)
         Endif
     Elseif 1
         If Colleague1:perversion > 50 && Colleague2:perversion > 50
-            "They may have their differences, but I know they share the same passion for sex. I managed to convince them to make things up with a threesome"
+            "Ils ont peut-être leurs différences, mais je sais qu'ils partagent la même passion pour le sexe. J'ai réussi à les convaincres de se réconcilier avec un plan à trois"
             Colleague1:rapportwithplayer += Random(0, 3)
             Colleague2:rapportwithplayer += Random(0, 3)
             jobperformance += Random(0, 2)
             Sex(Player, Colleague1, Colleague2)
         Else    
-            "Unfortunately, I couldn't get both of them to agree to a threesome."
+            "Malheureusement, je n'ai pas pu les convaincres tous les deux d'accepter un plan à trois!"
         Endif
     Else
-        "I decided not to get involved. It's a problem to be resolved between the two of them."
+        "J'ai décidé de ne pas m'impliquer. C'est un problème à résoudre entre eux!"
     Endif
 
     SceneEnd()
