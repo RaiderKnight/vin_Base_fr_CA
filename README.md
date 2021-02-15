@@ -16,8 +16,7 @@ This is a french translation of the vin_Base mod, currently under construction<b
 <p>Version française canadienne donc, accent québécois principalement, avec quelques expressions de diverses régions françaises du Canada.</p>
 <p>Cette version, contient plus de texte que la version originale et beaucoup de reconstruction de phrase ont été apportées.</p>
 <p>Je lui ai aussi ajouté une petite touche RK!</p>
-<p></p>
-<p>This is a french translation of the vin_Base mod</p>
+<br>
 <br>
 <p>À noter que:</p>
 <ul>
@@ -25,8 +24,6 @@ This is a french translation of the vin_Base mod, currently under construction<b
 <li>Certains fautes d'orthographe et de grammaire dans le jeu n'ont pas pu être selon les règles pour les mêmes raisons que ci-haut.</li>
 <li>Première version alors, contient sûrement des bugs dans les textes.</li>
 <li>Première version alors, contient sûrement des fautes d'orthographe et de grammaire dans les textes.</li>
-<li></li>
-<li></li>
 </ul>
 <br>
 <hr>
