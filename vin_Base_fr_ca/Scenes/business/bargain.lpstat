@@ -1,9 +1,0 @@
-STAT_ID: bargain
-STAT_NAME: Pouvoir de négociation de la cie; Uniquement pertinent si vous dirigez votre propre entreprise. Plus cette valeur est élevée, plus vos dépenses professionnelles seront faibles.
-PLAYER_ONLY: true
-HIGHER_BETTER: true
-STAT_MIN: 0
-STAT_MAX: 100
-DAILY_CHANGE: -0.01
-DEFAULT_VALUE: 0
-NPC_ONLY: false

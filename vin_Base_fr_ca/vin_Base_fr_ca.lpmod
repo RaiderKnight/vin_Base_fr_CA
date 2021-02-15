@@ -1,6 +1,0 @@
-MODULE_UNIQUEID: vin_Base_fr_ca
-MODULE_NAME: Module de base LifePlay  
-MODULE_AUTHOR: Vinfamy - Translated by Raddeck
-MODULE_LINK: https://github.com/RaiderKnight/
-MODULE_DESCRIPTION: Ce mod ne peut pas être désactivé et doit toujours être en haut de l'ordre de chargement (écrasé par tout le reste). Vous devez seulement activer la version de votre language choisi. Contient tout le contenu minimal du jeu et tous les actions, variables nécessaires dont dépendent d'autres modules internes et/ou de modules venant de la communautée des moddeurs.
-MODULE_REQUIREMENTS:

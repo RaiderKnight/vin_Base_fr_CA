@@ -1,6 +1,0 @@
-ID: sabotage
-NAME: Sabotage
-DESC: Essayez de briser une relation amoureuse apparemment parfaite entre deux NPCs.    
-ONCE: false
-CONDITIONS: none
-START: sabotage_start

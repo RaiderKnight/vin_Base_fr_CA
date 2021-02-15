@@ -1,9 +1,0 @@
-STAT_ID: modelfame
-STAT_NAME: Niveau de célébrité; Êtes-vous célèbre en tant que modèle? Plus vous êtes célèbre, plus vous serez souvent invité pour des séances photos. 0 sinon un modèle. 
-PLAYER_ONLY: true
-HIGHER_BETTER: true
-STAT_MIN: 0
-STAT_MAX: 100
-DAILY_CHANGE: -0.01
-DEFAULT_VALUE: 0
-NPC_ONLY: false

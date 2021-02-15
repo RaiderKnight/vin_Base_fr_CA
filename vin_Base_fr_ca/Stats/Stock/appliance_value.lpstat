@@ -1,9 +1,0 @@
-STAT_ID: appliance_value
-STAT_NAME: Valeur des appareils
-PLAYER_ONLY: true
-HIGHER_BETTER: true
-STAT_MIN: 0
-STAT_MAX:
-DAILY_CHANGE: -2
-DEFAULT_VALUE: 0
-NPC_ONLY: false

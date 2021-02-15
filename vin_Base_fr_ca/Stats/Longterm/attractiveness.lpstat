@@ -1,9 +1,0 @@
-STAT_ID: attractiveness
-STAT_NAME: Attirance; Comme tu es hot. Une forte Attirance signifie que plus de personnes auront une plus grande attraction de départ pour vous afin que vous puissiez vous faire baiser plus facilement et rapidement. 
-PLAYER_ONLY: false
-HIGHER_BETTER: true
-STAT_MIN: 0
-STAT_MAX: 100
-DAILY_CHANGE: -0.005
-DEFAULT_VALUE: 50
-NPC_ONLY: false
