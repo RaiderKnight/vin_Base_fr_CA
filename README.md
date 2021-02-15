@@ -3,8 +3,8 @@
 <p>https://github.com/vinfamy/LifePlay</p>
 <br><br>
 EN CONSTRUCTION<br>
-Donc ne fonctionne pas,... peut-être mais pas testé !<br>
-Il reste encore plusieurs fichiers à traduire.<br>
+Donc ne fonctionne pas,... peut-être mais pas testé!<br>
+Il reste environs 200 fichiers sur ... beaucoup :) ... à traduire.<br>
 À noter que cette version une fois terminée, contiendra plus de texte que la version originale.<br>
 <br>
 This is a french translation of the vin_Base mod, currently under construction<br>
@@ -13,9 +13,9 @@ This is a french translation of the vin_Base mod, currently under construction<b
 <h3>vin_Base_fr_CA :</h3>
 <p>Ce module est la version traduite du module vin_Base</p>
 <p>Un module de remplacement qui vous permet de changer le jeu en français, du moins le contenu de ce module.</p>
-<p>Version française canadienne donc, accent québécois, avec quelques expressions de diverses régions françaises du Canada.</p>
-<p>Cette version, contiend plus de texte que la version originale et beaucoup de reconstruction de phrase.</p>
-<p>Je lui ai ajouté une petite touche RK!</p>
+<p>Version française canadienne donc, accent québécois principalement, avec quelques expressions de diverses régions françaises du Canada.</p>
+<p>Cette version, contient plus de texte que la version originale et beaucoup de reconstruction de phrase ont été apportées.</p>
+<p>Je lui ai aussi ajouté une petite touche RK!</p>
 <p></p>
 <p>This is a french translation of the vin_Base mod</p>
 <br>
@@ -23,26 +23,30 @@ This is a french translation of the vin_Base mod, currently under construction<b
 <ul>
 <li>Certains textes du jeu n'ont pas pu être traduit car ils sont sur des fichiers/variables non-éditables (hardcoded).</li>
 <li>Certains fautes d'orthographe et de grammaire dans le jeu n'ont pas pu être selon les règles pour les mêmes raisons que ci-haut.</li>
-<li>Première version alors, contient surement des bugs dans les textes.</li>
-<li>Première version alors, contient surement des fautes d'orthographe et de grammaire dans les textes.</li>
+<li>Première version alors, contient sûrement des bugs dans les textes.</li>
+<li>Première version alors, contient sûrement des fautes d'orthographe et de grammaire dans les textes.</li>
 <li></li>
 <li></li>
 </ul>
 <br>
 <hr>
 <br>
-<h3>Module requirements</h3>
-<p>At least the game LifePlay 3.20</p>
+<h3>Module requis</h3>
+<p>Au moins le jeu LifePlay 3.20</p>
 <br>
 <hr>
 <br>
-<h3>How to install</h3>
-<p>Download the mod and add it to : ..\LifePlay\Content\Modules</p>
-<p>Make sure you don't leave an extra directory level for the mod. For example, it should go like this:</p>
+<h3>Comment installer cette version non testée</h3>
+<p>Allez dans le dossier: ..\LifePlay\Content\Modules</p>
+<p>Rechercher le module vin_Base. Ensuite, faites un couper-coller de ce dossier et placez-le dans un dossier extérieur au jeu...</p>
+<p>Téléchargez le mod vin_Base_fr_CA et une fois dézippé, Ouvrez le dossier vin_Base_fr_CA et faites un copier-coller du dossier vin_Base_fr_CA.(vin_Base_fr_CA.zip\vin_Base_fr_CA\vin_Base_fr_CA)</p>
+<p>Copiez le dossier vin_Base_fr_CA dans: ..\LifePlay\Content\Modules</p>
+<p>Assurez-vous de ne pas laisser un niveau de répertoire supplémentaire pour le mod. Par exemple, cela devrait ressembler à ceci:</p>
 <p>c:\..\LifePlay\Content\Modules\vin_Base_fr_CA </p>
-<p><strong>NOT</strong></p>
+<p><strong>Et non</strong></p>
 <p>c:\..\LifePlay\Content\Modules\vin_Base_fr_CA\vin_Base_fr_CA</p>
-<p>After the mod have been installed, make sure the mod is active in the Mod Manager. </p>
+<p>Ensuite, supprimez "_fr_CA" de vin_Base_fr_CA</p>
+<p>Vu que c'est un module de base, rien à activer, mais comme je vous l'ai dis, je n'ai rien testé alors il est probable qu'il ait des bugs et autres...</p>
 <br>
 <hr>
 <br>
